@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # Welcome
 
 The Nested Component Based Content Management System (aka “Nestor”) is such a versatile system designed to allow a Site manager to rapidly build web content with multiple levels of access.  Nestor is based on the concept of combining Components into a nested structure referred to as a Recipe.   Each Component is responsible for a small task, such as access control, and when nested with other Components in a Recipe allows for cascading features and access control at any layer of the structure.   Put simply, Nestor is versatile content management system designed to support user generated content.   
+=======
+# Welcome to Nestor
+
+The Nested Component Based Content Management System (aka “Nestor”) is versatile system designed to allow a Site manager to rapidly build web content with multiple levels of access.  Nestor is based on the concept of combining Components into a nested structure referred to as a Recipe.   Each Component is responsible for a small task, such as access control, and when nested with other Components in a Recipe allows for cascading features and access control at any layer of the structure.   Put simply, Nestor is versatile content management system designed to support user generated content.   
+>>>>>>> 7981a665c647667273d921fb953fbc2d150db34f
 
 Access the full documentation over here.  
 **[ Installation Guide ](Home/Install)**
