@@ -8,7 +8,7 @@
  
 body {
   font-family: "PT Sans", sans-serif;
-  background: #ffffff;
+  background: #f5f5f5;
  
   /* Used so 1.6 em = 16pts */
   font-size: 62.5%;
@@ -38,9 +38,10 @@ body {
   list-style: none;
   float: left;
   text-align: center;
-  width: 14.2%; /* fallback for non-calc() browsers */
-  /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7);
+  width: 16.5%; /* fallback for non-calc() browsers */
+ 
+  /* Width divided between the 10 items on the bar */
+  width: calc(100% / 6);
 }
  
 /* Style links in nav bar */
@@ -68,7 +69,7 @@ body {
 /* Position the menu drop down relative to the nav bar */
 .nav > li > div {
   position: absolute;
-  left: 14.2% + 1px;
+  left: 0;
   top: 41px;
  
   /* Don't show unless the nav bar li is hovered */
@@ -86,15 +87,38 @@ body {
 /* Drop Down Menu Styling */
  
 .nav-main {
-  width: 14.2%; /* fallback for non-calc() browsers */
-  /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7);
+  width: 100%;
   border: 1px solid #B2BEB5;
 }
  
 .nav-divider {
   display: inline-block;
   width: 1.8%;
+}
+ 
+.nav-focus-art {
+  display: inline-block;
+  width: 11.5%;
+  vertical-align: top;
+  text-align: center;
+}
+ 
+.nav-art-author, .nav-art-title {
+  display: inline-block;
+  padding: 10px 0px;
+}
+ 
+.nav-art-author {
+  font-size: .9em;
+  color: red;
+}
+ 
+.nav-art-title {
+  font-size: 1.4em;
+}
+ 
+.nav-art-image {
+  display: inline-block;
 }
  
 .nav-divider-2 {
@@ -104,8 +128,8 @@ body {
  
 .nav-headlines {
   display: inline-block;
-  width: 90%;
-  font-size: 0.8em;
+  width: 34.5%;
+  font-size: 1.2em;
   font-weight: bold;
   text-align: left;
   padding-right: 3px;
@@ -120,5 +144,23 @@ body {
   border-width: 0px;
 }
  
+.nav-links {
+  display: inline-block;
+  width: 11.95%;
+  vertical-align: top;
+  text-align: left;
+}
+ 
+.nav-link { padding-bottom: 20px;}
+ 
+.nav-empty-cell { padding-top: 40px;}
+ 
+.nav-headline-link:first-child {
+  color: red;
+}
+ 
+.nav-link:first-child {
+  color: red;
+}
  
 /* End of Drop Down Menu Styling */
