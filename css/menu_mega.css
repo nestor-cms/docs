@@ -38,10 +38,10 @@ body {
   list-style: none;
   float: left;
   text-align: center;
-  width: 16.5%; /* fallback for non-calc() browsers */
+  width: 10%; /* fallback for non-calc() browsers */
  
   /* Width divided between the 10 items on the bar */
-  width: calc(100% / 6);
+  width: calc(100% / 10);
 }
  
 /* Style links in nav bar */

@@ -6,18 +6,11 @@
   padding: 0; margin: 0;
 }
  
-body {
-  font-family: "PT Sans", sans-serif;
-  background: #ffffff;
- 
-  /* Used so 1.6 em = 16pts */
-  font-size: 62.5%;
-}
  
 .wrapper {
-  font-size: 1.6em;
+  font-size: 14px;
   padding: 2em;
-  margin: 0 auto;
+  margin:auto;
   width: 95%;
   background-color: white;
 }
@@ -25,39 +18,43 @@ body {
 /* Navigation Bar Styling */
  
 .nav {
-  background: white;
   width: 100%;
   height: 43px;
  
   /* Used so the menu drop down can be placed absolutely */
   position: relative;
   border: 1px solid #B2BEB5;
+  margin-left:auto;
+  margin-right:auto;
 }
  
 .nav li {
   list-style: none;
   float: left;
   text-align: center;
-  width: 14.2%; /* fallback for non-calc() browsers */
+  width: 13.3%; /* fallback for non-calc() browsers */
   /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7);
+  width: calc(100% / 7.5);
+  margin-left:auto;
+  margin-right:auto;
 }
  
 /* Style links in nav bar */
 .nav > li > a {
-  color: #536267;
+  color: #536267;;
   font-weight: bold;
-  font-size: .7em;
+  font-size: 14px;
   text-decoration: none;
   line-height: 43px;
   padding: 0 20px;
   height: 43px;
   text-transform: uppercase;
 }
- 
+
 .nav > li:hover  {
   border-right: 1px solid #B2BEB5;
   border-left: 1px solid #B2BEB5;
+
 }
  
 /* On hover show the menu drop down */
@@ -68,7 +65,7 @@ body {
 /* Position the menu drop down relative to the nav bar */
 .nav > li > div {
   position: absolute;
-  left: 14.2% + 1px;
+  left: 13.3% + 1px;
   top: 41px;
  
   /* Don't show unless the nav bar li is hovered */
@@ -86,9 +83,9 @@ body {
 /* Drop Down Menu Styling */
  
 .nav-main {
-  width: 14.2%; /* fallback for non-calc() browsers */
+  width: 13.3%; /* fallback for non-calc() browsers */
   /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7);
+  width: calc(100% / 7.5);
   border: 1px solid #B2BEB5;
 }
  
@@ -105,7 +102,7 @@ body {
 .nav-headlines {
   display: inline-block;
   width: 90%;
-  font-size: 0.8em;
+  font-size: 14px;
   font-weight: bold;
   text-align: left;
   padding-right: 3px;
@@ -114,6 +111,16 @@ body {
 .nav-headline-link {
   border-bottom: 1px solid #B2BEB5;
   padding: 10px 0px;
+}
+
+.nav-headline-link > a {
+  text-decoration: none;
+  color: blue;
+}
+
+.nav-headline-link > a:hover {
+  text-decoration: none;
+  color: blueviolet;
 }
  
 .nav-headline-link:last-child {

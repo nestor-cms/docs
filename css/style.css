@@ -1,15 +1,40 @@
 body{
   font-family: "PT Sans", sans-serif;
   background-color: #ffffff;
-  /* Used so 1.6 em = 16pts */
-  font-size: 62.5%;
+  font-size: 14px;
 }
 
+h1{
+  color: #003366;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
 
-#main{
-  transition:margin-left 0.5s;
-  padding:20px;
-  width:100%;
+h2{
+  color: #006666;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+h3{
+  color: #006699;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+p{
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+ul{
+  font-size: 14px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+}
+.main{
+  padding: 2em;
+  margin:auto;
+  width: 95%;
   background-color: #ffffff;
 }
 
