@@ -5,13 +5,13 @@ body{
 }
 
 h1{
-  color: #003366;
+  color: #326273;
   font-size: 18px;
   padding-bottom: 10px;
 }
 
 h2{
-  color: #006666;
+  color: #5c9ead;
   font-size: 16px;
   padding-bottom: 10px;
 }
@@ -26,9 +26,9 @@ p{
   font-size: 14px;
   padding-bottom: 10px;
 }
-ul{
+ul, ol{
   font-size: 14px;
-  margin-left: 10px;
+  margin-left: 15px;
   padding-bottom: 10px;
 }
 .main{
@@ -38,3 +38,32 @@ ul{
   background-color: #ffffff;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 4px;
+  vertical-align: top;
+}
+
+  th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #E39774;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.attention {
+  font-weight: bold;
+}

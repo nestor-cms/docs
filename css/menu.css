@@ -32,16 +32,16 @@
   list-style: none;
   float: left;
   text-align: center;
-  width: 13.3%; /* fallback for non-calc() browsers */
+  width: 12.1%; /* fallback for non-calc() browsers */
   /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7.5);
+  width: calc(100% / 8.2);
   margin-left:auto;
   margin-right:auto;
 }
  
 /* Style links in nav bar */
 .nav > li > a {
-  color: #536267;;
+  color: #536267;
   font-weight: bold;
   font-size: 14px;
   text-decoration: none;
@@ -63,9 +63,10 @@
 }
  
 /* Position the menu drop down relative to the nav bar */
+/*setting a little less than 100/8 because IE will break to next line*/
 .nav > li > div {
   position: absolute;
-  left: 13.3% + 1px;
+  left: 12.1% + 1px;
   top: 41px;
  
   /* Don't show unless the nav bar li is hovered */
@@ -83,9 +84,9 @@
 /* Drop Down Menu Styling */
  
 .nav-main {
-  width: 13.3%; /* fallback for non-calc() browsers */
+  width: 12.1%; /* fallback for non-calc() browsers */
   /* Width divided between the 6 items on the bar */
-  width: calc(100% / 7.5);
+  width: calc(100% / 8.2);
   border: 1px solid #B2BEB5;
 }
  
@@ -115,12 +116,12 @@
 
 .nav-headline-link > a {
   text-decoration: none;
-  color: blue;
+  color: #536267;
 }
 
 .nav-headline-link > a:hover {
   text-decoration: none;
-  color: blueviolet;
+  color: #5c9ead;
 }
  
 .nav-headline-link:last-child {
