@@ -1,0 +1,4556 @@
+<h1>
+    <a name="_Toc517175073">Nestor Documentation</a>
+</h1>
+<h2>
+    Home
+</h2>
+<p>
+    The <strong>Nested Component Based Content Management System</strong> (aka
+    “Nestor”) is versatile system designed to allow a Site manager to rapidly
+    build web content with multiple levels of access. Nestor is based on the
+    concept of combining Components into a nested structure referred to as a
+    Recipe. Each Component is responsible for a small task, such as access
+    control, and when nested with other Components in a Recipe allows for
+    cascading features and access control at any layer of the structure. Put
+    simply, Nestor is versatile content management system designed to support
+    user generated content.
+</p>
+<p>
+    The core Nestor engine translates a Recipe into a page that end users can
+    interact with based on the type and placement of Components in the Recipe.
+    This system provides a framework onto which:
+</p>
+<p>
+    · Administrators determine what components will be allowed in the
+    environment
+</p>
+<p>
+    · Site managers define a pattern that determines what type of content can
+    be added to a page and by whom
+</p>
+<p>
+    · Page builders add structural content to create the pages
+</p>
+<p>
+    · End users upload content to designated areas on the page
+</p>
+<p>
+    Visit the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Media_Recipe_Example"
+    >
+        Media Recipe Example
+    </a>
+    to see how a Recipe translates into a Page.<em></em>
+</p>
+<p>
+    Nestor also allows for the integration of
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_CSS_dependencies"
+    >
+        custom styles
+    </a>
+    ,
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        templates
+    </a>
+    and
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_JavaScript_Dependencies"
+    >
+        scripts
+    </a>
+    to further customize the experience.
+</p>
+<h2>
+    <a name="_Toc517175075">Uses</a>
+</h2>
+<p>
+    We originally built Nestor to host courses that allow early childhood
+    educators to become more effective instructors, and continue their
+    professional growth. These courses provide a powerful learning experience
+    with their ability to allow end users to upload images and video of their
+    work performance and then receive feedback from experts in their field. To
+    achieve this, we needed a system that would allow us discrete control over
+    what types of content could be uploaded and who could upload it. We quickly
+    realized that the flexible design of the system would be applicable to many
+    other applications and decided to make it available as an open source
+    framework.
+</p>
+<h2>
+    <a name="_Toc517175076">Install (Network Admin)</a>
+</h2>
+<h3>
+    <a name="_Toc517175077">
+        <s>
+            Scenario
+        </s>
+    </a>
+    <s>
+    </s>
+</h3>
+<p>
+    <s>
+        I am a Network Admin and my company wants to use Nestor to build out
+        our web content. I need to install and configure Nestor for use by my
+        Web Content team.
+    </s>
+</p>
+<p>
+    <s>
+    </s>
+</p>
+<h3>
+    <a name="_Toc517175078">
+        <s>
+            Minimum Requirements
+        </s>
+    </a>
+    <s>
+    </s>
+</h3>
+<p>
+    <s>
+        Nestor is built on the LAMP/WAMP stack, coded in PHP and JavaScript. In
+        order to have a successful installation, your machine must meet the
+        minimum requirements.
+    </s>
+</p>
+<h5>
+    <s>
+        Developer Machine
+    </s>
+</h5>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                        Macintosh
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                        Windows
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        OS
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                        OS xxxx
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                        Windows 7/10
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        Dev Framework
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <a
+                        href="https://www.linux.com/learn/easy-lamp-server-installation"
+                    >
+                        <s>
+                            LAMP
+                        </s>
+                    </a>
+                    <s>
+                    </s>
+                    <s>
+                        (Linux/Apache/MySQL/PHP)
+                    </s>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <a href="http://www.wampserver.com/en/">
+                        <s>
+                            WAMP
+                        </s>
+                    </a>
+                    <s>
+                    </s>
+                    <s>
+                        ( Windows version of LAMP: Linux/Apache/MySQL/PHP)
+                    </s>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        SMTP
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        RAM
+                    </s>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        Disc space
+                    </s>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        processer speed
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h5>
+    <s>
+    </s>
+</h5>
+<h5>
+    <s>
+        Production Machine
+    </s>
+</h5>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                        Linux
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                        Windows
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        OS
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                        Linux version xxxxx
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                        Windows Server version xxxx
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        Dev Framework
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                        PHP 5.4
+                    </s>
+                </p>
+                <p>
+                    <s>
+                        MySQL
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        SMTP
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        RAM
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        Disc space
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="171" valign="top">
+                <p>
+                    <s>
+                        processer speed
+                    </s>
+                </p>
+            </td>
+            <td width="369" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+            <td width="396" valign="top">
+                <p>
+                    <s>
+                    </s>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>
+    <a name="_Toc517175079">Before you Install</a>
+</h3>
+<p>
+    Follow these steps before running the Installer to prevent some common
+    errors
+</p>
+<p>
+    1. You need to have rights to install software on the machine onto which
+    you are installing the system
+</p>
+<p>
+    2. Install
+    <a href="https://www.linux.com/learn/easy-lamp-server-installation">
+        LAMP
+    </a>
+    (Mac, Linux) or <a href="http://www.wampserver.com/en/">WAMP</a> (Windows)
+    on your system
+</p>
+<p>
+    3. Create a new database in MySQL. You can give it any name but make sure
+    you use this name to identify the database when you run the installer
+</p>
+<p>
+    4. Create MySQL account with at least Database Manager permissions for the
+    database you created in step 3
+</p>
+<p>
+    5. You will create an admin account during installation. You’ll need to
+    remember which email and password you’ve assigned to this account
+</p>
+<h3>
+    <a name="_Toc517175080">Installation Steps</a>
+</h3>
+<p>
+    1. Copy the Nestor files from GitHub. The folder where you clone/copy the
+    files can have whatever name you choose, but make sure you use this folder
+    name to identify the application path during installation.
+</p>
+<p>
+2. Navigate to your application folder in a web browser. (ie    <a href="http://localhost/vce">http://localhost/vce</a>)
+</p>
+<p>
+    3. The Nestor installer should start and walk you through the installation
+    and configuration process
+</p>
+<p>
+    4. If the installer doesn’t start automatically, look for the
+    vce-installer.php file in the root of your installation folder and open it
+    in a web browser
+</p>
+<p>
+    If you have any difficulties with your installation, refer to the
+    Troubleshooting Guide: Installation Section
+</p>
+<h3>
+    <a name="_Toc517175081">Configuration File</a>
+    s
+</h3>
+<p>
+    The Nestor configuration file - vce-config.php – is found in the root
+    directory of your installation. This file consists of a list of defined
+    constants that are used throughout the system for many purposes.
+</p>
+<h4>
+    Installer Defined Settings
+</h4>
+<p>
+    During installation, some key settings are written to the Nestor
+    configuration file. Many system issues can be caused by the wrong settings,
+    so be careful about changing any of these key settings.
+</p>
+<table border="0" cellspacing="0" cellpadding="0" width="1028">
+    <tbody>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175082">Setting Name</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175083">Description</a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175084">Origin</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175085">SITE_KEY</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175086">
+                        Site key used by application for encryption –
+                        <strong>
+                            do not change this after install or your site will
+                            stop working
+                        </strong>
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175087">
+                        Generated and written by the installer
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175088">DB_NAME</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175089">
+                        The name of the database used to store application info
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175090">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175091">DB_USER</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175092">database username</a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175093">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175094">DB_PASSWORD</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175095">database password</a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175096">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175097">DB_HOST</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175098">
+                        Hostname of your webserver, commonly “localhost”
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175099">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175100">TABLE_PREFIX</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175101">
+                        This is the prefix attached to all table names in the
+                        database. Especially useful if you are sharing the
+                        database with other applications
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175102">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175103">QUERY_STRING_INPUT</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175104">
+                        Enable query string input. Set to true by default
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175105">Written by installer</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175106">PERSISTANT_LOGIN</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175107">
+                        Enable persistent login – allows users to access site
+                        without having to login each time. Set to true by
+                        default
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175108">Written by installer</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175109">PATH_TO_UPLOADS</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175110">
+                        Set the path for the directory where user uploaded
+                        files are stored
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175111">
+                        Written by installer from value provided by end user
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="258" valign="top">
+                <h3>
+                    <a name="_Toc517175112">VCE_DEBUG</a>
+                </h3>
+            </td>
+            <td width="432" valign="top">
+                <h3>
+                    <a name="_Toc517175113">
+                        Display MySQL and PHP errors. Set to true by default
+                    </a>
+                </h3>
+            </td>
+            <td width="337" valign="top">
+                <h3>
+                    <a name="_Toc517175114">Written by installer</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Manually Configured Settings
+</h4>
+<p>
+    There are other settings used by Nestor that can be manually configured in
+    the configuration file. You can even add your own settings for custom
+    component development.
+</p>
+<p>
+    These settings are all optional.
+</p>
+<table border="0" cellspacing="0" cellpadding="0" width="994">
+    <tbody>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175115">Setting Name</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175116">Description</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175117">CRON_TASK_LIMIT</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175118">
+                        Sets the amount of cron tasks processed on page load
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175119">ASSET_URL</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175120">Alternate path to theme files</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175121">PATH_TO_BASE_JAVASCRIPT</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175122">
+                        specifies location to be used for javascript files
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175123">PATH_TO_BASE_STYLESHEET</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175124">
+                        specifies location to be used for stylesheet files
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175125">SITE_MAIL</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175126">
+                        Indicates if site is configured to send mail
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175127">OPENSSL_VERSION_NUMBER</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175128">
+                        specifies what version of SSL to use in encryption
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175129">OPENSSL_RAW_DATA</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175130">used in encryption algorithms</a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175131">MEDIA_UPLOAD_PATH</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175132">
+                        specifies alternate path for where files uploaded by
+                        users are stored
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175133">PATH_INPUT</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175134">
+                        specifies alternate path for form action value
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175135">INSTANCE_BASEPATH</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175136">
+                        alternate basepath, can be used for path to uploads
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175137">DIRECTORY_SEPARATOR</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175138">
+                        specifies character to use when building file path
+                    </a>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td width="389" valign="top">
+                <h3>
+                    <a name="_Toc517175139">PATH_TO_FILE</a>
+                </h3>
+            </td>
+            <td width="605" valign="top">
+                <h3>
+                    <a name="_Toc517175140">
+                        specifies path to change default location from which to
+                        view files
+                    </a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    <a name="_Toc517175141">.</a>
+    htaccess settings
+</h4>
+<p>
+    All calls into your Nestor installation are intercepted by the .htaccess
+    file and routed to index.php if the path doesn’t specify an existing file
+    or directory. Settings in the .htaccess file route the requests. You
+    shouldn’t have to change this file, as the Nestor Installer should write
+    the correct settings.
+</p>
+<p>
+    RewriteBase /<em>{your basepath}</em>/
+</p>
+<p>
+    · Designates scope of rewrite to any requests made to this path
+</p>
+<p>
+    · Make sure this path matches the root directory of your installation. For
+    example, if you used <strong>http://localhost/mynestor</strong> to navigate
+to your installation, then this basepath value would be    <strong>/mynestor/</strong>
+</p>
+<p>
+    ^index\.php$ - [L]
+</p>
+<p>
+    · prevents requests for index.php from being rewritten, to avoid an
+    unnecessary file system check. If the request is for index.php the
+    directive does nothing - and stops processing rules [L].
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-f
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-d
+</p>
+<p>
+    RewriteRule . /vce/index.php [L]
+</p>
+<p>
+    · This block is all one rule, and it says that if it is not an existing
+    file or directory, reroute the request to index.php.
+</p>
+<h3>
+    <a name="_Toc517175142">Configure SMTP for use with Nestor</a>
+</h3>
+<h2>
+    <a name="_Toc517175143">Configure (IT/Web Manager)</a>
+</h2>
+<h4>
+    <a name="_Toc517175144">Scenario</a>
+</h4>
+<p>
+    My admin put Nestor on our network for me. I need to get it set up so that
+    my content team can start adding content using the Recipes I create. I also
+    want to set up access to the pages so the right people get the right level
+    of permissions to interact with them.
+</p>
+<h3>
+    <a name="_Toc517175145"></a>
+    <a name="_Manage_Components"></a>
+    Managing your Nestor installation
+</h3>
+<p>
+    There is a special set of Admin Components that are installed with Nestor
+    to help you manage your Nestor installation. Each of these components
+    renders a page, links to which can be found on the Admin page accessible
+    through the main menu. The admin area is simply a
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_2"
+    >
+        Recipe
+    </a>
+    of components that were built to administrate different aspects of Nestor.
+</p>
+<p>
+    These Admin Components provide an example of the type of functionality that
+    can be built to manage Nestor. You can modify or even replace these
+    components if you like. See the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Building_a_Component"
+    >
+        Development Section
+    </a>
+    for more details on building a new components.
+</p>
+<h3>
+    <a name="_Toc517175146">Manage Components</a>
+</h3>
+<p>
+    Components are the building blocks of the Nestor system, and as the Nestor
+    Admin you will have the ability to install, disable or even delete
+    components from a standard set that ships with the core system. Active
+    components are available to add to a
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes"
+    >
+        Recipe
+    </a>
+    , and deleted components will be removed entirely. You can even build your
+    own components with any functionality you’d like to add.
+</p>
+<p>
+    The Admin components are provided to help you manage your installation of
+    Nestor. There is also a set of
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Functional_Components"
+    >
+        Functional Components
+    </a>
+    that you can use to add features to your site Pages, such as Access
+    control, Login, and Media content.
+</p>
+<p>
+    The Manage Components tool allows you to activate, disable and delete
+    components, and is available on the Admin page.
+</p>
+<h4>
+    Component categories
+</h4>
+<p>
+    The component categories appear across the top of the Manage Components
+    page. To explore the categories, click on a category to see it’s associated
+    components. The site category loads by default.
+</p>
+<p>
+    <img
+        border="0"
+        width="1033"
+        height="133"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png"
+    />
+</p>
+<p>
+    <em>Component Categories</em>
+</p>
+<h4>
+    Activate a component
+</h4>
+<p>
+    · Click the white <strong>Activated</strong> button next to each component
+you’d like to activate, and then click the    <strong>Update Components</strong> button at the bottom of the list
+</p>
+<ul>
+    <li>
+        Note: you can select <strong>Activated</strong> for components from
+multiple categories and then click the        <strong>Update Components</strong> button – all of your changes will be
+        registered
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="634"
+        height="147"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"
+    />
+</p>
+<h4>
+    Disable a component
+</h4>
+<p>
+    · Click the white <strong>Disabled</strong> button next to each component
+you’d like to disable, and then click the    <strong>Update Components</strong> button at the bottom of the list
+</p>
+<ul>
+    <li>
+        Note: you can select <strong>Disabled</strong> for components from
+multiple categories and then click the        <strong>Update Components</strong> button – all of your changes will be
+        registered
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="629"
+        height="152"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png"
+    />
+</p>
+<h4>
+    <a name="_Manage_Recipes"></a>
+    Delete a component
+</h4>
+<p>
+    <strong>Deleting components is not recommended</strong>
+    – once deleted you will lose access to the component permanently as your
+    source files will be deleted. You would need to re-load the source files to
+    regain access to the component. If you are sure you want to delete it,
+    follow these instructions.
+</p>
+<p>
+    · If the component is active, disable it
+</p>
+<p>
+· In the disabled state, a component will a display a    <strong>Delete</strong> button. Click this button to delete the component.
+</p>
+<p>
+    <img
+        border="0"
+        width="610"
+        height="146"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png"
+    />
+</p>
+<h3>
+    <a name="_Toc517175147"></a>
+    <a name="_Standard_Component_Configuration_1"></a>
+    <a name="_Manage_Recipes_2"></a>
+    Manage Recipes
+</h3>
+<p>
+    The heart of Nestor is the ability to build nested Recipes. Recipes
+    describe the potential for what a page can look like – what elements can be
+    added, where and by whom? Different components can be added to Recipes to
+    provide different functionality. One component may provide navigational
+    information, while another adds a layer of access control to the components
+    that follow it. Adding certain components allows you to designate what type
+    of content can be added by end users and in what ways end users can
+    interact with content (add, update, delete etc). A recipe is like DNA in
+    that it describes a template from which a page can be built.
+</p>
+<p>
+    The Recipe is used during the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Page_Build_Process"
+    >
+        Page Build Process
+    </a>
+    to render the final page.
+</p>
+<p>
+The Manage Recipes interface consists of <strong>Components</strong>,    <strong>Categories</strong> and the <strong>Recipe Build Area</strong>, as
+    well as a field to name the Recipe and the <strong>Save</strong> button.
+    The following sections describe how to use these features to build, edit
+    and delete Recipes.
+</p>
+<p>
+    <img
+        border="0"
+        width="969"
+        height="781"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image005.png"
+    />
+</p>
+<p>
+    <em>Manage Recipes Interface</em>
+</p>
+<h4>
+    Why Nest?
+</h4>
+<p>
+    The ability to nest components is the key to the power of Nestor. Any
+    component that is nested within another component inherits the
+    functionality of its parent component(s), which can create a very flexible
+    system of cascading permissions and features.
+</p>
+<p>
+    For example, the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Login"
+    >
+        Login
+    </a>
+    component provides the functionality to allow a user to login. Any Recipe
+    with Login in the top hierarchy will always check that a user has a valid
+    login when the page is being rendered, and provide them with a login page
+    if they aren’t logged in.
+</p>
+<p>
+    Another great example is the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Access"
+    >
+        Access
+    </a>
+    component, which allows you to assign permissions to user roles. This
+    component can be added at multiple levels in a Recipe. This would allow you
+    to assign a role one level of permissions to one set of components, and
+    then limit them to more restrictive permission level on other components on
+    the same page.
+</p>
+<h4>
+    <a name="_Create_a_New"></a>
+    Create a New Recipe
+</h4>
+<p>
+1. Navigate to the <strong>Admin</strong> page and select    <strong>Manage Recipes</strong>
+</p>
+<p>
+    2. Click the <strong>Create a New Recipe</strong> bar at the top of the
+    page
+</p>
+<p>
+    3. Active components are listed on the left, under the Components header.
+</p>
+<p>
+    4. Click on a <strong>Category</strong> at the bottom of the listed
+    components to see all of the components associated with that category
+</p>
+<p>
+5. Click on a <strong>Component</strong> and drag it to the    <strong>Recipe Build Area</strong>. This area is where you’ll assemble your
+    Recipe.
+</p>
+<p>
+    6. It’s important to understand that the first component in a Recipe will
+    be the anchor for the rest of the components. Certain components are a
+    better choice for this position, and choosing a less suitable component can
+be problematic for the function of your final page. Choose one of the (    <em>colored, highlighted or listed in another section</em>) components as
+    the first component for the best experience. Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Functional_Components"
+    >
+        Functional Components
+    </a>
+    section for more information.
+</p>
+<p>
+    7. Click and drag other components to the Recipe build area. You can drop
+    them before or after existing components. When you drag a new component
+    over one that’s in the Recipe, you’ll notice a white box that appears
+    before or after the existing component. This indicates where the new
+    component will be placed when you release it.
+</p>
+<p>
+    <img
+        border="0"
+        width="911"
+        height="398"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png"
+    />
+    <em>
+        White box above Login component, Location will be placed above Login
+    </em>
+</p>
+<p>
+    8. Components can be moved within the Recipe after they have been placed.
+    Click on a component, then drag and drop to its new location.
+</p>
+<p>
+    9. To nest components, drag the component to be nested over an existing
+    Recipe component, and then slowly drag it to the right until you see a
+    nested spot open up under the existing component. Release the new component
+    and it should snap into this slot.
+</p>
+<p>
+    <img
+        border="0"
+        width="969"
+        height="383"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png"
+    />
+</p>
+<p>
+    <em>A nested spot is open underneath the Login component</em>
+</p>
+<p>
+    <img
+        border="0"
+        width="899"
+        height="438"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image008.png"
+    />
+</p>
+<p>
+    <em>Location is nested under Login</em>
+</p>
+<p>
+    10. Click the gray circle for each component and provide information
+    necessary to configure each component. Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Functional_Components"
+    >
+        Functional Components
+    </a>
+    list for more information about configuring the standard components.
+</p>
+<p>
+    11. To remove a component, click on the gray circle at the end of the
+component bar to expand the component, and then click the    <strong>Remove</strong> button
+</p>
+<p>
+    12. Give your Recipe a Name in the <strong>Recipe Name</strong> field
+</p>
+<p>
+    13. Click the <strong>Save This Recipe</strong> button
+</p>
+<h4>
+    View a Recipe
+</h4>
+<p>
+    1. On the Manage Recipes page, click the link in the<strong> URL </strong>
+    field to load the page built from this Recipe
+</p>
+<p>
+    2. Click the <strong>View Object</strong> button to see the Object code for
+    the Recipe. This can be used to update database fields if needed.
+</p>
+<h4>
+    Update a Recipe
+</h4>
+<p>
+1. In the <strong>Existing Recipes</strong> list, click the    <strong>Edit</strong> button next to the Recipe you want to update
+</p>
+<p>
+    <img
+        border="0"
+        width="969"
+        height="456"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image009.png"
+    />
+</p>
+<p>
+    2. Drag and drop components to rearrange them in the Recipe
+</p>
+<p>
+    3. Click on the gray circle next to a component to expand it and edit its
+    properties
+</p>
+<p>
+    4. To remove a component, click on the gray circle at the end of the
+component bar to expand the component, and then click the    <strong>Remove</strong> button
+</p>
+<p>
+    5. Click the <strong>Update This Recipe</strong> to make sure your changes
+    are saved
+</p>
+<h4>
+    Delete a Recipe
+</h4>
+<p>
+    1. In the Manage Recipes page, click the <strong>Delete</strong> button
+    next to the Recipe you want to update
+</p>
+<p>
+    2. Click <strong>OK</strong> on the browser warning that appears
+</p>
+<p>
+    <img
+        border="0"
+        width="629"
+        height="224"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png"
+    />
+</p>
+<h4>
+    Advanced Options
+</h4>
+<p>
+    1. Click the <strong>Advanced Options</strong> bar to see what other
+    options are available for your Recipe
+</p>
+<p>
+    2. A common option is to <strong>Generate Full Page Object. </strong>Click
+    on this option and then click<strong> Save This Recipe</strong>
+</p>
+<p>
+    <img
+        border="0"
+        width="806"
+        height="250"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image011.png"
+    />
+</p>
+<h4>
+    <a name="_Media_Recipe_Example"></a>
+    Media Recipe Example
+</h4>
+<p>
+    The Media Recipe builds a page where users can upload and edit content
+    based on their role. The Recipe contains Login, Location, Access, Comments
+    and Media components. Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Standard_Component_Configuration_1"
+    >
+        Standard Component Configuration and Usage section
+    </a>
+    for more details about each component.
+</p>
+<p>
+    Note that the first level of access in this Recipe is that only a Site
+    Admin can build a Recipe. The Site Admin can then add access controls to
+    the Recipe to determine which users can interact in what ways with the Page
+    content.
+</p>
+<p>
+    <img
+        border="0"
+        width="970"
+        height="551"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image012.png"
+    />
+</p>
+<p>
+    <em>Recipe with multiple levels of Access</em>
+</p>
+<p>
+    In this Recipe:
+</p>
+<p>
+    1.
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Login"
+    >
+        Login
+    </a>
+    and
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Location"
+    >
+        Location
+    </a>
+    provide their standard functionality
+</p>
+<p>
+    2. The first
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Access"
+    >
+        Access
+    </a>
+    component sets permissions for the Media component following it.
+</p>
+<p>
+    <img
+        border="0"
+        width="730"
+        height="748"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg"
+    />
+</p>
+<p>
+    <em>Expanded Access component showing properties</em>
+</p>
+<p>
+    · A user with role of Admin, Moderator, Author and Visitor can view the
+    uploaded content.
+</p>
+<p>
+    · A user with role of Admin, Moderator and Author can add content to the
+    page – in this case a Visitor <strong>cannot</strong> add content to the
+    page.
+</p>
+<p>
+    3. The
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Media/MediaType"
+    >
+        Media
+    </a>
+    component in this Recipe will allow images, text, PDF files, PowerPoint
+    files and YouTube videos to be added to the page.
+</p>
+<p>
+    <img
+        border="0"
+        width="744"
+        height="509"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg"
+    />
+</p>
+<p>
+    <em>Expanded Media component showing properties</em>
+</p>
+<p>
+    <img
+        border="0"
+        width="968"
+        height="815"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image017.png"
+    />
+</p>
+<p>
+    <em>
+        Page built from Media Recipe, Add Media bar visible to all roles except
+        Visitor
+    </em>
+</p>
+<p>
+    4. The second Access component sets permissions for the Comments component
+    following it
+</p>
+<p>
+    <img
+        border="0"
+        width="730"
+        height="882"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image019.jpg"
+    />
+</p>
+<p>
+    · A user with role of Admin, Moderator, Author and Visitor can view the
+    uploaded content.
+</p>
+<p>
+    · A user with role of Admin, Moderator, Author and Visitor can add content
+    to the page – in this case a Visitor <strong>is able to add</strong>
+    comments.
+</p>
+<p>
+    <img
+        border="0"
+        width="966"
+        height="422"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image020.png"
+    />
+</p>
+<p>
+    <em>
+        Text content on Media page, add Comment bar visible to all roles
+        including Visitor
+    </em>
+</p>
+<h3>
+    <a name="_Toc517175148"></a>
+    <a name="_Manage_Menus"></a>
+    Manage Menus
+</h3>
+<p>
+    There are a few different navigational elements in the Nestor system. There
+    is a default Main menu and Breadcrumbs menu that are set up in the standard
+    Nestor install. The placement of the menus is laid out in the theme.php
+    file associated with the install. The main menu is built automatically, but
+    the Breadcrumbs menu is a component that can be deactivated.
+</p>
+<p>
+    Learn more about displaying menus in the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    .
+</p>
+<h4>
+    Main menu
+</h4>
+<p>
+    The main menu is on the top right hand side of the page. The out-of-the-box
+    menu has options for Admin, Logout and My Account.
+</p>
+<p>
+    <img
+        border="0"
+        width="516"
+        height="104"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg"
+    />
+</p>
+<p>
+    <em>Main Menu</em>
+</p>
+<p>
+    You will have to be logged in to see all of the menu options, and you have
+    to have the right level of access for some of them. For example, only a
+    user with the role of Admin can see the Admin menu item.
+</p>
+<h4>
+    Breadcrumbs menu
+</h4>
+<p>
+    One of the Components that is included with Nestor allows for a breadcrumbs
+    menu to be added to your site. Within the default theme, code has been
+    included to display a breadcrumbs menu on the top left. This menu displays
+    the path that you’ve navigated to get to the current page. You can click
+    any level in this menu to move back in the hierarchy.
+</p>
+<p>
+    <img
+        border="0"
+        width="462"
+        height="125"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image023.png"
+    />
+</p>
+<p>
+    <em>Breadcrumbs Menu</em>
+</p>
+<h4>
+    Update the existing menu
+</h4>
+<p>
+    A standard menu is setup during the Nestor installation that contains some
+    basic elements. You can easily add your own pages to this menu, change the
+    order of the menu items, or remove items.
+</p>
+<p>
+· Open the <strong>Manage Menus</strong> interface from the main    <strong>Admin</strong> page
+</p>
+<p>
+    · A list of existing menus is displayed; a new installation will have the
+    main menu configured
+</p>
+<p>
+    <img
+        border="0"
+        width="970"
+        height="211"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image024.png"
+    />
+</p>
+<p>
+    · Click on the <strong>Edit</strong> button to open the edit menu interface
+</p>
+<p>
+    <img
+        border="0"
+        width="969"
+        height="509"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image025.png"
+    />
+</p>
+<p>
+    · The Pages list displays all available Pages that can be added to a menu.
+    This is actually a list of the existing Recipes that have a Location
+    component with a URL assigned.
+</p>
+<p>
+    · If you would like to add a new Page to this list, refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_1"
+    >
+        Manage Recipes
+    </a>
+    section for instructions to create a new Recipe.
+</p>
+<p>
+    · Click on a Page in this list and drag it to the position in the menu
+    where you’d like for it to display.
+</p>
+<p>
+    · Each menu item has properties that you can change. To access these
+    properties, click the gray circle next to the Page you’d like to configure.
+</p>
+<p>
+    <img
+        border="0"
+        width="832"
+        height="642"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image026.png"
+    />
+</p>
+<p>
+    o The Pages will contain the URL value that was assigned in the original
+    Recipe. If you want the menu item to point to a different page, change the
+    URL value
+</p>
+<p>
+    o Click the Roles that will be able to see this item on the menu
+</p>
+<p>
+    o Click the box next to new window if you’d like this Page to open in a new
+    window
+</p>
+<p>
+    · You can also nest Pages into other pages in a menu, refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_1"
+    >
+        Manage Recipes
+    </a>
+    section for more information on nesting components.
+</p>
+<p>
+    o Nested Pages will appear as drop-down items in the menu when you hover
+    over the parent Menu Item
+</p>
+<p>
+    <img
+        border="0"
+        width="838"
+        height="320"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image027.png"
+    />
+</p>
+<p>
+    <em>Menu with nested Pages</em>
+</p>
+<p>
+    <img
+        border="0"
+        width="411"
+        height="259"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image028.png"
+    />
+</p>
+<p>
+    <em>Nested drop-down menu</em>
+</p>
+<p>
+    · Click the options in <strong>Display-By-Depth </strong>to see other Pages
+    that have a URL at a different level
+</p>
+<p>
+    o For example, the Manage Recipes Page has the path admin/manage_recipes
+</p>
+<p>
+    · Click the <strong>Save This Menu</strong> button to save your changes
+</p>
+<h4>
+    Create a New Menu
+</h4>
+<p>
+    You can create a new menu that can be added to a theme. Creating and
+    deleting menus from this interface will not affect your current layout. See
+    the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for more information on how to add a menu to a template.
+</p>
+<p>
+    <img
+        border="0"
+        width="970"
+        height="211"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image024.png"
+    />
+</p>
+<p>
+    · Click the <strong>Create a New Menu</strong> bar
+</p>
+<p>
+    · Drag and Drop the pages you would like to add to your new menu to the
+    Menu Build area
+</p>
+<p>
+    · Save the new menu
+</p>
+<p>
+    · Use the <strong>Code For Theme</strong> value to add this new menu to a
+    new site Theme. Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for information on how to display a menu.
+</p>
+<p>
+    · Click the <strong>Save This Menu</strong> button
+</p>
+<h4>
+    Delete a Menu
+</h4>
+<p>
+    · Click the <strong>Delete</strong> button next to the menu you’d like to
+    delete
+</p>
+<p>
+    · Deleting a menu will have repercussions on any templates using the menu.
+    Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for more information about removing menu references from a template.
+</p>
+<h3>
+    <a name="_Toc517175149"></a>
+    <a name="_Manage_Site"></a>
+    Manage Site
+</h3>
+<p>
+    There are many site properties that you can configure, many of which are
+    set up during the installation process. Use the Manage Site interface to
+    update key site values
+</p>
+<p>
+· Open the <strong>Manage Site</strong> interface from the main    <strong>Admin</strong> page
+</p>
+<p>
+    · Update the Site properties as needed
+</p>
+<p>
+    · Click the <strong>Update</strong> button to save changes
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="963">
+    <tbody>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site Property</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site Title</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The title that appears in the web browser tab or window
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site Description</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The tagline that appears under the standard site name
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site URL</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The path to your Nestor installation
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site Email</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The email address of the site admin
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Site Theme</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The designated theme for your installation
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>
+    <a name="_Toc517175150"></a>
+    <a name="_Manage_Roles"></a>
+    Manage Roles
+</h3>
+<p>
+    Assigning variable Page permissions to User Roles is a key feature of
+    Nestor. The Admin Role is created when Nestor is installed, you get to
+    create other Roles based on how you would like to differentiate your users.
+    Roles are managed on the Manage Site page, which shows a list of all
+    existing Roles as well as how many users have been assigned this role.
+</p>
+<p>
+    <img
+        border="0"
+        width="768"
+        height="496"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg"
+    />
+</p>
+<h4>
+    Create a New Role
+</h4>
+<p>
+· Open the <strong>Manage Site</strong> interface from the main    <strong>Admin</strong> page
+</p>
+<p>
+    · Scroll down the page below the Site Properties and past existing Roles
+</p>
+<p>
+    · Click the <strong>Add Site Role</strong> bar
+</p>
+<p>
+    · Enter the name of the new Role
+</p>
+<p>
+    · Enter a number for the Role Hierarchy. This will determine the order in
+    which this Role appears when there is an option to select roles.
+</p>
+<p>
+    · Click the <strong>Add New Site Role</strong> button to save the role
+</p>
+<h4>
+    Update a Role
+</h4>
+<p>
+    · Click the bar showing the name of the Role you want to update
+</p>
+<p>
+    <img
+        border="0"
+        width="760"
+        height="245"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg"
+    />
+</p>
+<p>
+    · Enter a new name or select a new Role Hierarchy
+</p>
+<p>
+    · Click the <strong>Update</strong> button
+</p>
+<ul>
+    <li>
+        Click <strong>Reset</strong> to return to the original values (from the
+        time you expanded this Role)
+    </li>
+</ul>
+<h4>
+    Delete a Role
+</h4>
+<p>
+    · Click the bar showing the name of the Role you want to update
+</p>
+<p>
+    · Click the <strong>Delete</strong> button
+</p>
+<h3>
+    <a name="_Toc517175151"></a>
+    <a name="_Manage_Users"></a>
+    Manage Users
+</h3>
+<p>
+    Each user is assigned a Role that determines what they have access to in
+    the system, and how they can interact with content in the system. There are
+    built-in tools that allow Users to self-manage their accounts including the
+    ability to register themselves in the system, reset their password, and
+    update properties of their account.
+</p>
+<h4>
+    Create a New User
+</h4>
+<p>
+· Open the <strong>Manage Users</strong> interface from the main    <strong>Admin</strong> page
+</p>
+<p>
+    · Click the <strong>Create a New User</strong> bar
+</p>
+<p>
+    · Fill in the required fields for the new User
+</p>
+<p>
+    · Click the <strong>Create User</strong> button
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="963">
+    <tbody>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>User Property</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Email</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    Email address for the user, which is used to login
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Password</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+Enter a password or click the                    <strong>Generate Password</strong> button to have the
+                    system generate a password
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>First Name</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    User First Name
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Last Name</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    User Last Name
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    <strong>Role</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The Role a user will have
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Create a User Attribute
+</h4>
+<p>
+    If you would like to collect additional data about each User, you can add a
+    User Attribute. User Attributes are added from the Site page.
+</p>
+<p>
+    · Open the <strong>Manage Site</strong> interface from the main Admin page
+</p>
+<p>
+    · Scroll down to the User Attributes area under the Site Roles
+</p>
+<p>
+    · Click on the <strong>Add a new User Attribute</strong> bar
+</p>
+<table border="0" cellspacing="0" cellpadding="0" width="963">
+    <tbody>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    User Property
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    Description
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    Title
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The User Attribute Title is how this attribute appears on
+                    the Manage User Page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    Type
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    The type of data to be added – text, checkbox etc.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    DataList
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    ???
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    User Attribute Required
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    Check this box if this attribute will be required when a
+                    new user is added or an existing user is updated
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    User Attribute Sortable
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    Click this box if this attribute is sortable in the users
+                    list
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="306" valign="top">
+                <p>
+                    Attribute editable by User
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    Check this box if this property will appear on the My
+                    Account page, allowing a user to edit it for her own
+                    account
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Find a User
+</h4>
+<p>
+    As your Nestor Installation usage grows, your User lists will become
+    larger. We’ve added a few tools to help you navigate your User Population.
+</p>
+<h5>
+    Search
+</h5>
+<p>
+    You can use the Search feature to search on First Name, Last Name, or any
+    custom User Attribute of type Text.
+</p>
+<p>
+    · Click the <strong>Search For Users</strong> click bar, type in at least 3
+    characters and then click the <strong>Search</strong> button. A list of
+    matching Users will be displayed.
+</p>
+<p>
+    <img
+        border="0"
+        width="994"
+        height="448"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image033.png"
+    />
+</p>
+<h5>
+    Filter
+</h5>
+<p>
+    User the Filter feature to find Users by Role.
+</p>
+<p>
+· Click the <strong>Filter</strong> click bar, and then click in the    <strong>Filter By Site Roles</strong> field to select the Role
+</p>
+<p>
+    · Click the <strong>Filter</strong> button
+</p>
+<p>
+    · A list of Users that have this Role will appear
+</p>
+<p>
+    <img
+        border="0"
+        width="936"
+        height="561"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image034.png"
+    />
+</p>
+<h5>
+    Masquerade
+</h5>
+<p>
+    As you are testing the access controls you configure on the site, it’s
+    helpful to be able to see what a User of a certain Role will actually see
+    when viewing the site. You can use the Masquerade feature to do this
+    without having to log into the site as different users.
+</p>
+<p>
+    · Open the User list, and find a User with the Role you’d like to test. You
+    can filter by Role if you have a large User list
+</p>
+<p>
+    · Click the Masquerade button next to the User with the Role you’d like to
+    test
+</p>
+<p>
+    · The page will immediately re-load in the context of this Role, and as you
+    navigate the site you will remain in this Role until you logout and then
+    login with a different Role.
+</p>
+<h3>
+    <a name="_Toc517175152"></a>
+    <a name="_Manage_Datalists"></a>
+    Manage Datalists
+</h3>
+<p>
+    Datalists are flexible entities that allow you design data structures and
+    store data in the Nestor system. The Manage Datalists page allows you to
+    create these data structures through a simple interface. For more complex
+    interactions you can use a number of methods available in the Nestor core
+    engine. Read the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Datalists"
+    >
+        Datalists section
+    </a>
+    to learn how to design and interact programmatically with Datalists.
+</p>
+<h4>
+    Edit Datalist Items
+</h4>
+<p>
+    The Manage Datalists interface will display existing Datalists.
+</p>
+<p>
+    · Click on <strong>Edit</strong> next to the Datalist you’d like to update
+</p>
+<p>
+    <img
+        border="0"
+        width="936"
+        height="408"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image035.png"
+    />
+</p>
+<p>
+    <em>Datalists with associated items</em>
+</p>
+<p>
+    · The items associated with the Datalist will appear.
+</p>
+<p>
+    · You can add a new item by clicking on the <strong>+</strong> bar
+</p>
+<p>
+    <img
+        border="0"
+        width="936"
+        height="361"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image036.png"
+    />
+</p>
+<p>
+    <em>Edit Datalist item</em>
+</p>
+<p>
+    · You can edit items by clicking on the bar with the item name
+</p>
+<p>
+    · Update the properties, then click <strong>Update</strong>
+</p>
+<p>
+· If the item has a child Datalist with items you’d like to update, click    <strong>Edit Child Datalist: <u>[datalist name]</u></strong>
+</p>
+<p>
+    · The items for the child Datalist will load into the edit interface
+</p>
+<p>
+    <img
+        border="0"
+        width="935"
+        height="412"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image037.png"
+    />
+</p>
+<p>
+    <em>Edit items for a child Datalist</em>
+</p>
+<h4>
+    Delete a Datalist
+</h4>
+<p>
+    · Click the <strong>Delete</strong> button next to the Datalist
+</p>
+<ul>
+    <li>
+        Click <strong>OK</strong> in the confirmation window
+    </li>
+</ul>
+<h2>
+    <a name="_Toc517175153"></a>
+    <a name="_Functional_Components"></a>
+    Components
+</h2>
+<p>
+    Many Components are loaded with the standard Nestor installation. A subset
+    of these can be added to a Recipe, each with unique configuration options.
+    There are many more components that appear in the Manage Components section
+    that aren’t meant to be added to a Recipe – these are used under the hood
+    for many critical Nestor site functionalities. We don’t recommend disabling
+    or deleting any of these components from their native installation state if
+    you’d like your Nestor installation to continue working properly.
+</p>
+<h3>
+    <a name="_Toc517175154"></a>
+    <a name="_Access"></a>
+    Access
+</h3>
+<p>
+    The Access component lets you assign permissions to different user roles,
+    and can be added at multiple levels in a Recipe. If you wanted to create a
+    page where Instructors uploaded course materials, and then Students could
+    upload their completed work or comment on the material, this would be
+    possible. The
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Media_Recipe_Example"
+    >
+        Media Recipe example
+    </a>
+    walks through this type of scenario.
+</p>
+<h4>
+    Access configuration:
+</h4>
+<p>
+    · Update the title of this component if you would like
+</p>
+<p>
+    · Select the template you’d like to apply to the component. If you don’t
+    select a template the default template will be used.
+</p>
+<p>
+    · If you’ve created a custom Access denied page, you can enter the URL
+    here.
+</p>
+<p>
+    o This URL must point to an existing Recipe/Page
+</p>
+<p>
+    · Check the Roles that will be able to view content following/nested below
+    this Access component in the Recipe
+</p>
+<p>
+    · Check the Roles that will be able to create content following/nested
+    below this Access component in the Recipe.
+</p>
+<p>
+    · If the Role you’d like to use doesn’t appear, visit the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Roles"
+    >
+        Manage Roles
+    </a>
+    page to ensure that the Role exists
+</p>
+<p>
+    <img
+        border="0"
+        width="769"
+        height="737"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image038.png"
+    />
+</p>
+<h3>
+    <a name="_Toc517175155">Breadcrumbs</a>
+</h3>
+<p>
+    The breadcrumbs menu is part of the main theme template for Nestor. If
+    Breadcrumbs is installed and activated, the menu will appear in your
+    installation. If you disable the component, your breadcrumbs menu will not
+    show up.
+</p>
+<p>
+    Read the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates_1"
+    >
+        Templates section
+    </a>
+    to learn how to add or remove the breadcrumbs menu from your site template.
+</p>
+<h3>
+    <a name="_Toc517175156">Clickbox</a>
+</h3>
+<p>
+    Clickbox allows you to encapsulate your content in an
+    expandable/collapsible clickbox.
+</p>
+<h4>
+    Clickbox configuration:
+</h4>
+<p>
+    · Add Clickbox to a recipe
+</p>
+<p>
+    · Nest another component under Clickbox
+</p>
+<p>
+    · Save the Recipe
+</p>
+<p>
+    · On the rendered page, the nested component will appear inside a Clickbox
+</p>
+<h3>
+    <a name="_Toc517175157">Comments</a>
+</h3>
+<p>
+    Comments is used in conjunction with a Media object. This component allows
+    users to add comments to an element on a page, and can be added to each
+    element onto which you’d like users to be able to leave comments. Comments
+    will inherit permissions from the closest upstream Access component, if one
+    exists. The
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Media_Recipe_Example"
+    >
+        Media Recipe example
+    </a>
+    walks through the scenario where students can add comments to content on a
+    page.
+</p>
+<h4>
+    Comments configuration:
+</h4>
+<p>
+    · There is very little configuration necessary for this component, once
+    added to a Media element it will create a Comments box on the page for that
+    element
+</p>
+<p>
+    · Update the title of this component if you would like to change how it
+    appears on the rendered page
+</p>
+<p>
+    <img
+        border="0"
+        width="665"
+        height="393"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image039.png"
+    />
+</p>
+<h3>
+    <a name="_Toc517175158">Item</a>
+</h3>
+<p>
+    The Item Component allows you to link to a new page from the rendered page.
+    When the link is clicked, any components nested under the Item in the Page
+    Recipe will then appear.
+</p>
+<h4>
+    Item configuration:
+</h4>
+<p>
+    · Add an Item to a Recipe, and nest it under an Access Component if you
+    want to limit who is able to add an Item to this page
+</p>
+<p>
+    · Select the template you’d like to apply to the component. If you don’t
+    select a template the default template will be used.
+</p>
+<p>
+    · Nest a component under the Item Component to determine what gets rendered
+    on the target page
+</p>
+<p>
+· Change the Title of the Item to determine what appears on the    <strong>Add Item</strong> Clickbar on the rendered page
+</p>
+<p>
+    <img
+        border="0"
+        width="927"
+        height="603"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image040.png"
+    />
+</p>
+<p>
+    · On the rendered page, click the <strong>Add Content</strong> button at
+    the top of the page
+</p>
+<p>
+    · Click the <strong>Add a new <em>(Item Component Title)</em></strong> bar
+</p>
+<p>
+    <img
+        border="0"
+        width="970"
+        height="326"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image041.png"
+    />
+</p>
+<p>
+    · Enter a Name for the Item
+</p>
+<p>
+    · Click in the URL field and a new URL will be auto-generated
+</p>
+<p>
+    · Click the <strong>Create</strong> button, and a Link will be added to the
+    page
+</p>
+<p>
+    <img
+        border="0"
+        width="319"
+        height="147"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image042.png"
+    />
+</p>
+<p>
+    · Click the link to see the page containing the other Components nested
+    under this Item Component in the Page Recipe
+</p>
+<p>
+    o Notice that the path to this Item page appears in both the URL and the
+    Breadcrumbs menu
+</p>
+<p>
+    <img
+        border="0"
+        width="936"
+        height="500"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image044.png"
+    />
+</p>
+<h3>
+    <a name="_Toc517175159">Layout</a>
+</h3>
+<p>
+    The Layout component allows you to create blocks for layout with CSS.
+</p>
+<h4>
+    Layout Configuration
+</h4>
+<p>
+    · Create a recipe with a Layout component
+</p>
+<p>
+    · Nest another component under layout
+</p>
+<p>
+    · When you add and edit that component on a page, you’ll have to option to
+    apply a CSS class to the component
+</p>
+<p>
+    <img
+        border="0"
+        width="935"
+        height="300"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image045.png"
+    />
+</p>
+<p>
+    <em>Media component nested under layout component</em>
+    <em></em>
+</p>
+<h3>
+    <a name="_Toc517175160"></a>
+    <a name="_Location"></a>
+    Limit
+</h3>
+<p>
+    Limits the number of components that can be created in the hierarchy below
+    it. The “Add” bar will not appear after the limit of components has been
+    reached on a page.
+</p>
+<h4>
+    Layout Configuration
+</h4>
+<p>
+    · Create a recipe with a Limit component
+</p>
+<p>
+    · Nest another component under layout
+</p>
+<p>
+    · Change the title
+</p>
+<p>
+    · Select the amounts of sub components to allow on a page
+</p>
+<p>
+    <img
+        border="0"
+        width="897"
+        height="521"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image047.jpg"
+    />
+</p>
+<p>
+    <em>Limit component configuration</em>
+</p>
+<h3>
+    <a name="_Toc517175161">Location</a>
+</h3>
+<p>
+    Location is a critical component to have in your recipe, as it allows you
+    to assign the url and title of the page.
+</p>
+<h4>
+    Layout Configuration
+</h4>
+<p>
+    · Create a recipe with a Location component, which can be the recipe anchor
+</p>
+<p>
+    · Add other components under Location
+</p>
+<p>
+    · Assign the <strong>URL</strong> with which you’ll access the page
+    composed from this Recipe.
+</p>
+<p>
+    · Add the <strong>Title</strong>, which is used in the breadcrumb menu and
+    to identify this Recipe when building system menus
+</p>
+<p>
+    <img
+        border="0"
+        width="839"
+        height="546"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image049.jpg"
+    />
+</p>
+<p>
+    <em>Layout component configuration</em>
+</p>
+<h3>
+    <a name="_Toc517175162"></a>
+    <a name="_Login"></a>
+    Login
+</h3>
+<p>
+    The Login component requires that any user viewing the page is logged in.
+    If the user isn’t logged in, the page will display a login element. Login
+    is a great choice to serve as the anchor, or top component, in your Recipe.
+</p>
+<h3>
+    <a name="_Toc517175163">Logout</a>
+</h3>
+<p>
+    Logout contains the code for a full logout. Normally, you’d want to put
+    Login in a Recipe by itself and then add this recipe to your menu.
+</p>
+<h3>
+    <a name="_Toc517175164"></a>
+    <a name="_Media/MediaType"></a>
+    Media/MediaType
+</h3>
+<p>
+    The Media component allows you to choose what types of Media can be
+    uploaded on this page.
+</p>
+<h4>
+    Media Configuration
+</h4>
+<p>
+    · Add a media component to a recipe, usually nested under another component
+    that can affect its behavior such as Access, Set etc.
+</p>
+<p>
+    · Update the Title
+</p>
+<p>
+    · Update the text in the <strong>Clickbar Description</strong> field, which
+    is what appears on the bar your users click to add a new Media element
+</p>
+<p>
+    · Check the Media Types you will allow to be uploaded to this page
+</p>
+<ul>
+    <li>
+        Click <strong>Save this Recipe</strong>
+    </li>
+</ul>
+<p>
+    <img
+        border="0"
+        width="669"
+        height="595"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image050.png"
+    />
+</p>
+<p>
+    <em>Media component configuration</em>
+</p>
+<h3>
+    <a name="_Toc517175165">Pagination</a>
+</h3>
+<p>
+    <a name="_Manage_Recipes_1"></a>
+    When components are nested under a Pagination component, they will
+    paginate.
+</p>
+<h3>
+    Set
+</h3>
+<p>
+    Allows you to select specific users to grant access to any components
+    nested within.
+</p>
+<h4>
+    Set Configuration
+</h4>
+<p>
+    · Add a Set component to a recipe
+</p>
+<p>
+    · Nest components under Set to which you want to restrict access
+</p>
+<p>
+    · Update the Title and template
+</p>
+<p>
+    · Select the roles from which you’ll select the users
+</p>
+<p>
+    <img
+        border="0"
+        width="805"
+        height="763"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image052.jpg"
+    />
+</p>
+<p>
+    <em>Set component configuration</em>
+</p>
+<h3>
+    Sort
+</h3>
+<p>
+    The Sort component allows you to sort any nested sub-components by a
+    specific meta-key value. The meta-key values need to match existing values
+    for …..
+</p>
+<p>
+    <img
+        border="0"
+        width="896"
+        height="683"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image054.jpg"
+    />
+</p>
+<p>
+    <em>Sort component configuration</em>
+</p>
+<h2>
+    <a name="_Toc517175166">Designer</a>
+</h2>
+<h3>
+    <a name="_Toc517175167">Scenario</a>
+</h3>
+<p>
+    My IT group has installed Nestor and my company wants to start using it
+    internally. They want to change the look and feel of the system to reflect
+    our branding.
+</p>
+<h3>
+    <a name="_Toc517175170">Set the Site Theme</a>
+</h3>
+<p>
+    Once you create your theme folder and update the theme/template names in
+    the relevant files, your theme will show up in the theme drop-down on the
+    Manage Site page. Choose your theme and click the <strong>Update</strong>
+    button. If you don’t see your changes, clear your browser cache and re-load
+    the page.
+</p>
+<p>
+    <img
+        border="0"
+        width="935"
+        height="206"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image056.jpg"
+    />
+</p>
+<p>
+    <em>Updating the site theme on Manage Site</em>
+</p>
+<h3>
+    <a name="_Toc517175171">Create a new Theme</a>
+</h3>
+<p>
+    Adapting the Nestor environment to your organization’s style is as simple
+    as updating a few standard files. Each page built during the page build
+    process is based on a theme, which consists of a template and resources
+    such as CSS, images and Javascript files. You can create numerous themes
+    for your installation and switch between them using the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Site"
+    >
+        Manage Site admin page
+    </a>
+    . Theme files are stored in a separate folder in the
+    [my_nestor]/vce-content/themes folder.
+</p>
+<p>
+    The standard Nestor installation includes the blogorama and default themes
+    for you to use as examples. To create your own theme, copy the entire
+    directory and create a new directory with the name of your new theme. The
+    following files and folders can be edited to create your theme.
+</p>
+<h4>
+    theme.php
+</h4>
+<p>
+    The main theme file is responsible for configuring settings to allow your
+    theme to work properly. One of the more important settings found in this
+    file is the theme name, which will appear in the Manage Site page in the
+    themes list. This setting is in a php comment:
+</p>
+<p>
+    /*
+</p>
+<p>
+    Theme Name: blogorama
+</p>
+<p>
+    */
+</p>
+<p>
+    You may also need to update the $site-&gt;add_script and
+    $site-&gt;add_style methods to specify any .js and .css resource files you
+    are using for your theme. If you use the existing resources files in either
+    of the included themes – style.css and scripts.js - you won’t have to
+    update these method calls.
+</p>
+<h4>
+    Template files
+</h4>
+<p>
+    The template files set up the page structure for your installation, using
+    standard a mixture of HTML, PHP and CSS styles. The default themes use
+    templates called index.php and login.php, however you can create new
+    templates if you have a use for them. The page template used is chosen when
+    a page
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Standard_Component_Configuration_1"
+    >
+        Recipe
+    </a>
+    is created. If you don’t choose a page template, the index.php template
+    will be used by default.
+</p>
+<p>
+    The php comment at the top of this file defines the name by which it will
+    appear in the template list for Recipe components:
+</p>
+<p>
+    /*
+</p>
+<p>
+    Template Name: Login
+</p>
+<p>
+    */
+</p>
+<p>
+    There are a few critical calls into core Nestor functions that will
+    designate where your page content is rendered and displayed. Note that the
+    theme files are all included by initiate.php, and so that all global
+    objects are available to use without having to declare them as global.
+</p>
+<h4>
+    Calls to global object methods
+</h4>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>Method call</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$site-&gt;site_title()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and echos the site title, which is the site_title
+                    property stored in the [<em>my_db</em>]_site_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$page-&gt;title()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and echos the page title, which is the title
+                    given to the page Recipe
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$site-&gt;theme_path</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and sets up path to the theme file
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$site-&gt; site_description()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and echos the site description, which is the
+                    site_description property stored in the [<em>my_db</em>
+                    ]_site_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$content-&gt; menu('main')</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and displays the HTML for the designated menu.
+                    You can build and edit menus using the
+                    <a
+                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Menus"
+                    >
+                        Manage Menus
+                    </a>
+                    page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$content-&gt; breadcrumb()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Displays the breadcrumb menu. The Breadcrumbs component
+                    must be activated for this menu to display
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$content-&gt; notification_badge()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Content created by notifications component
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$content-&gt; notification_bar()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Content created by notifications component
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$user-&gt;first_name</strong>
+                </p>
+                <p>
+                    <strong>$user-&gt;last_name</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Retrieves and displays user’s first and last names
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>$page-&gt;message</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Many asynchronous calls will update a message on the page
+                    object to send information about success or failure to the
+                    page. This calls retrieves any existing message and
+                    displays it accordingly
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>
+                        $content-&gt; output(array('admin', 'premain', 'main',
+                        'postmain'))
+                    </strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Almost all of the content created by the page components is
+                    added to one of these properties of the content object.
+                    This call will output the bulk of the page content
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="234" valign="top">
+                <p>
+                    <strong>footer()</strong>
+                </p>
+            </td>
+            <td width="701" valign="top">
+                <p>
+                    Calls the footer method and echos results. This method
+                    lives in the theme.php file by default.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>
+    Dependencies
+</h3>
+<h4>
+    CSS dependencies
+</h4>
+<p>
+    The stylesheet for your theme is found in the css folder. Update the styles
+    in this sheet to match your own organizational style. Make sure to add your
+    css files using the $site-&gt;add_style call in theme.php.
+</p>
+<p>
+    The stylesheet used by Nestor for core functions can be found in the Nestor
+    hierarchy: [my_nestor]/vce_application/css, and is named vce.css. Be
+    careful when altering this stylesheet as the styles are used throughout the
+    Nestor system.
+</p>
+<h4>
+    <a name="_Toc517175172">JS dependencies</a>
+</h4>
+<p>
+    You can add your own javascript file(s) if you need them for your theme.
+    Make sure to add them using the $site-&gt;add_script call in theme.php
+    file.
+</p>
+<p>
+    The main javascript files used by Nestor for core functions can be found in
+    the Nestor hierarchy: [my_nestor]/vce_application/js, the main file is
+    named vce.js. There are many useful functions in this file that define how
+    many elements function in the system, so it’s good to become familiar with
+    vce.js before writing any custom code for your theme.
+</p>
+<p>
+    Also note that jquery is included by default, so you shouldn’t have to add
+    a copy to your theme to use it.
+</p>
+<h2>
+    <a name="_Toc517175173"></a>
+    <a name="_Develop"></a>
+    Develop
+</h2>
+<h2>
+    <a name="_Toc517175174">The Core Engine</a>
+</h2>
+<p>
+    The heavy lifting in the Nestor system is performed by a set of core engine
+    classes that work together to build the final page. There are many ways to
+    interact with the core engine, either by using standard Components
+    installed with the system, or by building your own custom Components. The
+    classes that comprise the core engine allow for flexibility for both system
+    configuration and extensibility; however due to the complexity of their
+    constituent code
+    <strong>
+        we don’t recommend making changes directly to these classes
+    </strong>
+    .
+</p>
+<p>
+    Each of the Core Engine classes has a number of public methods and
+    properties you can call when building your own class, as well as code used
+    for the inherent system processes that we strongly caution you against
+    altering.
+</p>
+<p>
+    The following section describes each of these core engine classes, and
+    links out to the full public API for each class.
+</p>
+<h3>
+    <a name="_Toc517175175">DB Class</a>
+</h3>
+<p>
+    The DB Class manages all interactions with the system database. There are
+    methods in this class that help you easily fetch, add, update and delete
+    data. DB is instantiated in the initiate process of Page Build and added to
+    the global $vce object, so the $db object is available to any Components.
+    Be sure to call “global $vce” in any function in which you call to db
+    methods to ensure it’s available to your function.
+</p>
+<p>
+    The
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx"
+    >
+        DB Class API
+    </a>
+    details methods and properties available for use .
+</p>
+<h3>
+    <a name="_Toc517175176">Content Class</a>
+</h3>
+<p>
+    The global $content object stores HTML produced by other Components in its
+    various properties, the most common being $premain, $main and $postmain. At
+    the end of the page build process, the global $content object outputs all
+    stored content to the browser.
+</p>
+<p>
+    The $content object also creates the HTML for the menu list, which is used
+    to populate site theme pages.
+</p>
+<p>
+    Content is instantiated in the initiate process of Page Build and added to
+    the global $vce object, so the $content object is available to any
+    Components. Be sure to call “global $vce” in any function in which you call
+    to $content methods to ensure it’s available to your function.
+</p>
+<p>
+    The
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Content%20Class.docx?web=1"
+    >
+        Content Class API
+    </a>
+    details methods and properties available for use.
+</p>
+<h3>
+    <a name="_Toc517175177">Site Class</a>
+</h3>
+<p>
+    The Site class stores metadata used by the site such as theme, site
+    description,
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Hooks"
+    >
+        Hooks
+    </a>
+    and the relative URL for the codebase. It contains methods to manage
+    datalists, which allow you to store data for use by your custom Component.
+    Site manages file dependencies for your Component, as well as any scheduled
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Cron_Tasks"
+    >
+        (cron) tasks
+    </a>
+    you’d like to add to the system. This class also manages a set of Session
+    attributes that can be used to store temporary or persistent values across
+    a session. Lastly, Site has a method that allows you to add User Roles to
+    your installation, as well as Role specific permissions unique to your
+    custom Component.
+</p>
+<p>
+    Site is instantiated in the initiate process of Page Build and added to the
+    global $vce object, so the $site object is available to any Components. Be
+    sure to call “global $vce” in any function in which you call to $site
+    methods to ensure it’s available to your function.
+</p>
+<p>
+    The
+    <a href="http:">
+        Site Class API details methods and properties available for use.
+    </a>
+</p>
+<h3>
+    <a name="_Toc517175178">User Class</a>
+</h3>
+<p>
+    The User class contains methods to manage Users in the system, and stores
+    information about the current logged in User.
+</p>
+<p>
+    User is instantiated in the initiate process of Page Build and added to the
+    global $vce object, so the $use object is available to any Components. Be
+    sure to call “global $vce” in any function in which you call to $user
+    methods to ensure it’s available to your function.
+</p>
+<p>
+    The User Class API details methods and properties available for use.
+</p>
+<h3>
+    <a name="_Toc517175179">Page Class</a>
+</h3>
+<p>
+    The Page Class parses the requested URL to determine what Recipe to use,
+    which Components will be added to the page, and which HTML content will be
+    added to the final rendered page based on the user role. The Page and
+    Component class interaction is the most complex part of the Page Build
+    process, and is thoroughly explained in the Page Build processes section.
+</p>
+<p>
+    Page is instantiated in the initiate process of Page Build and added to the
+    global $vce object, so the $page object is available to any Components. Be
+    sure to call “global $vce” in any function in which you call to $page
+    methods to ensure it’s available to your function.
+</p>
+<p>
+    The Page Class API details methods and properties available for use.
+</p>
+<h3>
+    <a name="_Toc517175180">Component Class</a>
+</h3>
+<p>
+    The Component Class is the base class from which all components are
+    extended. This class contains a core set of methods and properties that
+    provide key functionality for all Components, as well as a set that can be
+    overwritten. The rest of the Nestor system provides a robust scaffolding
+    onto which you can build new features in your component that can plug into
+    the system at almost all levels.
+</p>
+<p>
+    See the Extending the Component Class section for full details about
+    extending the Component class and interacting with the Nestor core engine.
+</p>
+<p>
+    Component Class API
+</p>
+<h2>
+    <a name="_Toc517175181">DataBase</a>
+</h2>
+<p>
+    The database driving the Nestor system was built to be entirely adaptable
+    to any scenario you are addressing. Instead of a standard relational
+    architecture, Nestor is hierarchical within the main object tables, and
+    then associated data is stored in separate tables as key-value pairs.
+    Additional component-specific data can also be stored in the database in
+    the form of
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Datalists"
+    >
+        datalists
+    </a>
+    . This system allows for a great deal of back-end flexibility when you are
+    designing your component architecture.
+</p>
+<h3>
+    <a name="_Toc517175182">Table Structure</a>
+</h3>
+<p>
+    During the installation process, you provided a path value that is appended
+    to the beginning of each table name. In the following documentation, this
+    path is represented by [<em>my_db</em>] notation. This section will
+    describe each tables function and general contents, but to see the full
+    table schema refer to your instance of the database in MySQL. You can use
+    the MySQL Admin tool that installed with your version of MAMP/WAMP.
+</p>
+<h4>
+    [<em>my_db</em>]_components Table
+</h4>
+<p>
+    The components table stores general information about each component,
+    including its ID and parent ID. The parent ID provides the hierarchical
+    relationship that defines structures within the database. A component will
+    have a value for url if it represents the top (“anchor”) component in a
+    recipe.
+</p>
+<h4>
+    [<em>my_db</em>]_components_meta Table
+</h4>
+<p>
+    This table holds all associated metadata for a component, and is set up
+    using ‘meta_key’ and ‘meta_value’ fields that can be populated with any
+    key/value pairs relevant to your scenario. There are key/value pairs
+    standard for every component, including type, created_by, created_at, and
+    title. Other pairs are only relevant to some components, such as recipe and
+    role access. And other values can be inserted by your custom component if
+    needed.
+</p>
+<h4>
+    [<em>my_db</em>]_site_meta Table
+</h4>
+<p>
+    The site_meta table contains all of the information relevant to your
+    installation of Nestor. All of these site properties are thoroughly
+    detailed in the Site Class API document.
+</p>
+<h4>
+    [<em>my_db</em>]_users Table
+</h4>
+<p>
+    The users table holds the user ID and role ID, as well as the vector for
+    decryption and the hashed value of the user login and password information.
+</p>
+<h4>
+    [<em>my_db</em>]_users_meta Table
+</h4>
+<p>
+    The users_meta table holds metadata associated with each user, stored as
+    key/value pairs. All personal data is encrypted, the vector needed for
+    decryption is stored in the users table for each user.
+</p>
+<h3>
+    <a name="_Toc517175183"></a>
+    <a name="_Datalists"></a>
+    Datalists
+</h3>
+<p>
+    Datalists allow you to store Component specific data in a very flexible
+    format. Data can be associated with components, users, or other entities
+    you design. A datalist can be associated with items, each item can in turn
+    act as a datalist with its own associated items.
+</p>
+<p>
+    Datalists and Datalist items can be added, updated and deleted through a
+    series of methods in the Site Class. Refer to the Site Class API for more
+    details about managing datalists programmatically. You can also manage
+    Datalists using the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Datalists"
+    >
+        Manage Datalists page
+    </a>
+    .
+</p>
+<p>
+    Datalists are contained in four tables:
+</p>
+<h4>
+    [<em>my_db</em>]_datalists Table
+</h4>
+<p>
+    The datalists table contains all of the IDs that define a datalist. All
+    values are optional except for the datalist ID, which is an auto-generated
+    primary key.
+</p>
+<p>
+    · datalist ID – distinct ID that identifies the datalist
+</p>
+<p>
+    · parent ID - this datalist is associated with another datalist
+</p>
+<p>
+    · user ID - the data is associated with a specific user
+</p>
+<p>
+    · component ID – the data is associated with a specific component
+</p>
+<p>
+    · item ID – There is an associated item ID, which is also acting as a
+    datalist. Creating a new datalist in this scenario creates a hierarchy that
+    allows an item to have its own items. See the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_State/City_Datalist_example:"
+    >
+        State/City datalist example
+    </a>
+    for an illustration of this concept.
+</p>
+<p>
+    · sequence – the order in which this datalist would appear in a list
+</p>
+<h4>
+    [<em>my_db</em>]_datalists_meta Table
+</h4>
+<p>
+    The datalists_meta table holds all of the data associated with the
+    datalist, in key/value pairs. This structure is identical to the
+    components_meta and site_meta tables and allows you the same flexibility to
+    design your data structure.
+</p>
+<h4>
+    [<em>my_db</em>]_datalists_items Table
+</h4>
+<p>
+    If you will be associating multiple items with your datalist, the
+    datalists_items table stores these items. This table contains the IDs that
+    define an item.
+</p>
+<p>
+    · item ID: distinct ID that identifies the item
+</p>
+<p>
+    · datalist ID: the datalist with which this item is associated
+</p>
+<p>
+    · sequence: the order in which this item would appear in a list
+</p>
+<h4>
+    [<em>my_db</em>]_datalists_items_meta Table
+</h4>
+<p>
+    The datalists_items_meta table holds all of the data associated with the
+    item, in key/value pairs. This structure is identical to the datalists_meta
+    table and allows you the same flexibility to design your data structure.
+</p>
+<h4>
+    <a name="_State/City_Datalist_example:"></a>
+    State/City Datalist example
+</h4>
+<p>
+    In this scenario, the top level datalist represents a state entity, which
+    can have multiple items representing distinct states. Each state can have
+    multiple cities. In order to associate the city items to the state item, a
+    new datalist is created that represents a distinct state.
+</p>
+<p>
+    <img
+        border="0"
+        width="935"
+        height="568"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image058.jpg"
+    />
+</p>
+<p>
+    <em>State/City scenario</em>
+</p>
+<p>
+    In the data structure each item contains the datalist ID of its parent
+    datalist. When an item in turn becomes a datalist, the new datalist
+    contains the item ID of its parent item. The new datalist will also have a
+    parent ID of the first level datalist.
+</p>
+<p>
+    <img
+        border="0"
+        width="1064"
+        height="802"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image060.jpg"
+    />
+</p>
+<p>
+    <em>State/City database table representation</em>
+</p>
+<h2>
+    <a name="_Toc517175184"></a>
+    <a name="_Toc517175187">The Page Build Processes</a>
+</h2>
+<p>
+    There are a couple of key processes in which the core engine classes
+    interact with the page components to build out each page. These processes
+    have been extensively documented in this section.
+</p>
+<h3>
+    <a name="_Toc517175188">Overview</a>
+</h3>
+<p>
+    The Page Build process follows the same path each time, but the actual
+    rendered page is determined by the Components and Recipe associated with
+    the requested page. The
+    <a
+        href="https://teams.microsoft.com/_#/vsdx/viewer/teams/https%3A~2F~2Fuwnetid.sharepoint.com~2Fsites~2Fog_cultivate-learning-nestor~2FShared%2520Documents~2FDocumentation~2FNestor%2520Codeflow.vsdx?threadId=19%3A1fb54ab236ea45bc9efca5b43c470eea%40thread.skype&amp;fileId=DD2DF85B-2E15-4573-837F-7"
+    >
+        Nestor Codeflow Chart
+    </a>
+    shows how each of the core engine classes, as well as a few configuration
+    files, interact to render the final page.
+</p>
+<p>
+    To follow the page build flow:
+</p>
+<p>
+    1) The lane on the far left, labeled “Initiate”, contains the major steps
+    in the Page Build process. This lane roughly follows the code flow in
+    initiate.php
+</p>
+<p>
+    2) During execution of initiate.php, all of the major Core Engine classes
+    are loaded and instantiated, and then added to the master $vce object. The
+    master $vce class allows for ease of access to each of these objects from
+    other components.
+</p>
+<p>
+    3) All of the colored circles in the Initiate lane represent control
+    passing to one of the Core Engine classes. When you see a colored circle,
+    look for a corresponding colored circle across the top of the lanes. Each
+    of these lanes represents the events in the __construct() method of the
+    class.
+</p>
+<p>
+    4) Follow the flow down the lane for each class to learn about its
+    function. At the end of the lane flow, you’ll reach a second colored circle
+    indicating that control is passed back to the Initiate process flow
+</p>
+<p>
+    5) In a few cases, control is passed back and forth between the Core Engine
+    classes. This will be indicated by flow arrows crossing the lane boundaries
+</p>
+<p>
+    6) The squares colored light green represent Hooks. These are areas in the
+    process where you can insert a call to a method in your custom Component.
+    See the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Hooks"
+    >
+        Hooks Section
+    </a>
+    for more information.
+</p>
+<h3>
+    <a name="_Toc517175189">Page Request Routing</a>
+</h3>
+<p>
+    There are a few things that are important to understand about how the page
+    requests are routed by Nestor:
+</p>
+<p>
+    · All calls into your Nestor installation are intercepted by the .htaccess
+    file and routed to index.php if the requested path doesn’t specify an
+    existing file or directory
+</p>
+<p>
+    · Index.php sets a few values and then loads initiate.php, which drives the
+    build process
+</p>
+<p>
+    · If the requested path contains a URL value recognized by the system, the
+    page will be built according to the Recipe with the designated URL (see
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_2"
+    >
+        Manage Recipes
+    </a>
+    section for more information)
+</p>
+<p>
+o The URL value is found in this pattern: <em>[my_servername]</em>/    <em>[my_nestor]</em>/<strong>URL</strong>
+</p>
+<p>
+§ For example, in the path    <a href="http://localhost/vce/admin">http://localhost/vce/admin</a> -
+    ‘admin’ is the URL value
+</p>
+<p>
+    o You can also add a ‘~[component_id]’ to the path querystring to render a
+    specific component. This must be a page level component, or you will not
+    see a properly rendered page.
+</p>
+<p>
+§ For example:    <a href="http://localhost/vce/~1">http://localhost/vce/~1</a> will load the
+    recipe associated with the component with component_id of 1
+</p>
+<p>
+    · If the requested URL is not recognized, or the request is not accompanied
+    by the correct security handshake, the request is routed to the home page
+</p>
+<h3>
+    <a name="_Toc517175190">Interaction between Page and Component classes</a>
+</h3>
+<p>
+    When the Page object is instantiated during Initiation, it kicks off the
+    most complex phases of the Page Build process. The intricate interaction
+    between Page, other core engine classes, and page Components provides a
+    rich opportunity to build custom code to affect the final rendered page. By
+    design, the Page class calls into specific methods in each component it
+    processes during Page Build. Also, there are many Hooks invoked during Page
+    Build into which your custom Component can insert code.
+</p>
+<p>
+    The
+    <a
+        href="https://teams.microsoft.com/_#/vsdx/viewer/teams/https%3A~2F~2Fuwnetid.sharepoint.com~2Fsites~2Fog_cultivate-learning-nestor~2FShared%2520Documents~2FDocumentation~2FNestor%2520Codeflow.vsdx?threadId=19%3A1fb54ab236ea45bc9efca5b43c470eea%40thread.skype&amp;fileId=DD2DF85B-2E15-4573-837F-7"
+    >
+        Nestor Codeflow Chart
+    </a>
+    shows how each of the core engine classes, configuration files, hooks and
+    page components interact to render the final page.
+</p>
+<h3>
+    <a name="_Toc517175191">Build Components Array Process</a>
+</h3>
+<p>
+    Since the components hold all of the information about how a page is built,
+    it’s important to assemble an array that contains all of the components
+    associated with the page under construction. This array includes the
+    metadata that defines each component. A key piece of metadata is the page
+    Recipe which is discovered and added to the global $page object during this
+    process. Also, there is a parent-child-sibling hierarchy between Components
+    that must be reflected in the array. In order to build out this
+    multifarious component tree, there are many levels of recursion executed in
+    the two Page methods involved in building out the array – get_components()
+    and get_sub_components().
+</p>
+<p>
+    This process is documented in the
+    <a
+        href="https://uwnetid.sharepoint.com/:u:/r/sites/og_cultivate-learning-nestor/_layouts/15/doc.aspx?sourcedoc=%7Bdd2df85b-2e15-4573-837f-7523755d63e4%7D&amp;action=default&amp;uid=%7BDD2DF85B-2E15-4573-837F-7523755D63E4%7D&amp;ListItemId=5&amp;ListId=%7B53A752AB-53D8-45B4-88F4-D748E5622CCE%7D&amp;odsp=1&amp;env=prod"
+    >
+        Build Components Array Process
+    </a>
+    flowchart, which not only shows the control flow between methods and
+    classes, but also indicates where hooks are invoked in which you can insert
+    your own custom methods.
+</p>
+<h3>
+    <a name="_Toc517175192">Build Content Process</a>
+</h3>
+<p>
+    Once the full Component array has been populated, it’s time to build out
+    the HTML content that is rendered on the final page. This process involves
+    traversing the component array structure and comparing it to the page
+    Recipe, component-by-component. Comparing the two allows the process to
+    check for Role-based access as well as call specific methods in each
+    component to determine what content should be written out to the page.
+    There are opportunities for your custom component to stop the entire Page
+    Build within this process if there are scenarios where it makes sense for
+    your component to do so.
+</p>
+<p>
+    This process is documented in the
+    <a
+        href="https://uwnetid.sharepoint.com/:u:/r/sites/og_cultivate-learning-nestor/_layouts/15/doc.aspx?sourcedoc=%7Bdd2df85b-2e15-4573-837f-7523755d63e4%7D&amp;action=default&amp;uid=%7BDD2DF85B-2E15-4573-837F-7523755D63E4%7D&amp;ListItemId=5&amp;ListId=%7B53A752AB-53D8-45B4-88F4-D748E5622CCE%7D&amp;odsp=1&amp;env=prod"
+    >
+        Build Content Process
+    </a>
+    flowchart, which not only shows the control flow between methods and
+    classes, but also indicates where hooks are invoked in which you can insert
+    your own custom methods.
+</p>
+<h2>
+    Build a Custom Component
+</h2>
+<p>
+    Nestor is easily extensible for developers, as it was designed to allow
+    custom components to access the core system at multiple levels. This
+    section details how to build your own custom component.
+</p>
+<h3>
+    <a name="_Toc517175185">Component Quick Start</a>
+</h3>
+<p>
+    We have included a sample component in the standard Nestor Installation to
+    help jumpstart your customization. The sample component – Blog-o-rama – is
+    located in the [<em>my_nestor]\</em>vce-content\components\blog-o-rama
+    directory.
+</p>
+<p>
+    Follow these quick steps to start building your first component:
+</p>
+<p>
+    1) Open the blog-o-rama.php file into your code editor of choice
+</p>
+<p>
+    2) You can change the Class name, but if you do so, it’s best to update the
+    file name and the folder name in which the component resides for
+    continuity. The folder, file and Class name should be the same.
+</p>
+<p>
+    3) In the component_info( ) method, change the title, description and
+    category values
+</p>
+<p>
+    4) In the as_content method, change the value of $my_content to the value
+    you’d like to display. You can include HTML tags, but make sure that if you
+    use special characters in your text that you use the proper escape syntax
+</p>
+<p>
+    5) Open the Manage Components page, and click on the category matching the
+    category you set in step 2. Note that your name and description component
+    values from this step also display in this interface.
+</p>
+<p>
+6) You should see your component in the list. Click the<strong>Activated</strong> button next to your component name and then the    <strong>Update Components</strong> button to activate your component.
+</p>
+<p>
+    7) Open the Manage Recipes page and add your component to a recipe. Make
+    sure you include a Location component with a URL value.
+</p>
+<p>
+    8) Open the Manage Menus page and add your new page to the main menu
+</p>
+<p>
+    9) Click on the new menu item with your component name and you will see
+    your component on a page!
+</p>
+<p>
+    10) Read further to understand how to extend your class beyond these basic
+    Component methods
+</p>
+<h3>
+    <a name="_Toc517175186"></a>
+    <a name="_Page_Build_Process"></a>
+    <a name="_Building_a_Custom"></a>
+    Extending the Component Class
+</h3>
+<p>
+    Building a custom component involves extending the Component class, which
+    contains properties and methods that are linked directly into core system
+    processes. Extending this class allows you to layer new features and
+    functionality onto Nestor, and still provides the same abilities to allow
+    end users to add content of their own when using the system. Also, there
+    are many hooks with which the components can interact with the main engine
+    at various stages of the page build process.
+</p>
+<p>
+    Refer to the Component Class API document to get detailed information about
+    the available methods that you can use to interact with the Nestor System,
+    and standard properties associated with components. The following section
+    describes system processes performed by the core engine classes that you
+    will be able to influence with your component.
+</p>
+<h2>
+    <a name="_Toc517175194">Hooks</a>
+</h2>
+<p>
+    Hooks are a powerful tool that allow your component to 'hook into' the
+    Nestor engine at various stages of the page build process, as well as any
+    place in the code where a hook has been inserted. A hook is configured
+    within a component class and designates a class and method to call when the
+    hook is invoked within the system. In the Nestor system, a class/method
+    pairing is known as a procedure.
+</p>
+<p>
+    During the page build process, the procedure/hook associations are loaded
+    into a hooks array that’s added to the global $site object. The Hooks
+    Definition and Load Process flow chart shows the end-to-end process of
+    defining a hook and loading into the system for use.
+</p>
+<p>
+    Read the Adding a Hook section in the Component API document to learn how
+    to associate a procedure with a hook in the Nestor system.
+</p>
+<h3>
+    <a name="_Toc517175195">Hooks in the Page Build Process</a>
+</h3>
+<p>
+    The following flow charts depict when the major system hooks are invoked
+    during the Page Build process. You can use these charts to design your own
+    component hooks if you need to influence the build process at any point.
+    Hooks are shown as green boxes. Note that some hooks receive parameters to
+    route to the designated procedures, and some change the value of passed
+    parameters and send the changed value back into the method from which the
+    hook is invoked. Each hook representation in the flow chart details how
+    parameters are processed by the hook procedure.
+</p>
+<p>
+    1) Page Build Process – shows the high level process, hooks displayed are
+    invoked during the instantiation of the $site, $user and $page objects
+</p>
+<p>
+    2) Build Component Array Process – shows the detailed process of building
+    the component array, with hooks invoked by get_components and
+    get_subcomponents methods of the Page class
+</p>
+<p>
+    3) Build Content Process – depicts the hooks invoked during the complex
+    interaction between classes (primarily Page and Component) to render the
+    page content.
+</p>
+<h3>
+    <a name="_Toc517175196">Hooks in the Core Engine Classes</a>
+</h3>
+<p>
+    The following section lists the hooks found in core engine classes, as well
+    as some other standard component classes. Each hook follows a standard
+    nomenclature to make it easier to trace their origin and function:
+</p>
+<p>
+    [Class-name]_[method-name]_[brief-description]
+</p>
+<p>
+    This list is not exhaustive for the system.
+</p>
+<h4>
+    at_user_login
+</h4>
+<p>
+    · Can be used to perform function using current user ID
+</p>
+<p>
+    · called in User::login and User::__construct after user object is created
+</p>
+<p>
+    · arguments passed: user_id
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+</h4>
+<h4>
+    at_user_logout
+</h4>
+<p>
+    · Can be used to perform function using current user ID
+</p>
+<p>
+    · called in User::logout at the very end, after session info is cleared
+</p>
+<p>
+    · arguments passed: user_id
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    alternative_user_login
+</h4>
+<p>
+    · Can be used to create an alternative method to login if there is no user
+    session or persistent login set
+</p>
+<p>
+    · called in User::__construct after performing auto login for user with a
+    session or persistent login
+</p>
+<p>
+    · arguments passed: $user
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    build_content_recipe_item
+</h4>
+<p>
+    · Not in code
+</p>
+<h4>
+    ***component_recipe-components_can-add (currently
+    page_requested_components)
+</h4>
+<p>
+    · can be used to reverse auto create or alter any of the $input when a
+    component is created
+</p>
+<p>
+    · called from Component::create_component
+</p>
+<p>
+    · arguments passed: $input used to create component
+</p>
+<p>
+    · return $input array
+</p>
+<h4>
+    create_component_before
+</h4>
+<p>
+    · can be used to reverse auto create or alter any of the $input when a
+    component is created
+</p>
+<p>
+    · called from Component::create_component
+</p>
+<p>
+    · arguments passed: $input used to create component
+</p>
+<p>
+    · return $input array
+</p>
+<p>
+    <strong></strong>
+</p>
+<h4>
+    delete_extirpate_component
+</h4>
+<p>
+    · can be used to alter $components array before deletion of members.
+    $components array consists of sub-components of either the component being
+    extirpated, or sub-components of one of its descendants
+</p>
+<p>
+    · called from Component::extirpate_component
+</p>
+<p>
+    · arguments passed: $component_id (parent ID of $components), $components
+    (sub-components of current parent)
+</p>
+<ul>
+    <li>
+        return $components
+    </li>
+</ul>
+<h4>
+    input_sanitize_textarea
+</h4>
+<ul>
+    <li>
+        Can be used to sanitized form input from a text area
+    </li>
+</ul>
+<p>
+    · Called from Input::page_requested_url if originating form field was a
+    textarea
+</p>
+<ul>
+    <li>
+        arguments passed: $value of text
+    </li>
+    <li>
+        return $value
+    </li>
+    <li>
+    </li>
+</ul>
+<h4>
+    media_after_display
+</h4>
+<p>
+    · Can be used to perform a function on a mediatype component after its
+    display and edit_media_component methods are called
+</p>
+<ul>
+    <li>
+        Called from Media::as_content
+    </li>
+</ul>
+<p>
+    · arguments passed: $each_component (media player being displayed), $vce
+</p>
+<p>
+    · no return
+</p>
+<h4>
+    media_before_display
+</h4>
+<p>
+    · Can be used to perform a function on a mediatype component before its
+    display method is called
+</p>
+<ul>
+    <li>
+        Called from Media::as_content
+    </li>
+</ul>
+<p>
+    · arguments passed: $each_component (media player being displayed), $vce
+</p>
+<p>
+    · no return
+</p>
+<h4>
+    media_create_component
+</h4>
+<p>
+    · Can be used to alter the input for a new media component before it’s
+    created
+</p>
+<ul>
+    <li>
+        Called from Media::create and Mediaplupload:create
+    </li>
+    <li>
+        arguments passed: $input used to create media component
+    </li>
+</ul>
+<p>
+    · return $input array
+</p>
+<h4>
+    media_component_created
+</h4>
+<ul>
+    <li>
+        Called after a new media component is created
+    </li>
+    <li>
+        Called from Media::create
+    </li>
+</ul>
+<p>
+    · arguments passed: $input used to create media component, $response array
+</p>
+<p>
+    · return $response
+</p>
+<h4>
+    media_file_uploader
+</h4>
+<ul>
+    <li>
+        Can be used to add content before the file upload button
+    </li>
+    <li>
+        Called from Media::add_file_uploader
+    </li>
+    <li>
+        arguments passed: $recipe_component, $vce
+    </li>
+    <li>
+        return $content_media that is added to the page
+    </li>
+</ul>
+<h4>
+    media_update_component
+</h4>
+<ul>
+    <li>
+        Called from Media::update before update_component method is called
+    </li>
+    <li>
+        arguments passed: $input used for update
+    </li>
+    <li>
+        return $input
+    </li>
+</ul>
+<h4>
+    media_delete_component
+</h4>
+<ul>
+    <li>
+        Called from Media::delete before delete_component method is called
+    </li>
+    <li>
+        arguments passed: $input used for delete
+    </li>
+    <li>
+        return $input
+    </li>
+</ul>
+<h4>
+    page_add_recipe
+</h4>
+<p>
+    · called when recipe is added to $page in get_components and
+    get_sub_components
+</p>
+<ul>
+    <li>
+        Page::get_components
+    </li>
+</ul>
+<p>
+    · arguments passed: $page-&gt;recipe and recipe found in current component
+</p>
+<p>
+    · return recipe, which is assigned to $page
+</p>
+<h4>
+    page_build_content
+</h4>
+<p>
+    · called for each component at the beginning of Build Content process
+</p>
+<p>
+    · called in Page::build_content
+</p>
+<p>
+    · arguments passed: $each_component from $components array, $linked
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    page_build_content_callback
+</h4>
+<p>
+    · Called before recursive call to build_content for current component
+</p>
+<p>
+    · Called in Page::build_content
+</p>
+<p>
+    · Arguments passed: $sub_components from current component
+</p>
+<p>
+    · returns $sub_components
+</p>
+<h4>
+    page_construct_object
+</h4>
+<p>
+    · called in Page::__construct after requested_component object is pulled
+    from db
+</p>
+<p>
+    · arguments passed: $requested_component, $vce
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    page_get_components
+</h4>
+<p>
+    · Called in Page::get_components before recursive call back to
+    get_components
+</p>
+<p>
+    · arguments passed: $requested_component, $components, $page
+</p>
+<ul>
+    <li>
+        no return
+    </li>
+</ul>
+<h4>
+    page_get_sub_components
+</h4>
+<p>
+    · Called in Page::get_sub_components before building full sub_components
+    tree
+</p>
+<p>
+    · arguments passed: $requested_components
+</p>
+<ul>
+    <li>
+        return $requested_components
+    </li>
+</ul>
+<h4>
+    page_requested_components
+</h4>
+<p>
+    · Can be used to alter $requested_component at the beginning of
+    get_components method
+</p>
+<p>
+    · Called at start of Page::get_components, after call to db to get
+    requested component object
+</p>
+<p>
+    · arguments passed: $requested_component
+</p>
+<ul>
+    <li>
+        return $requested_component
+    </li>
+</ul>
+<h4>
+    page_requested_url
+</h4>
+<p>
+    · Called in Page::__construct after $requested_url is cleaned up and
+    sanitized
+</p>
+<ul>
+    <li>
+        arguments passed: $requested_url, $vce
+    </li>
+    <li>
+        no return
+    </li>
+</ul>
+<h4>
+    recipe_attributes
+</h4>
+<p>
+    · Adds fields on recipe page after Recipe Name
+</p>
+<p>
+    · called in ManageRecipes::as_content
+</p>
+<p>
+    · arguments passed: $vce-&gt;user
+</p>
+<p>
+    · returns string of HTML content with additional attributes, to be added to
+    Manage Recipe page
+</p>
+<h4>
+    recipe_components_each
+</h4>
+<ul>
+    <li>
+        Components::recipe_components
+    </li>
+</ul>
+<h4>
+    requested_sub_components
+</h4>
+<p>
+    · Called at start of Page::get_sub_components, after call to db to get
+    array of sub components
+</p>
+<p>
+    · arguments passed: $requested_components
+</p>
+<ul>
+    <li>
+        return $requested_components
+    </li>
+</ul>
+<h4>
+    site_hook_initiation
+</h4>
+<p>
+    · The earliest hook that can be used
+</p>
+<p>
+    · called in Site:__construct
+</p>
+<p>
+    · arguments passed: $hooks array
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    site_javascript_dependencies
+</h4>
+<p>
+    · can be used to alter the site-&gt;javascript_dependencies array
+</p>
+<p>
+    · called in Site::__construct after javascript &amp; CSS files are added to
+    site
+</p>
+<p>
+    · arguments passed: $site, $site-&gt;javascript_dependencies
+</p>
+<p>
+    · return javascript_dependencies array
+</p>
+<h4>
+    site_mail_transport
+</h4>
+<p>
+    · can be used to route mail message to a different transport method
+</p>
+<p>
+    · if it exists, is called in VCE::mail instead of PHP mailer call
+</p>
+<p>
+    · arguments passed: $vce, $attributes
+</p>
+<p>
+    · return status of message call
+</p>
+<h4>
+    site_media_link
+</h4>
+<p>
+    · can be used to alter path to which media is uploaded
+</p>
+<ul>
+    <li>
+        called in Site::media_link after $media_link path is built
+    </li>
+</ul>
+<p>
+    · arguments passed: $fileinfo arrray, $this
+</p>
+<ul>
+    <li>
+        returns $media_link
+    </li>
+</ul>
+<h4>
+    site_object_construct
+</h4>
+<p>
+    · Can be used to modify the site object
+</p>
+<p>
+    · called in Site::__construct
+</p>
+<p>
+    · arguments passed: $site object
+</p>
+<p>
+    · no return value
+</p>
+<h4>
+    user_attributes
+</h4>
+<p>
+    · Used to add additional user attributes
+</p>
+<p>
+    · called in: ManageUsers::as_content, UserRegistration::as_content,
+    UserSettings::as_content
+</p>
+<p>
+    · arguments passed: $user_info array
+</p>
+<p>
+    · returns string of HTML content with additional user attributes, to be
+    added to Manage Users page
+    <br/>
+    <br/>
+</p>
+<h2>
+    <a name="_Toc517175197"></a>
+    <a name="_Templates_1"></a>
+    Templates
+</h2>
+<ul>
+    <li>
+        existing
+    </li>
+</ul>
+<p>
+    · creating a new one
+</p>
+<h3>
+    <a name="_Toc517175198">JavaScript Dependencies</a>
+</h3>
+<p>
+    · How to add a new .js file
+</p>
+<p>
+    · Files used in system
+</p>
+<p>
+    o jQuery
+</p>
+<p>
+    o JSON
+</p>
+<p>
+    o vce.js
+</p>
+<p>
+    o other js files used in system (manage components…?)
+</p>
+<ul>
+    <li>
+        clickbars?
+    </li>
+</ul>
+<h3>
+    <a name="_Toc517175199">CSS dependencies</a>
+</h3>
+<p>
+    · How to add a new .css file
+</p>
+<p>
+    · Files used in system
+</p>
+<p>
+    o jQuery
+</p>
+<h2>
+    <a name="_Toc517175200">Cron Tasks</a>
+</h2>
+<p>
+    Cron tasks allow you to schedule tasks for the system. These cron tasks are
+    defined by methods within Components Classes that are called during page
+    build. Cron tasks are useful when you need to sync with external systems,
+    such as connecting to external service providers. They can also be used for
+    general housekeeping – in Nestor they go through user comments looking for
+    any blank entries and deleting them every day.
+</p>
+<h4>
+    Data Structure
+</h4>
+<p>
+    A cron task takes the form of a record in the site_meta table, and contains
+    the following information:
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Name of the Component Class that contains the method to be
+                    called
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    method
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Name of the method to call. Since cron_tasks are called
+                    before the components are instantiated, the method needs to
+                    be static
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    properties
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    A list of key/value pairs to provide more information about
+                    the task, for example the component_id
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    timestamp
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    A timestamp value to indicate when the task has expired
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Cron Task Management
+</h4>
+<p>
+    During the page build process, the Site class loads all of the cron tasks
+    from the site_meta table into a cron_tasks array, and then parses through
+    the array to look for any expired timestamps. If a task has an expired
+    timestamp, the Site class will call the method indicated by the cron task.
+    If this method sends a response in the form of an array, the Site class
+    updates the cron task with the new values. If the method does not send a
+    response the Site class will delete this task from the system. See the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx?web=1"
+    >
+        Site Class API
+    </a>
+    for information about how to form a response to manage a cron task.
+</p>
+<p>
+    Since the tasks are performed during the Page build process, the tasks are
+    only fired when you have visitors to your site.
+</p>
+<h4>
+    Throttling Cron Tasks
+</h4>
+<p>
+    The CRON_TASK_LIMIT value in the system config file sets the amount of cron
+    tasks that will be processed on page load. This allows you to balance the
+    load on your system. The amount of cron tasks run on each page load
+    defaults to 1 if CRON_TASK_LIMIT isn’t set.
+</p>
+<h3>
+    <a name="_Toc517175201">Session Variables</a>
+</h3>
+<p>
+    · add_attributes Session variables used by the system, especially for
+    persistent values?
+</p>
+<p>
+    <a name="_Building_a_Component"></a>
+    <a name="_JavaScript_Dependencies"></a>
+    <a name="_CSS_dependencies"></a>
+    <a name="_Templates"></a>
+    <a name="_Hooks"></a>
+    <a name="_Cron_Tasks"></a>
+</p>

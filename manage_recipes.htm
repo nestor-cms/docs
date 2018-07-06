@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+    <h1 id="manage">Manage Recipes</h1>
+  <p>
+      The heart of Nestor is the ability to build nested Recipes. Recipes
+      describe the potential for what a page can look like – what elements can be
+      added, where and by whom? Different components can be added to Recipes to
+      provide different functionality. One component may provide navigational
+      information, while another adds a layer of access control to the components
+      that follow it. Adding certain components allows you to designate what type
+      of content can be added by end users and in what ways end users can
+      interact with content (add, update, delete etc). A recipe is like DNA in
+      that it describes a template from which a page can be built.
+  </p>
+  <p> The Recipe is used during the
+      <a href="page_build_process.htm">Page Build Process</a> to render the final page.
+  </p>
+  <p>The Manage Recipes interface consists of <strong>Components</strong>, <strong>Categories</strong> and the <strong>Recipe Build Area</strong>, as
+      well as a field to name the Recipe and the <strong>Save</strong> button.
+      The following sections describe how to use these features to build, edit
+      and delete Recipes.
+  </p>
+  <ul>
+    <li><a href="#nest">Why Nest?</a></li>
+    <li><a href="#create_recipe">Create a new Recipe</a></li>
+    <li><a href="#view_recipe">View Recipes</a></li>
+    <li><a href="#update_recipe">Update a Recipe</a></li>
+    <li><a href="#delete_recipe">Delete a Recipe</a></li>
+    <li><a href="#advanced">Advanced Options</a></li>
+  </ul>
+  <p>
+      <img
+          border="0"
+          width="969"
+          height="781"
+          src="images/screen_clips/clip_image005.png"
+      />
+  </p>
+  <p>
+      <div class="screen_clip">Manage Recipes Interface</div>
+  </p>
+  <h2 id="nest">Why Nest?</h2>
+  <p>
+      The ability to nest components is the key to the power of Nestor. Any
+      component that is nested within another component inherits the
+      functionality of its parent component(s), which can create a very flexible
+      system of cascading permissions and features.
+  </p>
+  <p> For example, the
+      <a href="component_login.htm">Login</a> 
+      component provides the functionality to allow a user to login. Any Recipe
+      with Login in the top hierarchy will always check that a user has a valid
+      login when the page is being rendered, and provide them with a login page
+      if they aren’t logged in.
+  </p>
+  <p>
+      Another great example is the <a href="component_access.htm">Access</a>
+      component, which allows you to assign permissions to user roles. This
+      component can be added at multiple levels in a Recipe. This would allow you
+      to assign a role one level of permissions to one set of components, and
+      then limit them to more restrictive permission level on other components on
+      the same page.
+  </p>
+  <div><a href="#manage">Back to top</a></div>
+  <h2 id="create_recipe">Create a New Recipe</h2>
+  <ol>
+    <li>Navigate to the <strong>Admin</strong> page and select    <strong>Manage Recipes</strong></li>
+    <li>Click the <strong>Create a New Recipe</strong> bar at the top of the
+      page</li>
+    <li>Active components are listed on the left, under the Components header</li>
+    <li>Click on a <strong>Category</strong> at the bottom of the listed
+      components to see all of the components associated with that category</li>
+    <li>Click on a <strong>Component</strong> and drag it to the <strong>Recipe Build Area</strong>. This area is where you’ll assemble your
+        Recipe.</li>
+    <li>It’s important to understand that the first component in a Recipe will
+      be the anchor for the rest of the components. Certain components are a
+      better choice for this position, and choosing a less suitable component can
+      be problematic for the function of your final page. Choose one of the ( <em>colored, highlighted or listed in another section</em>) components as
+      the first component for the best experience. Refer to the <a
+      href="standard_components">Standard Components</a> section for more information.</li>
+      <li>Click and drag other components to the Recipe build area. You can drop
+        them before or after existing components. When you drag a new component
+        over one that’s in the Recipe, you’ll notice a white box that appears
+        before or after the existing component. This indicates where the new
+        component will be placed when you release it.
+ 
+        <p>
+            <img
+                border="0"
+                width="911"
+                height="398"
+                src="images/screen_clips/clip_image006.png"
+            />
+            <div class="screen_clip"> White box above Login component, Location will be placed above Login</div>
+        </p>
+      </li>
+      <li>Components can be moved within the Recipe after they have been placed.
+        Click on a component, then drag and drop to its new location.</li>
+        <li>To nest components, drag the component to be nested over an existing
+          Recipe component, and then slowly drag it to the right until you see a
+          nested spot open up under the existing component. Release the new component
+          and it should snap into this slot.
+          <p>
+            <img
+                border="0"
+                width="969"
+                height="383"
+                src="images/screen_clips/clip_image007.png"
+            />
+        </p>
+        <div class="screen_clip">A nested spot is open underneath the Login component</div>
+        <p>
+          <img
+              border="0"
+              width="899"
+              height="438"
+              src="images/screen_clips/clip_image008.png"
+          />
+      </p>
+      <p>
+        <div class="screen_clip">Location is nested under Login</div>
+      </p>
+        </li>
+        <li>Click the gray circle for each component and provide information
+          necessary to configure each component. Refer to the
+          <a href="standard_components.htm">Standard Components</a> 
+          list for more information about configuring the standard components.</li>     
+         <li>To remove a component, click on the gray circle at the end of the
+          component bar to expand the component, and then click the    <strong>Remove</strong> button</li> 
+         <li>Give your Recipe a Name in the <strong>Recipe Name</strong> field </li>
+         <li>Click the <strong>Save This Recipe</strong> button</li>
+ 
+  <div><a href="#manage">Back to top</a></div>
+
+  <h2 id="view_recipe">View a Recipe</h2>
+  <ol>
+    <li>On the Manage Recipes page, click the link in the<strong> URL </strong>
+      field to load the page built from this Recipe.</li>
+    <li>Click the <strong>View Object</strong> button to see the Object code for
+      the Recipe. This can be used to update database fields if needed.</li>
+
+  </ol>
+  <h2 id="update_recipe">Update a Recipe</h2>
+  <ol>
+    <li>In the <strong>Existing Recipes</strong> list, click the <strong>Edit</strong> button next to the Recipe you want to update.
+      <p>
+        <img
+            border="0"
+            width="969"
+            height="456"
+            src="images/screen_clips/clip_image009.png"
+        />
+      </p>
+    </li>
+    <li>Drag and drop components to rearrange them in the Recipe</li>
+    <li>Click on the gray circle next to a component to expand it and edit its
+      properties</li>
+      component bar to expand the component, and then click the <strong>Remove</strong> button></li>
+      <li>Click the <strong>Update This Recipe</strong> to make sure your changes
+        are saved</li>
+  </ol>
+ <div><a href="#manage">Back to top</a></div>
+
+  <h2 id="delete_recipe">Delete a Recipe </h2>
+    <ol>
+      <li>In the Manage Recipes page, click the <strong>Delete</strong> button
+        next to the Recipe you want to update</li>
+        <li>Click <strong>OK</strong> on the browser warning that appears
+          <p>
+            <img
+                border="0"
+                width="629"
+                height="224"
+                src="images/screen_clips/clip_image010.png"
+            />
+        </p>
+      </li>
+   </ol>
+   <div><a href="#manage">Back to top</a></div>
+  <h2 id="advanced">Advanced Options</h4>
+  <ol>
+      <li>Click the <strong>Advanced Options</strong> bar to see what other
+        options are available for your Recipe</li>
+        <li>A common option is to <strong>Generate Full Page Object. </strong>Click
+          on this option and then click<strong> Save This Recipe</strong>
+          <p>
+            <img
+                border="0"
+                width="806"
+                height="250"
+                src="images/screen_clips/clip_image011.png"
+            />
+        </p>
+      </li>
+  </ol>
+  <div><a href="#manage">Back to top</a></div>
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
