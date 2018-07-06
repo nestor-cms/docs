@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   <!--INSERT CONTENT HERE-->
+
+
+
+   <h1>
+    Site Admin
+</h1>
+<h2>
+    Installation
+</h2>
+<p>
+    &#183; I can&#8217;t run the installer
+</p>
+<p>
+    o Make sure you have the entire LAMP/WAMP stack installed, and that all
+    services are running
+</p>
+<p>
+    &#167; Apache web server
+</p>
+<p>
+    &#167; MySQL database service
+</p>
+<p>
+    &#167; PHP interpreter
+</p>
+<p>
+    &#183; I am running the installer on a Mac and see an error that the mcrypt
+    file is missing
+</p>
+<p>
+    o This seems to be a problem with php 7.2. Works fine with php 7.1
+</p>
+<p>
+    &#183; I see errors related to the MySQL database
+</p>
+<p>
+    o Make sure the database account you entered during the installation has
+    the correct level of permission to write to your database.
+</p>
+<p>
+    o Did you create a database in MySQL and enter the correct name for this
+    database during the installation process?
+</p>
+<p>
+    &#183; I need to do a <a>clean install</a>
+    <a
+        id="_anchor_1"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_1"
+        name="_msoanchor_1"
+    >
+        [CD1]
+    </a>
+</p>
+<p>
+    o Run the installer again: look for the vce-installer.php file in the root
+    of your installation folder and open it in a web browser, and either use
+    the database you created for the last installation or create a new database
+</p>
+<p>
+    &#183; I see an error about the mailserver
+</p>
+<p>
+    Failed to connect to mailserver at &amp;quot;localhost&amp;quot; port 25,
+</p>
+<p>
+    o This message is a warning, and not a fatal error. Your installation will
+    still work if you don&#8217;t set up a mail server
+</p>
+<p>
+    &#183; I see an error regarding a non-existant property
+</p>
+<p>
+    Call to non-existant property $site-&gt;site_description()
+</p>
+<p>
+    o Check the site_meta table in the database and make sure there is a record
+    with the following properties:
+</p>
+<p>
+    &#167; meta_key = site_description
+</p>
+<p>
+    &#167; meta_value = [<em>your site description</em>]
+</p>
+<p>
+    o If you don&#8217;t see this record, add it
+</p>
+<p>
+    &#183; My site isn&#8217;t loading styles
+</p>
+<p>
+    o Check the site_meta table and make sure the record with meta_key =
+    site_url has the correct value for the site path you use to access your
+Nestor installation. Ie    <a href="http://localhost/nestor">http://localhost/nestor</a>
+</p>
+<p>
+    &#183; I see the message &#8220;Forbidden&#8221; and &#8220;You don&#8217;t
+    have permission to access [<em>path</em>] on this server
+</p>
+<p>
+    o Check that your path values were written correctly into the .htaccess
+    file. For example:
+</p>
+<p>
+    # BEGIN
+</p>
+<p>
+    &lt;IfModule mod_rewrite.c&gt;
+</p>
+<p>
+    RewriteEngine On
+</p>
+<p>
+    RewriteBase /VCE/
+</p>
+<p>
+    RewriteRule ^index\.php$ - [L]
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-f
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-d
+</p>
+<p>
+    RewriteRule . /VCE/index.php [L]
+</p>
+<p>
+    RedirectMatch 301 /VCE/vce-content/uploads/(.*) /VCE/
+</p>
+<p>
+    &lt;/IfModule&gt;
+</p>
+<p>
+    # END
+</p>
+<p>
+    &#183; I see an internal server error
+</p>
+<p>
+    o Syntax errors in the htaccess file will cause an internal server error.
+    Make sure all your syntax is correct
+</p>
+<p>
+    &#183; My re-directs don&#8217;t seem to be working correctly
+</p>
+<p>
+    o The AllowOverride directive in the Apache httpd.conf may be set to
+    &#8220;none&#8221;, which basically prevents the .htaccess file from doing
+    anything. Set this to &#8220;all&#8221;.
+</p>
+<p>
+    o Correct directive syntax:
+</p>
+<p>
+    AllowOverride all
+</p>
+<h2>
+    File Uploads
+</h2>
+<p>
+    &#183; My end users are not able to upload files
+</p>
+<p>
+    o When installing in a dedicated server environment, the file permission
+    for "vce-content/uploads" must be set to 775. If you have shell access,
+    from within the "vce-content" directory, execute the following shell
+    command: <a name="_Configure_(IT/Web_Manager)"></a>sudo chmod -R 775
+    uploads)
+</p>
+<h2>
+    MySQL errors
+</h2>
+<p>
+    &#183; When I call a method that inserts data into the database, I&#8217;m
+    seeing errors regarding incorrect datatype values. For example:
+</p>
+<p>
+    Error: Incorrect integer value: '' for column 'component_id' at row 1
+</p>
+<p>
+    o This can be a common issue using the Windows environment, which uses the
+    WAMP stack. WAMP sets the MySQL mode to &#8220;strict&#8221; by default,
+    which means that you generally can&#8217;t insert null values into a
+    database field set for other types of data. You can either make sure to
+    provide &#8216;0&#8217; values for any numeric data expected, or set your
+    sql_mode to &#8216;none&#8217;. This can mask other issues, so you may want
+    to consider the best strategy to handle this situation.
+</p>
+<p>
+    o To set MySQL sql_mode to &#8216;none&#8217;:
+</p>
+<p>
+    &#167; Click on the WAMP icon in your desktray, then hover over these
+    settings Mysql -&gt; MySQL settings -&gt; sql-mode
+</p>
+<p>
+    &#167; In the sql_mode window, select sql-mode-&gt;none
+</p>
+<p>
+    <img
+        border="0"
+        width="446"
+        height="377"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png"
+    />
+</p>
+<p>
+    <em>WAMP icon in desktray</em>
+</p>
+<p>
+    <img
+        border="0"
+        width="1037"
+        height="654"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"
+    />
+</p>
+<p>
+    <em>WAMP settings for sql-mode</em>
+</p>
+<h1>
+    Administer
+</h1>
+<h2>
+    Managing <a>Recipes</a>
+    <a
+        id="_anchor_2"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_2"
+        name="_msoanchor_2"
+    >
+        [CD2]
+    </a>
+</h2>
+<p>
+    1. I don&#8217;t see the component I want to add
+</p>
+<p>
+    a. Visit the Manage Components page and make sure your component is
+    installed and activated
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_Manage_Components"
+    >
+    </a>
+</p>
+<p>
+    b. Click through the categories under the components and see if the
+    component is listed under a different category
+</p>
+<p>
+    c. Contact your IT administrator who installed Nestor and make sure the
+    code for the component wasn&#8217;t removed from the installation
+</p>
+<p>
+    2. I don&#8217;t see the categories under the components
+</p>
+<p>
+    a. Click the <strong>Display By Category</strong> bar under the component
+    list to expand the category options
+</p>
+<p>
+    3. I can&#8217;t get the components to nest
+</p>
+<p>
+    a. This can be a tricky process. Make sure the component you want to nest
+    is on top of the parent component, and the parent component
+&#8220;recognizes&#8221; it. You&#8217;ll see a    <a>subtle color change in the gray menu box</a>
+    <a
+        id="_anchor_3"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_3"
+        name="_msoanchor_3"
+    >
+        [CD3]
+    </a>
+    of the parent component when it&#8217;s in this state.
+</p>
+<p>
+    <img
+        border="0"
+        width="254"
+        height="203"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png"
+    />
+</p>
+<p>
+    <em>
+        Login doesn&#8217;t recognize Location as potential child &#8211; gray
+        box is dark
+    </em>
+</p>
+<p>
+    <a>
+        <img
+            border="0"
+            width="354"
+            height="187"
+            src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png"
+        />
+    </a>
+    <a
+        id="_anchor_4"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_4"
+        name="_msoanchor_4"
+    >
+        [CD4]
+    </a>
+</p>
+<p>
+    <em>Login recognizes Location as potential child, gray box is lighter </em>
+</p>
+<p>
+    b. Once you see the color change, slowly drag the child component to the
+    right until you see the gray menu box of the parent stretch to the next row
+    and open up a nested position for the new child.
+</p>
+<p>
+    <img
+        border="0"
+        width="302"
+        height="165"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image005.png"
+    />
+</p>
+<p>
+    <em>A nested spot has opened under Login for Location to drop into</em>
+</p>
+<p>
+    c. Release the child component when you see this nested spot open and the
+    component should snap right into position.
+</p>
+<p>
+    4. I created and saved a Recipe, and now I can&#8217;t move or even remove
+    the components.
+</p>
+<p>
+    <a>a. There are certain components that &#8220;lock</a>
+    <a
+        id="_anchor_5"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_5"
+        name="_msoanchor_5"
+    >
+        [CD5]
+    </a>
+&#8221; into place once you&#8217;ve added them to a Recipe, including    <a>Login, Location&#8230; </a>
+    <a
+        id="_anchor_6"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_6"
+        name="_msoanchor_6"
+    >
+        [CD6]
+    </a>
+    If you have a recipe using these components and need to change the Recipe,
+    you will need to create a new Recipe with the pattern you want and then
+    delete the existing Recipe.<a name="_Standard_Component_Configuration"></a>
+</p>
+<h2>
+    Managing Menus
+</h2>
+<p>
+    &#183; My Recipe is not showing up in the Pages list
+</p>
+<p>
+    o To be added to a menu, a Recipe must contain a Location component with a
+    value in the url field.
+</p>
+<h2>
+    Managing Site Properties
+</h2>
+<p>
+    &#183; I see the Admin email on this page, but not the password. How do I
+    update my Admin password?
+</p>
+<p>
+    o Make sure you are <a>logged in with the Admin account</a>
+    <a
+        id="_anchor_7"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_7"
+        name="_msoanchor_7"
+    >
+        [CD7]
+    </a>
+</p>
+<p>
+    o Click the <strong>My Account</strong> selection on the main menu, and
+    click the Update Password bar at the top of the page. Follow instructions
+    to update your password.
+</p>
+<h2>
+    Managing Roles
+</h2>
+<p>
+    &#183; Why doesn&#8217;t my new Role show up in the drop-down when
+    I&#8217;m creating a new User?
+</p>
+<p>
+    o Make sure the Role Hierarchy is not set to 0. If set to 0, the Role does
+    not show up in the drop-down for a new user. (As far as I can tell by
+    testing to verify this is not true &#8211; as in, it works fine for me)
+</p>
+<p>
+    &#183; How do I know what Users have this Role?
+</p>
+<p>
+    o Navigate to the Manage Users page from the main Admin page
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_Manage_Users"
+    >
+    </a>
+</p>
+<p>
+    o You&#8217;ll see a list of existing Users that displays the Role for each
+    User
+</p>
+<h2>
+    Nestor Administration
+</h2>
+<p>
+    &#183; I forgot my admin password
+</p>
+<p>
+    o Make sure you are <a>logged in with the Admin account</a>
+    <a
+        id="_anchor_8"
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msocom_8"
+        name="_msoanchor_8"
+    >
+        [CD8]
+    </a>
+</p>
+<p>
+    o Click the <strong>My Account</strong> selection on the main menu, and
+    click the Update Password bar at the top of the page. Follow instructions
+    to update your password.
+</p>
+<p>
+    o If your site isn&#8217;t set for persistent login, and you aren&#8217;t
+    automagically logged in as the admin, bummer
+</p>
+<p>
+    &#183; I lost my site key
+</p>
+<p>
+    o You are outa luck and prolly have to run the install again
+</p>
+<p>
+    <img
+        border="0"
+        width="171"
+        height="171"
+        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png"
+    />
+</p>
+<h2>
+    Request Routing
+</h2>
+<p>
+    &#183; I am trying to load a Page and I keep getting re-routed to the home
+    page
+</p>
+<p>
+    o Make sure you&#8217;ve created and saved a Recipe for this page
+</p>
+<p>
+    o Check the Recipe for the Page you are attempting to load and make sure
+    that you have added a Location component, and that Location component has a
+    designated URL
+</p>
+<p>
+    o Check the list of Recipes you&#8217;ve built, and make sure the
+    designated URL next to the Recipe you are trying to load is the same URL
+    you have been trying to load. Click on the URL value in the Recipe table to
+    test if it&#8217;s loading correctly.
+</p>
+<p>
+    o Refer to the Manage Recipes section for more information
+</p>
+<div>
+    <hr align="left" size="1" width="33%"/>
+    <div>
+        <div id="_com_1">
+            <a name="_msocom_1"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_1"
+                >
+                    [CD1]
+                </a>
+                What happens to existing database if we run installer again?
+                Does site key need to be manually updated?
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_2">
+            <a name="_msocom_2"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_2"
+                >
+                    [CD2]
+                </a>
+                Move all troubleshooting to a separate section
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_3">
+            <a name="_msocom_3"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_3"
+                >
+                    [CD3]
+                </a>
+                Possible UX change?
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_4">
+            <a name="_msocom_4"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_4"
+                >
+                    [CD4]
+                </a>
+                Can we tweak the styling on this, to make this color change
+                more obvious?
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_5">
+            <a name="_msocom_5"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_5"
+                >
+                    [CD5]
+                </a>
+                Probably need a better explanation here. Also, as we&#8217;ve
+                discussed, it would be nice to visually indicate which of the
+                components are &#8220;anchor&#8221; components and which
+                aren&#8217;t
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_6">
+            <a name="_msocom_6"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_6"
+                >
+                    [CD6]
+                </a>
+                Need full list
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_7">
+            <a name="_msocom_7"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_7"
+                >
+                    [CD7]
+                </a>
+                What do you do if you are locked out of the site?
+            </p>
+        </div>
+    </div>
+    <div>
+        <div id="_com_8">
+            <a name="_msocom_8"></a>
+            <p>
+                <a
+                    href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Troubleshooting%20Nestor.docx#_msoanchor_8"
+                >
+                    [CD8]
+                </a>
+                What do you do if you are locked out of the site?
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

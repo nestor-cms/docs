@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   <!--INSERT CONTENT HERE-->
+
+
+
+   <h1>
+    Page Class
+</h1>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The Page Class contains properties and methods used to build out the final
+    page. It first determines what page is being requested, by reading the URL
+    and pulling out either a component ID or Recipe url value. Page then fills
+    a multi-dimensional component array based on parent-child relationships in
+    the database – these entries and relationships are created by the Recipe
+    and by end users adding content to Pages. Last, Page reads the Recipe and
+    compares it to the component array, and determines what content should be
+    displayed based on user role and other settings.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Properties
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    <strong>Name</strong>
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Persistent keys and values – attributes stored in the
+                    $_SESSION super global marked ‘persistent’, which are
+                    re-added to $page on each page load
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $recipe
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Array to hold recipe info
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $sub_recipe
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Any sub-recipes found
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $template
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Template used to build page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $components
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Array to hold all components, formatted as objects. They
+                    are ordered based on the parentIDs for the components ahead
+                    of the called component, and then the subcomponents after.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $file_uploader
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Indicates that a file uploader element has been added to
+                    the page, set in add_file_uploader() class of many media
+                    classes
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $title
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Title of the page (also in VCE so may be removed from page)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    <a name="methods">Methods</a>
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>Name/Syntax</strong>
+                    <strong></strong>
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>Private</strong>
+                    build_content
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Builds content from components. Called from __construct(),
+                    is given a list of components and the recipe, and then
+                    orders the components and
+                </p>
+                <p>
+                    recursively calls on them to add their content to the
+                    $content object.
+                </p>
+                <p>
+                    This can’t be called by another component directly. However
+                    it does interact with components in the page being built
+                    and contains hooks where a component can insert
+                    functionality.
+                </p>
+                <p>
+                    Use the display_components() method to call build_content()
+                    from another component.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#can_add"
+                        >
+                            can_add
+                        </a>
+                    </strong>
+                    ($each_component)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Checks to see if user can add a component to the page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#can_delete"
+                        >
+                            can_delete
+                        </a>
+                    </strong>
+                    ($each_component)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Checks to see if user can delete a component on the page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#can_edit"
+                        >
+                            can_edit
+                        </a>
+                    </strong>
+                    ($each_component)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Checks to see if user can edit a component on the page
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#display_components"
+                        >
+                            display_components
+                        </a>
+                    </strong>
+                    ($components, $recipe = null, $requested_id = null, $linked
+                    = false, $recipe_tracker = array())
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Calls build_content to allow you to see what the final page
+                    output will be
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    find_url ($component_id)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Gets url that is associated with component, which is the
+                    first one encountered working backwards through parents
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#find_url"
+                        >
+                            find_url
+                        </a>
+                    </strong>
+                    <strong> </strong>
+                    ($component_id)<strong></strong>
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Gets url that is associated with component, which is the
+                    first one encountered working backwards through parents
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#get_children"
+                        >
+                            get_children
+                        </a>
+                    </strong>
+                    ($current_id, $parent_id = null, $component = array(),
+                    $sub_components = array(), $sub_url = false, $full_object =
+                    false)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Calls get_sub_components to get children of a parent_id
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    get_parents ($component_id)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Returns an array with parents of a specific component. Is
+                    similar to get_components
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>Private</strong>
+                    get_components ($page_id, $requested_id, $components)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Finds all components upstream of the component $requested,
+                    and then fills in all sub_components. Returns
+                    multi-dimensional array of all components related to a
+                    specific page.
+                </p>
+                <p>
+                    This can’t be called by another component directly. However
+                    it does interact with components in the page being built
+                    and contains hooks where a component can insert
+                    functionality.
+                </p>
+                <p>
+                    The get_parents() method allows you to partially emulate
+                    this method from another component.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+                <p>
+                    <strong>Private</strong>
+                    get_sub_components ($current_id, $parent_id, $components,
+                    $sub_components = array(), $sub_url = false, $full_object =
+                    false)
+                </p>
+            </td>
+            <td width="498" valign="top">
+                <p>
+                    Finds all components downstream of the $current_id and adds
+                    to a multi-dimensional array.
+                </p>
+                <p>
+                    This can’t be called by another component directly. However
+                    it does interact with components in the page being built
+                    and contains hooks where a component can insert
+                    functionality.
+                </p>
+                <p>
+                    Use the get_children() method to call get_sub_components()
+                    from another component.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="438" valign="top">
+            </td>
+            <td width="498" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Method Details
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a name="_Get_Data_Object"></a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="can_add">Can Add</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Checks to see if user can add a component to the page
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    can_add ($each_component)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $each_component
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The component that is being checked for user access
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    True if user can add or if user is an admin, false if user
+                    can’t add
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example
+</h4>
+<p>
+    can_add is called in Component::build_content to determine to determine if
+    the component add form should be displayed for the current user
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    if ($vce-&gt;page-&gt;can_add((object)
+                    $each_recipe_component)) {
+                </p>
+                <p>
+                    //code to add form fields
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="can_delete">Can Delete</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Checks to see if user can delete a component
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    can_delete ($each_component)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $each_component
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The component that is being checked for user access
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    True if user can delete or if user is an admin, false if
+                    user can’t delete
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example
+</h4>
+<p>
+    can_delete is called in Item::edit_component to determine if the component
+    delete button should be displayed for the current user
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    if ($vce-&gt;page-&gt;can_delete($each_component)) {
+                </p>
+                <p>
+                    //code to display delete button for component
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="can_edit">Can Edit</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Checks to see if user can edit a component
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    can_edit ($each_component)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $each_component
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The component that is being checked for user access
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    True if user can edit or if user is an admin, false if user
+                    can’t edit
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example
+</h4>
+<p>
+    can_edit is called in Media::as_content to determine if the component edit
+    form should be displayed for the current user
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    if ($vce-&gt;page-&gt;can_edit($each_component)) {
+                </p>
+                <p>
+                    //code to display edit form for component
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="display_components">Display Components</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Calls build_content to allow you to see what the final page output will be.
+    Note: if you want to have recipe_components / add_component work for
+    components sent to this method, you need to send along a requested_id with
+    the recipe. $requested_id should be the component_id from where you want
+    the sub_recipe to allow add_content. The recipe should include the parent
+    component of the requested_id.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    display_components ($components, $recipe = null,
+                    $requested_id = null, $linked = false, $recipe_tracker =
+                    array())
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $components
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Array of the components that you want to display. This
+                    would be along the lines of $page-&gt;components
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $recipe
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Recipe for the components
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $requested_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The requested ID that goes with the $recipe. Generally is
+                    the component_id of the first component in the recipe
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $linked
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    A value used in the build_content method to track
+                    recursion. False by default
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $recipe_tracker
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    An array that acts as a placeholder when traversing the
+                    $components array. Set to blank by default
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    No return value
+                </p>
+            </td>
+            <td width="738" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $vce-&gt;page-&gt;display_components
+                    ($vce-&gt;page-&gt;components, $vce-&gt;page-&gt;recipe,
+                </p>
+                <p>
+                    $vce-&gt;page-&gt;components[0]-&gt;component_id);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="find_url">Find URL</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Gets url that is associated with component, which is the first one
+    encountered working backwards through parents. Returns full path including
+    site URL.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    find_url ($component_id)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $component_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of component
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    URL belonging to closed parent up the recipe chain
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $link_url =
+                    $vce-&gt;find_url($each_media_item-&gt;component_id);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="get_children">Get Children</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Calls get_sub_components to get children of a parent_id, and all of their
+    descendants. Returned in a multi-dimensional array.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    get_children ($current_id, $parent_id = null, $component =
+                    array(), $sub_components = array(), $sub_url = false,
+                    $full_object = false)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $current_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of component whose descendants you want to fetch
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $parent_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of parent of the current component, set to null by
+                    default
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $component
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Array of components, set empty by default
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $sub_components
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Array of sub-components, set empty by default
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $sub_url
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Boolean (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Set to false by default
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $full_object
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Boolean (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Set to false by default
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Return array
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Array contains objects representing components
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="4" valign="top">
+                <p>
+                    Potential members of the returned array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Component ID
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    ID of parent of component
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    Sequence
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Order in which component appears
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    url
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    url if component is the anchor of the recipe
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    created_at
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    timestamp
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    created_by
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    ID of the user who created the component
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    title
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Title of the component
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    Type
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Class type of component
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="157" valign="top">
+                <p>
+                    Updated_at
+                </p>
+            </td>
+            <td width="110" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="668" valign="top">
+                <p>
+                    Timestamp when component was last updated
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $children =
+                    $vce-&gt;get_children($each_submission-&gt;component_id);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Page%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+
+
+
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

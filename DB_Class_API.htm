@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   <!--INSERT CONTENT HERE-->
+
+   <h4>
+</h4>
+<h1>
+    DB Class
+</h1>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The DB Class manages all interactions with the system database. The $db
+    object is added to the global $vce object during site initiation, so make
+    sure to call “global $vce” and then use then use $vce-&gt;db to call
+    methods from the global $db object.
+</p>
+<p>
+    Database errors are written to log.txt when VCE_DEBUG is set to true in
+    your [<em>myinstall</em>]-config.php file.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Properties
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="136" valign="top">
+                <p>
+                    <strong>Name</strong>
+                </p>
+            </td>
+            <td width="143" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="136" valign="top">
+                <p>
+                    $connection
+                </p>
+            </td>
+            <td width="143" valign="top">
+                <p>
+                    object
+                </p>
+            </td>
+            <td width="657" valign="top">
+                <p>
+                    set in the __construct method, holds a mysqli connection
+                    object to communicate with the application database
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Methods
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>Name/Syntax</strong>
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#delete"
+                        >
+                            delete
+                        </a>
+                    </strong>
+                    ($table,
+                </p>
+                <p>
+                    $where = array(),
+                </p>
+                <p>
+                    $limit = '')
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Deletes rows from a specified table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#get_data_object"
+                        >
+                            get_data_object
+                        </a>
+                    </strong>
+                    ($query, $object = true)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Runs the provided query and returns the dataset in a
+                    readable format
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <a name="insert"></a>
+                    <a
+                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#insert"
+                    >
+                        insert
+                    </a>
+                    ($table, $data = array())
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Inserts data into database table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#query"
+                        >
+                            query
+                        </a>
+                    </strong>
+                    ($query)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Runs the provided query and returns the results as a PHP
+                    mysqli_result object.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#update"
+                        >
+                            update
+                        </a>
+                    </strong>
+                    ($table, $data = array(),
+                </p>
+                <p>
+                    $where = array(),
+                </p>
+                <p>
+                    $limit = '',
+                </p>
+                <p>
+                    $return_affected_rows = true)<strong></strong>
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Update rows in a specified table
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Method Details
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="delete">Delete</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Deletes rows from a specified table.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    delete($table, $where = array(), $limit = '')
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0" width="936">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $table
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    Name of database table from which you are deleting data
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $where
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    WHERE statement for SQL query
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $limit
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    LIMIT statement for SQL query
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Returns false if empty WHERE statement or database error
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Returns array of objects representing rows deleted (see
+                    <a
+                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#get_data_object"
+                    >
+                        Get Data Object
+                    </a>
+                    for format of returned data)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Hooks
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    db_delete called after successful query execution
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $table = 'email_data';
+                </p>
+                <p>
+                    $where = array( 'user_id' =&gt; 4241, 'email' =&gt;
+                    'email@address.com' );
+                </p>
+                <p>
+                    $vce-&gt;db-&gt;delete($table , $where, 1 );
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="get_data_object">Get Data Object</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a name="_Get_Data_Object"></a>
+    Runs the provided query and returns the dataset in a readable format. There
+    is also a
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/DB%20Class.docx#_Query"
+    >
+        query method
+    </a>
+    that returns the native PHP mysqli_result object, which is a bit less easy
+    to traverse.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    get_data_object($query, $object = true)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $query
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    The query to be run on the database
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $object
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    Determines whether data is returned as an array of objects
+                    or multi-dimensional array, is set to true by default to
+                    return objects
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Array of objects
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    When $object = true (set by default), the data is returned
+                    as an array of objects, with each object representing a
+                    record in the dataset.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Multi-dimensional array
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    When $object = false, the data is returned as a
+                    multi-dimensional array.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //$object = true, results returned as an array of objects
+                </p>
+                <p>
+                    $myData = $vce-&gt;db-&gt;get_data_object('SELECT * FROM
+                    vce-site-properties');
+                </p>
+                <p>
+                    // output data of each row
+                </p>
+                <p>
+                    foreach (myData as $row) {
+                </p>
+                <p>
+                    echo '&lt;br&gt;';
+                </p>
+                <p>
+                    echo $row-&gt;name;
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" valign="top">
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //$object = false, results returned as a multi-dimensional
+                    array
+                </p>
+                <p>
+                    $myData = $vce-&gt;db-&gt;get_data_object('SELECT * FROM
+                    vce-site-properties', false);
+                </p>
+                <p>
+                    // output data of each row
+                </p>
+                <p>
+                    foreach (myData as $row) {
+                </p>
+                <p>
+                    echo '&lt;br&gt;';
+                </p>
+                <p>
+                    echo $row['name'];
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h5>
+</h5>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    Insert
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Inserts data into database table. This method handles most types of
+    insertion into a single table. It determines if it is a single row or
+    multiple rows being inserted and processes the call as needed.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    insert($table, $data = array())
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $table
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    The table into which you’ll insert data
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $data
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    An array of data to insert. This can be a single row array
+                    or multidimensional array.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Returns false if database error
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    int
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Returns the auto-incremented ID generated for the last row
+                    inserted if successful insert
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Hooks
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    db_insert called after insert query is executed
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<p>
+    <strong></strong>
+</p>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //for single row of data
+                </p>
+                <p>
+                    $data = array(
+                </p>
+                <p>
+                    'name' =&gt; 'Sunil',
+                </p>
+                <p>
+                    'email' =&gt; 'sunil@email.com',
+                </p>
+                <p>
+                    'active' =&gt; 1
+                </p>
+                <p>
+                    );
+                </p>
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //for multi-dimensional data array
+                </p>
+                <p>
+                    $data = array(
+                </p>
+                <p>
+                    array('name'=&gt;'Consuela',
+                    'email'=&gt;'consuela@email.com',
+                </p>
+                <p>
+                    'state'=&gt;'WA'),
+                </p>
+                <p>
+                    array('name'=&gt;'Vincent', 'email'=&gt;'vinnie@email.com',
+                </p>
+                <p>
+                    'state'=&gt;'MI'),
+                </p>
+                <p>
+                    array('name'=&gt;'Ngoc Huyen',
+                    'email'=&gt;'ngoc_huyen@email.com',
+                </p>
+                <p>
+                    'state'=&gt;'CA')
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $table = 'students';
+                </p>
+                <p>
+                    $last_inputID = $vce-&gt;db-&gt;insert($table, $data);
+                </p>
+                <p>
+                    //output the last id generated
+                </p>
+                <p>
+                    echo $last_inputID;
+                </p>
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="query">Query</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Runs the provided query and returns the results as a PHP mysqli_result
+    object.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    query($query)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $query
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    The query to be run on the database sc
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Returns false if database call returns an error
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Returns mysqli_results object if successful query execution
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $sql = "SELECT * from vce_datalists";
+                </p>
+                <p>
+                    $result = $vce-&gt;db-&gt;query($sql);
+                </p>
+                <p>
+                    $datalist_ids="";
+                </p>
+                <p>
+                    if ($result-&gt;num_rows &gt; 0) {
+                </p>
+                <p>
+                    while($row = $result-&gt;fetch_assoc()) {
+                </p>
+                <p>
+                    $datalist_ids .= "id: " . $row["datalist_id"]. " - Datalist
+                    ID: " .
+                </p>
+                <p>
+                    "&lt;br&gt;";
+                </p>
+                <p>
+                    }
+                </p>
+                <p>
+                    } else {
+                </p>
+                <p>
+                    $datalist_ids .= "0 results";
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="update">Update</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Update data in specified table
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    update($table, $data = array(),
+                </p>
+                <p>
+                    $where = array(),
+                </p>
+                <p>
+                    $limit = '',
+                </p>
+                <p>
+                    $return_affected_rows = true)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $table
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    Name of database table into which you are inserting data
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $data
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    Data to insert
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $where
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    WHERE statement for SQL query
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $limit
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    LIMIT statement for SQL query
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $return_affected_rows
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="594" valign="top">
+                <p>
+                    Determines whether the number of affected rows is returned,
+                    set true by default
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Return false if there is a database error, or no rows
+                    affected
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Return true if rows updated but $return_affected_rows set
+                    to false
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    int
+                </p>
+            </td>
+            <td width="755" valign="top">
+                <p>
+                    Return amount of affected rows if $return_affected_rows set
+                    to true
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<h4>
+    Hooks<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    db_update hook called after update query executed.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $data = array( 'name' =&gt; 'Nora Bennett',
+                </p>
+                <p>
+                    'email' =&gt; 'nora.bennett@email.com' );
+                </p>
+                <p>
+                    $update_where = array( 'user_id' =&gt; 44, 'name' =&gt;
+                    'Bennett' );
+                </p>
+                <p>
+                    $num_rows = $vce-&gt;db-&gt;update( 'users_table', $update,
+                    $update_where, 1 );
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

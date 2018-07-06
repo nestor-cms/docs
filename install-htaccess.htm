@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   <!--INSERT CONTENT HERE-->
+
+
+  <h1>.htaccess file settings</h1>  
+
+<p>
+    All calls into your Nestor installation are intercepted by the .htaccess
+    file and routed to index.php if the path doesn’t specify an existing file
+    or directory. Settings in the .htaccess file route the requests. You
+    shouldn’t have to change this file, as the Nestor Installer should write
+    the correct settings.
+</p>
+<p>
+    RewriteBase /<em>{your basepath}</em>/
+</p>
+<p>
+    · Designates scope of rewrite to any requests made to this path
+</p>
+<p>
+    · Make sure this path matches the root directory of your installation. For
+    example, if you used <strong>http://localhost/mynestor</strong> to navigate
+to your installation, then this basepath value would be    <strong>/mynestor/</strong>
+</p>
+<p>
+    ^index\.php$ - [L]
+</p>
+<p>
+    · prevents requests for index.php from being rewritten, to avoid an
+    unnecessary file system check. If the request is for index.php the
+    directive does nothing - and stops processing rules [L].
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-f
+</p>
+<p>
+    RewriteCond %{REQUEST_FILENAME} !-d
+</p>
+<p>
+    RewriteRule . /vce/index.php [L]
+</p>
+<p>
+    · This block is all one rule, and it says that if it is not an existing
+    file or directory, reroute the request to index.php.
+</p>
+
+
+
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

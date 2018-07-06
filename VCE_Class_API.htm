@@ -1,0 +1,5460 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   <!--INSERT CONTENT HERE-->
+
+
+
+   <h1>
+    VCE Class API
+</h1>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <div align="center">
+                    <hr size="3" width="100%" align="center"/>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    VCE is a utility class that contains properties and methods used by all
+    components throughout the Nestor system, and which can be easily accessed
+    with a custom component. During the initiation phase, all of the core
+    engine class objects are added to the global $vce object, which makes it
+    much simpler to access them in another component.
+</p>
+<p>
+    All of the $vce properties are added at run-time, during the page build
+    process.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Properties
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    <strong>Name</strong>
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $db
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Global db object
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $site
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Global site object
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $user
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Global user object
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $page
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Object
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Global page object
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $query_string
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    value of query string from requested URI
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $input_path<strong></strong>
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Input path defined by the configuration file. This is where
+                    any forms will route their submission actions
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $media_upload_path
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Path where any media will upload to, defined by the
+                    configuration file
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $requested_id
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    ID of the component requested in the URL
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $site_url<strong></strong>
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    URL that resolves to your installation of Nestor
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $requested_url<strong></strong>
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    URL of the component requested – this value is parsed out
+                    of the full path like so: [path]/[url] for example in the
+                    full path http://localhost/vce/admin, the $requested_url
+                    would be ‘admin’
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="215" valign="top">
+                <p>
+                    $title
+                </p>
+            </td>
+            <td width="135" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="587" valign="top">
+                <p>
+                    Title of the page
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    <a name="methods">Methods</a>
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>Name/Syntax</strong>
+                    <strong></strong>
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#add_datalist_item"
+                        >
+                            add_datalist_item
+                        </a>
+                    </strong>
+                    ($input)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Add a single datalist item to the database
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#check_permissions"
+                        >
+                            check_permissions
+                        </a>
+                    </strong>
+                    ($permission_name, $component_name = null)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Checks for component specific permissions
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#convert_to_bytes"
+                        >
+                            convert_to_bytes
+                        </a>
+                    </strong>
+                    ($size)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Convert a string to bytes
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#convert_from_bytes"
+                        >
+                            convert_from_bytes
+                        </a>
+                    </strong>
+                    ($size)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Convert from bytes to a nice readable size
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#create_datalist"
+                        >
+                            create_datalist
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Create a datalist in the database
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#dump"
+                        >
+                            dump
+                        </a>
+                    </strong>
+                    ($var, $color = 'ffc')<strong></strong>
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Display the contents of a value to the screen
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#get_datalist"
+                        >
+                            get_datalist
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Returns datalist(s) that match the passed attributes.
+                    Includes all metadata
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#get_datalist_items"
+                        >
+                            get_datalist_items
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Return all items associated with a datalist that contains
+                    the specified attribute(s).
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#generate_dossier"
+                        >
+                            generate_dossier
+                        </a>
+                    </strong>
+                    ($dossier_elements_input)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Create encrypted dossier and return it as a string. The
+                    dossier must be added to any form you are using to submit
+                    information into the system.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#ilkyo"
+                        >
+                            ilkyo
+                        </a>
+                    </strong>
+                    ($string)
+                </p>
+            </td>
+            <td width="549" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#insert_datalist_items"
+                        >
+                            insert_datalist_items
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Add multiple datalist items to an existing datalist
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#log"
+                        >
+                            log
+                        </a>
+                    </strong>
+                    ($var, $file = "log.txt")
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Sends data to the designated log file at the root of the
+                    Nestor installation.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#mail"
+                        >
+                            mail
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Sends mail using PHP mail function or transport agent
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#manage_cron_task"
+                        >
+                            manage_cron_task
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Update a current cron task. These are tasks that run
+                    automatically on scheduled intervals.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#remove_datalist"
+                        >
+                            remove_datalist
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Removes datalist and its associated data
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#sorter"
+                        >
+                            sorter
+                        </a>
+                    </strong>
+                    ($data, $key='title', $order='asc', $type='string')
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Sort an object or array by associative key
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#update_datalist"
+                        >
+                            update_datalist
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Update an existing datalist
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387" valign="top">
+                <p>
+                    <strong>
+                        <a
+                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#update_datalist_item"
+                        >
+                            update_datalist_item
+                        </a>
+                    </strong>
+                    ($attributes)
+                </p>
+            </td>
+            <td width="549" valign="top">
+                <p>
+                    Update an existing datalist item
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h2>
+                    Method Details
+                </h2>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a name="_Get_Data_Object"></a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="add_datalist_item">Add Datalist Item</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Adds single item to a datalist. At least one of the values in the $input
+    array must be provided, others will be auto-filled on the back-end if they
+    aren’t relevant.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    add_datalist_item($input)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $input
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Contains information to add the datalist item.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Values in the $input array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of datalist to which you are adding the item.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+            </td>
+            <td width="576" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The order in which this item will appear when a list is
+                    rendered using all items associated with the same parent
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of component associated with the item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of user associated with the item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) you are adding to the
+                    datalist item. You can include multiple key/value pairs,
+                    each will be added as metadata for the datalist item.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="check_permissions">Check Permissions</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Checks to see if there are component specific permissions. These
+    permissions can be assigned using the add_site_role method in the Site
+    class.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    check_permissions ($permission_name, $component_name =
+                    null)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $permission_name
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name of the specific permission being checked
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $component_name
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name of component that is being checked to see if it has
+                    this specific permission
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Return true if this permission exists for the specified
+                    component, false if not
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //if component has permission, create form to allow end
+                    user to
+                </p>
+                <p>
+                    //create new users
+                </p>
+                <p>
+                    if ($vce-&gt;check_permissions('create_users')) {
+                </p>
+                <p>
+                    // create the dossier
+                </p>
+                <p>
+                    $dossier_for_create = $vce-&gt;generate_dossier(
+                </p>
+                <p>
+                    array('type' =&gt; 'ManageUsers','procedure' =&gt;
+                    'create'));
+                </p>
+                <p>
+                    $content .= &lt;&lt;&lt;EOF
+                </p>
+                <p>
+                    &lt;p&gt;
+                </p>
+                <p>
+                    &lt;div class="clickbar-container"&gt;
+                </p>
+                <p>
+                    &lt;div class="clickbar-content"&gt;
+                </p>
+                <p>
+                    &lt;form id="form" class="asynchronous-form" method="post"
+                    action="$vce-&gt;input_path" autocomplete="off"&gt;
+                </p>
+                <p>
+                    &lt;input type="hidden" name="dossier"
+                    value="$dossier_for_create"&gt;
+                </p>
+                <p>
+                    &lt;label&gt;
+                </p>
+                <p>
+                    &lt;input type="text" name="email" tag="required"
+                    autocomplete="off"&gt;
+                </p>
+                <p>
+                    &lt;div class="label-text"&gt;
+                </p>
+                <p>
+                    &lt;div class="label-message"&gt;Email&lt;/div&gt;
+                </p>
+                <p>
+                    &lt;div class="label-error"&gt;Enter Email&lt;/div&gt;
+                </p>
+                <p>
+                    &lt;/div&gt;
+                </p>
+                <p>
+                    &lt;/label&gt;
+                </p>
+                <p>
+                    EOF;
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="convert_to_bytes">Convert to Bytes</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Converts a string to bytes
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    convert_to_bytes($size)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $size
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    String to convert
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Size in bytes of the string
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $chunk_size = $vce-&gt;convert_to_bytes(UPLOAD_SIZE_LIMIT);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="convert_from_bytes">Convert from Bytes</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Convert from bytes to a nice readable size
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    convert_from_bytes($size)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $size
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    String to convert
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Size in bytes of the string
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $nice_size = $vce-&gt;convert_from_bytes($file_size);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="create_datalist">Create Datalist</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Creates a datalist in the database to store data for your component(s).
+    Datalists can have associated items that can be added using this method.
+    You don’t need to provide values for all of the attributes below, as the
+    function will fill in ‘null’ values to those you don’t provide. However,
+    your datalist won’t have much value if there is no data associated with it.
+</p>
+<p>
+    You can create a datalist hierarchy by associating a datalist with a item,
+    which basically turns the item into its own datalist. The $attributes array
+    for this scenario will differ from a non-hierarchical datalist.
+</p>
+<p>
+    Refer to the Datalist section for more information about datalist
+    architecture.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    create_datalist($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Information used to create the datalist
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    if you are creating a nested datalist, this is the ID of
+                    the parent datalist
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Allows you to make an item into its own datalist,
+                    references an item_id in the datalist_items table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    the component to which the data will be associated
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    user_id of the user to whom the datalist will be associated
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    name of the datalist, can be used to search for the
+                    datalist so make sure it’s unique
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Order in which the datalist will be rendered in a list
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    aspects
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    key/value pairs to assign to the datalist_meta table,
+                    represent datalist metadata
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    hierarchy
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Indexed array of values. Allows you to specify levels of
+                    hierarchy, such as states and cities. Note that the
+                    <a
+                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#items_hierarchical"
+                    >
+                        items array
+                    </a>
+                    for a hierarchical scenario will also need to be
+                    hierarchical (see below)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+                <p>
+                    (Optional)
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    key/value pairs that represent items that will be
+                    associated with the datalist
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the aspects array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) you are adding to the
+                    datalists_meta table. You can include multiple key/value
+                    pairs.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the hierarchy array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [index]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Values in an indexed array. Allows you to specify levels of
+                    hierarchy, such as states and cities. The first value will
+                    relate to the top parent datalist, then the next level will
+                    be applied as the name of the children datalist(s) in the
+                    datalists_meta table.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the items array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [index]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Holds multiple arrays, each of which represents a new
+                    datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Members of each item array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) associated with the item.
+                    This data will be entered into the datalist_items_meta
+                    table. You can include multiple key/value pairs.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Members of each item array - hierarchical
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) associated with the item.
+                    This data will be entered into the datalist_items_meta
+                    table. You can include multiple key/value pairs.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    A new items array that represents an item to associate with
+                    the parent item/datalist. Members of this array would be
+                    key/value pairs, and a potential new items array if there
+                    was a level below this item level.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    datalist ID
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //non-hierarchical
+                </p>
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'parent_id' =&gt; '0',
+                </p>
+                <p>
+                    'item_id' =&gt; '0',
+                </p>
+                <p>
+                    'component_id' =&gt; '1',
+                </p>
+                <p>
+                    'user_id' =&gt; '0',
+                </p>
+                <p>
+                    'sequence' =&gt; '1',
+                </p>
+                <p>
+                    'datalist' =&gt; 'State_datalist',
+                </p>
+                <p>
+                    'aspects' =&gt; array ('name' =&gt; 'State',
+                </p>
+                <p>
+                    'type' =&gt; 'select'),
+                </p>
+                <p>
+                    'items' =&gt; array (
+                </p>
+                <p>
+                    array ('name' =&gt; 'CA',
+                </p>
+                <p>
+                    'state_flower' =&gt; 'golden poppy'),
+                </p>
+                <p>
+                    array ('name' =&gt; 'WA','state_flower' =&gt;
+                    'rhododendron')
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;create_datalist($attributes);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //hierarchical
+                </p>
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'parent_id' =&gt; '0',
+                </p>
+                <p>
+                    'item_id' =&gt; '0',
+                </p>
+                <p>
+                    'component_id' =&gt; '0',
+                </p>
+                <p>
+                    'user_id' =&gt; '0',
+                </p>
+                <p>
+                    'sequence' =&gt; '1',
+                </p>
+                <p>
+                    'datalist' =&gt; 'State_datalist',
+                </p>
+                <p>
+                    'aspects' =&gt; array ('name' =&gt; 'State',
+                </p>
+                <p>
+                    'type' =&gt; 'select'),
+                </p>
+                <p>
+                    'hierarchy' =&gt; array ('State', 'City'),
+                </p>
+                <p>
+                    'items' =&gt; array (
+                </p>
+                <p>
+                    array ('name' =&gt; 'WA',
+                </p>
+                <p>
+                    'state_flower' =&gt; 'rhododendron'),
+                </p>
+                <p>
+                    array ('name' =&gt; 'CA',
+                </p>
+                <p>
+                    'state_flower' =&gt; 'golden poppy',
+                </p>
+                <p>
+                    'items' =&gt; array (
+                </p>
+                <p>
+                    array ('name' =&gt; 'Sacramento',
+                </p>
+                <p>
+                    'mayor' =&gt; 'Darrell Steinberg'),
+                </p>
+                <p>
+                    array ('name' =&gt; 'Los Angeles',
+                </p>
+                <p>
+                    'mayor' =&gt; 'Eric Garcetti')
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;create_datalist($attributes);
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="dump">Dump</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The dump method allows you to display the contents of a value to the
+    screen. Note that this doesn’t always work, depending on what point during
+    the page build process you call the function.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    dump($var, $color = 'ffc')
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $var
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Mixed
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    If given a
+                    <a
+                        href="http://php.net/manual/en/language.types.string.php"
+                    >
+                        string
+                    </a>
+                    ,
+                    <a
+                        href="http://php.net/manual/en/language.types.integer.php"
+                    >
+                        integer
+                    </a>
+                    or
+                    <a href="http://php.net/manual/en/language.types.float.php">
+                        float
+                    </a>
+                    , the value itself will be printed. If given an
+                    <a href="http://php.net/manual/en/language.types.array.php">
+                        array
+                    </a>
+                    , values will be presented in a format that shows keys and
+                    elements.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $color
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Hex value for the color of the background shown behind the
+                    value printed
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    No values returned
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $vce-&gt;dump($each_component);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="get_datalist">Get Datalist</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Find the datalist(s) associated with the specified attribute, and return
+    its metadata. Function will look for passed values in the following order,
+    and then will stop parsing $attributes array at the first non-null value
+    (or value pairs) it finds. Will then search datalist table for the
+    datalist(s) with matching value(s). So it makes sense to only pass one of
+    the following values or combos, based on what you are using to search.
+</p>
+<p>
+    1. component_id
+</p>
+<p>
+    2. datalist_id
+</p>
+<p>
+    3. user_id AND datalist
+</p>
+<p>
+    4. datalist
+</p>
+<p>
+    5. user_id
+</p>
+<p>
+    6. item_id
+</p>
+<p>
+    This function can be filtered to remove certain datalists from the results
+    set.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    get_datalist($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Contains attributes to use to retrieve datalists
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Component ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Datalist ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    User ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Datalist name to search for in datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Item ID to search for in datalists table. Note: this is not
+                    the item_ID in the datalists_items table
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="158" valign="top">
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Return false if no parameters specified
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Array containing all matching datalists, including
+                    associated metadata. Returned array will be keyed using
+                    datalist_id of each datalist
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="4" valign="top">
+                <p>
+                    Members of the returned array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    ID of datalist
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    ID of parent datalist
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    ID of corresponding item in datalist_items
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    ID of associated component
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    ID of user data is associated with
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Order in which datalist appears in a list
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    datalist
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Unique name for the datalist
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    [Key]
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Key / value pairs of associated metadata, common keys are
+                    ‘name’ and ‘type’
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+        <tr>
+            <td width="158" valign="top">
+                <p>
+                    hierarchy
+                </p>
+            </td>
+            <td width="103" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="674" valign="top">
+                <p>
+                    Indexed arrays with values representing hierarchy
+                </p>
+            </td>
+            <td width="1">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $datalists = $vce-&gt;site-&gt;get_datalist(
+                </p>
+                <p>
+                    array('component_id' =&gt; '11'));
+                </p>
+                <p>
+                    if (!empty($datalists)) {
+                </p>
+                <p>
+                    foreach ($datalists as $datalist_info) {
+                </p>
+                <p>
+                    $datalist_id = $datalist_info['datalist_id'];
+                </p>
+                <p>
+                    $datalist = $datalist_info['datalist'];
+                </p>
+                <p>
+                    $parent_id = $datalist_info['parent_id'];
+                </p>
+                <p>
+                    $item_id = $datalist_info['item_id'];
+                </p>
+                <p>
+                    $user_id = $datalist_info['user_id'];
+                </p>
+                <p>
+                    $component_id = $datalist_info['component_id'];
+                </p>
+                <p>
+                    $datalist_name = $datalist_info['datalist'];
+                </p>
+                <p>
+                    }
+                </p>
+                <p>
+                    }
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="get_datalist_items">Get Datalist Items</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Return all items from the datalist_items table that match the specified
+    attribute(s), as well as extra information about the datalist. The values
+    in the returned dataset vary based what attributes(s) you pass in for the
+    search.<strong></strong>
+</p>
+<p>
+    The method will look for passed values in the following order, and will
+    stop parsing $attributes array at the first non-null value(s) it finds.
+    Will then search datalist or datalist_meta table for the datalist(s) with
+    matching value(s). So it makes sense to only pass one of the following
+    values or combos, based on what you are using to search.
+</p>
+<p>
+    1. datalist_id
+</p>
+<p>
+    2. name
+</p>
+<p>
+    3. parent_id AND item_id
+</p>
+<p>
+    4. user_id AND datalist
+</p>
+<p>
+    5. datalist
+</p>
+<p>
+    6. user_id
+</p>
+<p>
+    7. component_id
+</p>
+<p>
+    The function will return data from the first matched datalist it finds. If
+    there are multiple datalists that match your search parameter, you’ll get
+    the items associated with the first datalist found by the search query.
+    This would normally be the one with the lowest datalist_id.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    get_datalist_items($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Contains attributes to use to retrieve datalists
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Datalist ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    name
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name to search for in datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Parent ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Item ID to search for in datalists table. Note: this is not
+                    the item ID in the datalists_items table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    User ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+            </td>
+            <td width="576" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Datalist name to search for in datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Component ID to search for in datalists table
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="161" valign="top">
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="680" valign="top">
+                <p>
+                    Returns false if no datalists returned from query
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="161" valign="top">
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="680" valign="top">
+                <p>
+                    Returns array of datalist items and their associated
+                    metadata
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="162" valign="top">
+            </td>
+            <td width="74" valign="top">
+            </td>
+            <td width="700" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong>
+        Values in the returned Array vary based what attributes(s) you pass in
+        for the search.
+    </strong>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" colspan="5" valign="top">
+                <p>
+                    Members of the returned array using one of the following
+                    search parameters:
+                    <strong>
+                        datalist_id, component_id, datalist, user_id, parent_id
+                        &amp; item_id or user_id &amp; datalist
+                    </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" colspan="2" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="93" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    Datalist ID
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" colspan="2" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="93" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    ID of datalist Parent
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="105" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="635" valign="top">
+                <p>
+                    ID of associated Item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="105" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="635" valign="top">
+                <p>
+                    ID of associated Component
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="105" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="635" valign="top">
+                <p>
+                    ID of associated User
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="105" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="635" valign="top">
+                <p>
+                    Order in which this datalist will display in a rendered
+                    list of datalists
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="105" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="635" valign="top">
+                <p>
+                    Holds arrays, each with information about a datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="5" valign="top">
+                <p>
+                    Members of items array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    [datalists_item_id]
+                </p>
+            </td>
+            <td width="103" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="636" valign="top">
+                <p>
+                    Info about an individual datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="5" valign="top">
+                <p>
+                    Members of each [datalists_item_id] array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="103" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="636" valign="top">
+                <p>
+                    ID of datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="103" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="636" valign="top">
+                <p>
+                    Order in which this datalist item will display in a
+                    rendered list of items
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="197" colspan="2" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="103" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="636" valign="top">
+                <p>
+                    This array will contain all key/value pairs from the
+                    datalists_items_meta table associated with the datalist
+                    item.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="161" valign="top">
+            </td>
+            <td width="97" colspan="2" valign="top">
+            </td>
+            <td width="678" colspan="2" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="161" valign="top">
+            </td>
+            <td width="97" colspan="2" valign="top">
+            </td>
+            <td width="678" colspan="2" valign="top">
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="161">
+            </td>
+            <td width="34">
+            </td>
+            <td width="59">
+            </td>
+            <td width="33">
+            </td>
+            <td width="421">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+Members of the returned array when searching on                    <strong>name</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="181" valign="top">
+                <p>
+                    id
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="661" valign="top">
+                <p>
+                    ID of datalists_items record
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <pre>String</pre>
+            </td>
+            <td width="698" valign="top">
+                <pre> ID of associated datalist</pre>
+                <pre>       </pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    meta_key
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    meta_key from datalists_meta table with value of [name] you
+                    are searching for
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    meta_value
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    meta_value field associated with meta_key = [name] you are
+                    searching for
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    minutia
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    minutia from datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    Holds arrays, each with information about a datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+                    Members of items array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    [datalists_item_id]
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    Info about an individual datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+                    Members of each [datalists_item_id] array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    ID of datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    Order in which this datalist item will display in a
+                    rendered list of items
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="143" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="95" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="698" valign="top">
+                <p>
+                    This array will contain all key/value pairs from the
+                    datalists_items_meta table associated with the datalist
+                    item.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+Members of the returned array when searching on                    <strong>item_id</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    Holds array with information about the datalist item. This
+                    record set is much smaller than the other two, as it will
+                    only ever return information about one datalist item.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+                    Member of items array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" valign="top">
+                <p>
+                    [datalists_item_id]
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    Info about an individual datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" colspan="3" valign="top">
+                <p>
+                    Members of each [datalists_item_id] array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    ID of datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    Order in which this datalist item will display in a
+                    rendered list of items
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="189" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="93" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="653" valign="top">
+                <p>
+                    This array will contain all key/value pairs from the
+                    datalists_items_meta table associated with the datalist
+                    item.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h4>
+                    $attributes = array('datalist_id' =&gt; '10');
+                </h4>
+                <h4>
+                    $options =
+                    $vce-&gt;site-&gt;get_datalist_items($attributes);
+                </h4>
+                <h4>
+                    $insert = "options: ";
+                </h4>
+                <h4>
+                    if (isset($options['items'])) {
+                </h4>
+                <h4>
+                    foreach ($options['items'] as $each_option) {
+                </h4>
+                <h4>
+                    $insert .= '&lt;option value="' . $each_option['item_id'] .
+                    '"';
+                </h4>
+                <h4>
+                    $insert .= '&gt;' . $each_option['name'] .
+                    '&lt;/option&gt;';
+                </h4>
+                <h4>
+                    }
+                </h4>
+                <p>
+                    }
+                </p>
+                <p>
+                    echo '&lt;select&gt;'. $insert . '&lt;/select&gt;';
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="generate_dossier">Generate Dossier</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Create encrypted dossier and return it as a string. JSON-encodes the
+    dossier array and then calls $user-&gt;encryption to encrypt it. Pass back
+    encrypted string.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    generate_dossier ($dossier_elements_input)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    $dossier_elements_input
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    Contains values used to create the dossier, which routes
+                    form input data to a specific Class/Method
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Members of the $dossier_elements_input array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    type
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    Class that contains the method data will be routed to
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    procedure
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    Method that will process the routed data
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    ID of component that has this dossier
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    created_at
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    Date/Time the component was created
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="259" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="119" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="558" valign="top">
+                <p>
+                    Key/value pairs that can be customized for your component
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    string
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    JSON encoded, encrypted string
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h4>
+                    $dossier = array(
+                </h4>
+                <h4>
+                    'type' =&gt; 'Blogorama',
+                </h4>
+                <h4>
+                    'procedure' =&gt; 'update_contact',
+                </h4>
+                <h4>
+                    'component_id' =&gt; $this-&gt;component_id,
+                </h4>
+                <h4>
+                    'created_at' =&gt; $this-&gt;created_at
+                </h4>
+                <h4>
+                    );
+                </h4>
+                <p>
+                    $this-&gt;dossier_for_contact =
+                    $vce-&gt;generate_dossier($dossier);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="ilkyo">Ilkyo</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Returns an ilkyo id, a 14 digit number string representation, for any
+    string. Can be used in encryption protocols.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    ilkyo($string)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $string
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    String to be converted to a number.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    14 digit int created from a string
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $lookup = $site-&gt;ilkyo($input['email']);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="insert_datalist_items">Insert Datalist Items</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Adds datalist items to an existing datalist. Cycles though items in
+    attributes and calls to add_datalist_item function to add each item.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    insert_datalist_items($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Array of key/value pairs to insert as datalist items.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of datalist to which you are adding items
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    items
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Multidimensional array holding key/value pairs of data to
+                    assign to items.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of the items array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Anonymous array that contains a series of arrays, each with
+                    information about an individual item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members in the individual arrays within the items
+                    array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    key
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) you are adding to the
+                    datalist item. You can include multiple key/value pairs,
+                    each will be added to the datalist_items_meta table.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+            </td>
+            <td width="576" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    No return value
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'datalist_id' =&gt; '10',
+                </p>
+                <p>
+                    'items' =&gt; array (
+                </p>
+                <p>
+                    array ('name' =&gt; 'NC', 'state_flower' =&gt; 'dogwood'),
+                </p>
+                <p>
+                    array ('name' =&gt; 'TX', 'state_flower' =&gt;
+                    'bluebonnet')
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;insert_datalist_items($attributes);
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="935" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="log">Log</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Writes text to the specified log file, at the root of the Nestor
+    installation.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    log($var, $file = "log.txt")
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $var
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    mixed
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Information to write to the log file. Can be any type
+                    except a resource. Is json encoded before the write, so
+                    could be an array or object.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $file
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name of the file to which information will be written.
+                    Defaults to log.txt.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    No return value
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //send components array details to the log file
+                </p>
+                <p>
+                    $var = $vce-&gt;page-&gt;components;
+                </p>
+                <p>
+                    $vce-&gt;log($var);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="mail">Mail</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Sends mail using PHP mail function or transport agent.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    mail($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Information needed to create and send email
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3">
+                <p>
+                    Values in the $attributes array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    from
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    information that will appear in the ’from’ line of the
+                    email
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    to
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    information about recipients of the email, can hold more
+                    than one array, each array represents one recipient
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    subject
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    text for subject line of email
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    message
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    text body of the email
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3">
+                <p>
+                    Values in the ‘from’ array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    email
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    email address on the ‘from’ line
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    name
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    name that appears on the ‘from’ line
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3">
+                <p>
+                    Values in the ‘to’ array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Anonymous array that contains a series of arrays, each with
+                    information about a recipient
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3">
+                <p>
+                    Values in the recipient arrays within the ‘to’ array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    email
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    email address of recipient
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    name
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    name of recipient
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Return false if mail failure, true if success
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Hooks
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    site_mail_transport called at beginning of function, after
+                    checking that system is configured for site mail
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $attributes = array ('from' =&gt; array('carmen@email.com',
+                    'Carmen
+                </p>
+                <p>
+                    Rodriguez'),
+                </p>
+                <p>
+                    'to' =&gt; array(
+                </p>
+                <p>
+                    array('tran@email.com', 'Tran Huyen'),
+                </p>
+                <p>
+                    array('vinjaya@email.com', 'Vinjaya Singh')
+                </p>
+                <p>
+                    ),
+                </p>
+                <p>
+                    'subject' =&gt; 'Meeting on wednesday',
+                </p>
+                <p>
+                    'message' =&gt; 'We need to update our meeting agenda.'
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;mail($attributes);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="manage_cron_task">Manage Cron Task</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    This is a very flexible method that allows you to add, update or delete a
+    cron task in the site_meta table. During the page load process, the Site
+    class loads all of the cron tasks checks for those with expired timestamps.
+    If the task is expired, Site will call the indicated method and then delete
+    the cron task from the system. If the method returns a response formatted
+    as an $attributes array that manage_cron_task can accept, Site will call
+    manage_cron_task with the returned array.
+</p>
+<p>
+    Note that when testing cron task management, if you use date() to set the
+    timestamp, the task will fire the very next time you load a page and your
+    task may get garbage collected by the system. You may want to set your
+    timestamps far in the future when testing cron task management, at least
+    until you are ready to test the method you’ve assigned to the task.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    manage_cron_task($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The details of the cron task to be added, updated or
+                    deleted
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3">
+                <p>
+                    Values in the $attributes array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    timestamp
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Timestamp to indicated when task expires
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    action
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Action to take on the task, values can be ‘add’, ‘update’,
+                    or ‘delete’
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of cron_task record in the site_meta table, optional if
+                    sending ‘add’ as the action
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    value
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    JSON encoded string containing an array, holds other
+                    properties for the cron task
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Values in the (encoded) value array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name of the component that contains the function called by
+                    this task
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    method
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Name of the method called by this task
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    properties
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    key/value pairs to associate with the task
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Values in the (encoded) properties array:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key to the supplied value. Can add as many key/value pairs
+                    as needed to this array. An example would be the
+                    component_id for the component you are calling.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="162" valign="top">
+            </td>
+            <td width="576" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Returns cron_task_id from site_meta table if successful add
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Returns true if successful update or delete
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    No returned value if not successful
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h4>
+                    //add cron task
+                </h4>
+                <h4>
+                    $cron_task['action'] = 'add';
+                </h4>
+                <h4>
+                    $cron_task['timestamp'] = time();
+                </h4>
+                <h4>
+                    $cron_task['value'] = json_encode(
+                </h4>
+                <h4>
+                    array (
+                </h4>
+                <h4>
+                    'component' =&gt; 'StateManager',
+                </h4>
+                <h4>
+                    'method' =&gt; 'update_state_flowers',
+                </h4>
+                <h4>
+                    'properties' =&gt; array (
+                </h4>
+                <h4>
+                    'component_id' =&gt; '10'
+                </h4>
+                <h4>
+                    )));
+                </h4>
+                <p>
+                    $cron_task_id =
+                    $vce-&gt;site-&gt;manage_cron_task($cron_task);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    //update cron task
+                </p>
+                <p>
+                    $cron_task['action'] = 'update';
+                </p>
+                <p>
+                    $cron_task['timestamp'] = time();
+                </p>
+                <p>
+                    $cron_task['id'] = $cron_task_id;
+                </p>
+                <p>
+                    $cron_task['value'] = json_encode(
+                </p>
+                <p>
+                    array (
+                </p>
+                <p>
+                    'component' =&gt; 'StateManager ',
+                </p>
+                <p>
+                    'method' =&gt; 'update_state_flowers',
+                </p>
+                <p>
+                    'properties' =&gt; array (
+                </p>
+                <p>
+                    'component_id' =&gt; '145',
+                </p>
+                <p>
+                    )));
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;manage_cron_task($cron_task);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="remove_datalist">Remove Datalist</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Removes datalist and its associated data. Can identify datalist for removal
+    by datalist, datalist_id, item_id. Any datalists and datalist items that
+    belong to this datalist will be recursively removed.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    remove_datalist($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Attributes used to identify a datalist for removal
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="3" valign="top">
+                <p>
+                    Potential members of $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Identify the datalist by this value from the datalists_meta
+                    table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of datalist in datalist table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    item_id of datalist in datalist table
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    No return value
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'item_id' =&gt; '13',
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;remove_datalist($attributes);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="sorter">Sorter</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Sort an object or array by associative key
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    sorter($data, $key='title', $order='asc', $type='string')
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $data
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    Array/Object
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Data to sort
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $key
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key to sort on
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $order
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Order of the sort
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $type
+                </p>
+            </td>
+            <td width="162" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Type data to sort, ie ‘string’ or ‘time’
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Array/Object
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Sorted object or array
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+</h4>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $requested_components = $vce-&gt;sorter
+                </p>
+                <p>
+                    ($requested_components,'course_begins','desc','time');
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="update_datalist">Update Datalist</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Updates datalist and associated meta_data using datalist_id or item_id of
+    datalist. Can update the values in the datalists table using the
+    relational_data array, and the datalists_meta table using the meta_data
+    array.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    update_datalist($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="99" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="639" colspan="2" valign="top">
+                <p>
+                    Attributes that you want to update. You can specify either
+                    datalist ID or item ID of the datalist to identify the
+                    datalist to update.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="4" valign="top">
+                <p>
+                    Potential members of the $attributes array, used to
+                    identify datalist to update
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    ID of the datalist you want to update, from the datalists
+                    table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Item ID for the datalist you want to update, from the
+                    datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    relational_data
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    data that you want to update in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    meta_data
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    key/value pairs to update in the datalists_meta table.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="4" valign="top">
+                <p>
+                    Potential members of the relational_data array, used to
+                    provide info to update in datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    parent_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Parent ID in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Item ID in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    component_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Component ID in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    user_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    User ID in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Sequence this datalist would appear in a rendered list
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="4" valign="top">
+                <p>
+                    Potential members of the meta_data array, used to provide
+                    info to update in datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) you are adding to the
+                    datalists_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" valign="top">
+            </td>
+            <td width="99" valign="top">
+            </td>
+            <td width="639" colspan="2" valign="top">
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="181">
+            </td>
+            <td width="88">
+            </td>
+            <td width="37">
+            </td>
+            <td width="401">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Return true if successful update, false if not successful
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'datalist_id' =&gt; '10',
+                </p>
+                <p>
+                    'relational_data' =&gt; array(
+                </p>
+                <p>
+                    'parent_id' =&gt; '5',
+                </p>
+                <p>
+                    'item_id' =&gt; '6',
+                </p>
+                <p>
+                    'component_id' =&gt; '7',
+                </p>
+                <p>
+                    'user_id' =&gt; '8',
+                </p>
+                <p>
+                    'sequence' =&gt; '3',
+                </p>
+                <p>
+                    ),
+                </p>
+                <p>
+                    'meta_data' =&gt; array (
+                </p>
+                <p>
+                    'name' =&gt; 'StateUpdate',
+                </p>
+                <p>
+                    'type' =&gt; 'radio',
+                </p>
+                <p>
+                    'datalist' =&gt; 'State_Update_datalist'
+                </p>
+                <p>
+                    )
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $vce-&gt;site-&gt;update_datalist($attributes);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <h3>
+                    <a name="update_datalist_item">Update Datalist Item</a>
+                </h3>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Updates a datalist item. User item_id to identify datalist item in the
+    datalists_items table. Can update the values in the datalists_items table
+    using the relational_data array, and the datalists_items_meta table using
+    the meta_data array.
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    update_datalist_item($attributes)
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Parameters
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="180" valign="top">
+                <p>
+                    $attributes
+                </p>
+            </td>
+            <td width="90" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="666" colspan="2" valign="top">
+                <p>
+                    Attributes that you want to update for the specified
+                    datalist item
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="5" valign="top">
+                <p>
+                    Potential members of the $attributes array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    item_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Item ID in the datalists_items table. Note there is also an
+                    item_id in the datalists table, which this is not
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    relational_data
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    data that you want to update in the datalists table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    meta_data
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Array
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    key/value pairs to update in the datalists_meta table.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="5" valign="top">
+                <p>
+                    Potential members of the relational_data array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    datalist_id
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    datalist ID in the datalists_items table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    sequence
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    Int
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    The order in which this datalist item appears in any
+                    rendered list
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="936" colspan="5" valign="top">
+                <p>
+                    Potential members of the meta_data array
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="198" colspan="2" valign="top">
+                <p>
+                    [key]
+                </p>
+            </td>
+            <td width="162" colspan="2" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    Key for the key/value pair(s) you are updating in the
+                    datalists_items_meta table
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="180" valign="top">
+            </td>
+            <td width="90" colspan="2" valign="top">
+            </td>
+            <td width="666" colspan="2" valign="top">
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="161">
+            </td>
+            <td width="18">
+            </td>
+            <td width="70">
+            </td>
+            <td width="51">
+            </td>
+            <td width="409">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Return
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="198" valign="top">
+                <p>
+                    Boolean
+                </p>
+            </td>
+            <td width="738" valign="top">
+                <p>
+                    Return true if successful update, false if not successful
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    Example<strong></strong>
+</h4>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" valign="top">
+                <p>
+                    $attributes = array (
+                </p>
+                <p>
+                    'item_id' =&gt; '21',
+                </p>
+                <p>
+                    'relational_data' =&gt; array(
+                </p>
+                <p>
+                    'datalist_id' =&gt; '9',
+                </p>
+                <p>
+                    'sequence' =&gt; '5'),
+                </p>
+                <p>
+                    'meta_data' =&gt; array (
+                </p>
+                <p>
+                    'name' =&gt; 'KS',
+                </p>
+                <p>
+                    'state_flower' =&gt; 'prairie rose')
+                </p>
+                <p>
+                    );
+                </p>
+                <p>
+                    $updated =
+                    $vce-&gt;site-&gt;update_datalist_item($attributes);
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/VCE%20Class%20API.docx#methods"
+    >
+        Back to Top
+    </a>
+</p>
+
+
+
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
