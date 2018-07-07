@@ -9,8 +9,8 @@
  
 .wrapper {
   font-size: 14px;
-  padding: 2em;
-  margin:auto;
+  padding: 2em 2em 0em 2em;
+  margin: 0 auto;
   width: 95%;
   background-color: white;
 }
@@ -20,12 +20,11 @@
 .nav {
   width: 100%;
   height: 43px;
- 
+  background: white;
   /* Used so the menu drop down can be placed absolutely */
   position: relative;
   border: 1px solid #B2BEB5;
-  margin-left:auto;
-  margin-right:auto;
+
 }
  
 .nav li {
@@ -35,9 +34,8 @@
   width: 12.1%; /* fallback for non-calc() browsers */
   /* Width divided between the 6 items on the bar */
   width: calc(100% / 8.2);
-  margin-left:auto;
-  margin-right:auto;
 }
+
  
 /* Style links in nav bar */
 .nav > li > a {
@@ -50,6 +48,7 @@
   height: 43px;
   text-transform: uppercase;
 }
+
 
 .nav > li:hover  {
   border-right: 1px solid #B2BEB5;
@@ -66,7 +65,7 @@
 /*setting a little less than 100/8 because IE will break to next line*/
 .nav > li > div {
   position: absolute;
-  left: 12.1% + 1px;
+  left: 12.1%;
   top: 41px;
  
   /* Don't show unless the nav bar li is hovered */
@@ -78,7 +77,7 @@
   /* Hide anything that might be outside the div */
   overflow: hidden;
 }
- 
+
 /* End of Navigation Bar Styling */
  
 /* Drop Down Menu Styling */
