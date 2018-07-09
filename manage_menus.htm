@@ -15,14 +15,215 @@
   </div>
 
   <div class="main">
-   <!--INSERT CONTENT HERE-->
+   
+<h1>Manage Menus</h1>
+<p>
+    There are a few different navigational elements in the Nestor system. There
+    is a default Main menu and Breadcrumbs menu that are set up in the standard
+    Nestor install. The placement of the menus is laid out in the theme.php
+    file associated with the install. The main menu is built automatically, but
+    the Breadcrumbs menu is a component that can be deactivated.
+</p>
+<p>Learn more about how to display a menu on a page in the
+    <a href="extend_templates.htm">Templates section</a>.
+</p>
+<h2>Main menu</h2>
+<p>
+    The main menu is on the top right hand side of the page. The out-of-the-box
+    menu has options for Admin, Logout and My Account.
+</p>
+<p>
+    <img
+        border="0"
+        width="516"
+        height="104"
+        src="images/screen_clips/clip_image022.jpg"
+    />
+</p>
+<div class="screen_clip">Main Menu</div>
+<p>
+    You will have to be logged in to see all of the menu options, and you have
+    to have the right level of access for some of them. For example, only a
+    user with the role of Admin can see the Admin menu item.
+</p>
+<h2>Breadcrumbs menu</h2>
+<p>
+    One of the Components that is included with Nestor allows for a breadcrumbs
+    menu to be added to your site. Within the default theme, code has been
+    included to display a breadcrumbs menu on the top left. This menu displays
+    the path that you’ve navigated to get to the current page. You can click
+    any level in this menu to move back in the hierarchy.
+</p>
+<p>
+    <img
+        border="0"
+        width="462"
+        height="125"
+        src="images/screen_clips/clip_image023.png"
+    />
+</p>
+<div class="screen_clip">Breadcrumbs Menu</div>
+<h2>
+    Update the existing menu
+</h2>
+<p>
+    A standard menu is setup during the Nestor installation that contains some
+    basic elements. You can easily add your own pages to this menu, change the
+    order of the menu items, or remove items.
+</p>
+<ul>
+  <li>Open the <strong>Manage Menus</strong> interface from the main    <strong>Admin</strong> page</li>
+  <li>A list of existing menus is displayed; a new installation will have the
+      main menu configured
+      <p>
+          <img
+              border="0"
+              width="970"
+              height="211"
+              src="images/screen_clips/clip_image024.png"
+          />
+      </p>
+    </li>
+    <li> Click on the <strong>Edit</strong> button to open the edit menu interface
+    
+      <p>
+          <img
+              border="0"
+              width="969"
+              height="509"
+              src="images/screen_clips/clip_image025.png"
+          />
+      </p>
+    </li>
+    <li>The Pages list displays all available Pages that can be added to a menu.
+        This is actually a list of the existing Recipes that have a Location
+        component with a URL assigned.</li>
+      <li>If you would like to add a new Page to this list, refer to the
+          <a href="manage_recipes.htm">Manage Recipes</a>
+          section for instructions to create a new Recipe.
+      </li>
+      <li>Click on a Page in this list and drag it to the position in the menu
+          where you’d like for it to display.</li>
+      <li>Each menu item has properties that you can change. To access these
+          properties, click the gray circle next to the Page you’d like to configure.
+          <p>
+              <img
+                  border="0"
+                  width="832"
+                  height="642"
+                  src="images/screen_clips/clip_image026.png"
+              />
+          </p>
+          <ul>
+            <li>The Pages will contain the URL value that was assigned in the original
+                Recipe. If you want the menu item to point to a different page, change the
+                URL value</li>
+            <li>Click the Roles that will be able to see this item on the menu</li>
+            <li>Click the box next to new window if you’d like this Page to open in a new
+                window</li>
+          </ul>
+      </li>
+      <li>You can also nest Pages into other pages in a menu, refer to the
+          <a
+              href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_1"
+          >
+              Manage Recipes
+          </a>
+          section for more information on nesting components.
+        <ul>
+            <li>Nested Pages will appear as drop-down items in the menu when you hover
+                over the parent Menu Item
+                <p>
+                    <img
+                        border="0"
+                        width="838"
+                        height="320"
+                        src="images/screen_clips/clip_image027.png"
+                    />
+                </p>
+                <div class="screen_clip">Menu with nested Pages</div>
+                <p>
+                    <img
+                        border="0"
+                        width="411"
+                        height="259"
+                        src="images/screen_clips/clip_image028.png"
+                    />
+                </p>
+                <div class="screen_clip">Nested drop-down menu</div>
+              </li>
+        </ul>  
+      </li>
+      <li>Click the options in <strong>Display-By-Depth </strong>to see other Pages
+        that have a URL at a different level
+        <ul>
+          <li>For example, the Manage Recipes Page has the path admin/manage_recipes</li>
+        </ul>
+      </li>
+      <li>Click the <strong>Save This Menu</strong> button to save your changes</li>
 
-
-
-
-
-
-
+<h2>
+    Create a New Menu
+</h2>
+<p>
+    You can create a new menu that can be added to a theme. Creating and
+    deleting menus from this interface will not affect your current layout. See
+    the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for more information on how to add a menu to a template.
+</p>
+<p>
+    <img
+        border="0"
+        width="970"
+        height="211"
+        src="images/screen_clips/clip_image024.png"
+    />
+</p>
+<p>
+    · Click the <strong>Create a New Menu</strong> bar
+</p>
+<p>
+    · Drag and Drop the pages you would like to add to your new menu to the
+    Menu Build area
+</p>
+<p>
+    · Save the new menu
+</p>
+<p>
+    · Use the <strong>Code For Theme</strong> value to add this new menu to a
+    new site Theme. Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for information on how to display a menu.
+</p>
+<p>
+    · Click the <strong>Save This Menu</strong> button
+</p>
+<h2>
+    Delete a Menu
+</h2>
+<p>
+    · Click the <strong>Delete</strong> button next to the menu you’d like to
+    delete
+</p>
+<p>
+    · Deleting a menu will have repercussions on any templates using the menu.
+    Refer to the
+    <a
+        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Templates"
+    >
+        Templates section
+    </a>
+    for more information about removing menu references from a template.
+</p>
   </div><!--end main div-->
 
  

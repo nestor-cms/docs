@@ -26,16 +26,17 @@ p{
   font-size: 14px;
   padding-bottom: 10px;
 }
+
 ul, ol{
   font-size: 14px;
   margin-left: 15px;
-  padding: 10px 0px 10px 0px;
 }
+
 li {
   padding: 0px 0px 5px 0px;
 }
 .main{
-  padding: 2em;
+  padding: 1em 2em 0em 2em;
   margin:auto;
   width: 95%;
   background-color: #ffffff;
