@@ -87,3 +87,7 @@ a:hover, ul > li> a:hover {
   color: #ff6f59;
   padding: 0px 0px 10px 0px;
 }
+
+.codified {
+  font-family: 'Courier New', Courier, monospace;
+}

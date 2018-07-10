@@ -27,37 +27,36 @@
     shouldn’t have to change this file, as the Nestor Installer should write
     the correct settings.
 </p>
-<p>
+<p class="codified">
     RewriteBase /<em>{your basepath}</em>/
 </p>
-<p>
-    · Designates scope of rewrite to any requests made to this path
-</p>
-<p>
-    · Make sure this path matches the root directory of your installation. For
-    example, if you used <strong>http://localhost/mynestor</strong> to navigate
-to your installation, then this basepath value would be    <strong>/mynestor/</strong>
-</p>
-<p>
+<ul>
+    <li>Designates scope of rewrite to any requests made to this path</li>
+    <li>Make sure this path matches the root directory of your installation. For
+            example, if you used <strong>http://localhost/mynestor</strong> to navigate
+        to your installation, then this basepath value would be    <strong>/mynestor/</strong></li>
+</ul>
+<br>
+<p class="codified">
     ^index\.php$ - [L]
 </p>
-<p>
-    · prevents requests for index.php from being rewritten, to avoid an
-    unnecessary file system check. If the request is for index.php the
-    directive does nothing - and stops processing rules [L].
-</p>
-<p>
+<ul>
+    <li>prevents requests for index.php from being rewritten, to avoid an
+            unnecessary file system check. If the request is for index.php the
+            directive does nothing - and stops processing rules [L].</li>
+</ul>
+<br>
+<p class="codified">
     RewriteCond %{REQUEST_FILENAME} !-f
-</p>
-<p>
+<br>
     RewriteCond %{REQUEST_FILENAME} !-d
-</p>
-<p>
+<br>
     RewriteRule . /vce/index.php [L]
 </p>
-<p>
-    · This block is all one rule, and it says that if it is not an existing
-    file or directory, reroute the request to index.php.
+<ul>
+    <li>This block is all one rule, and it says that if it is not an existing
+     file or directory, reroute the request to index.php.</li>
+</ul>
 </p>
 
 
