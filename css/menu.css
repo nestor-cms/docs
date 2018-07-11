@@ -9,7 +9,11 @@
  
 .wrapper {
   font-size: 14px;
+<<<<<<< HEAD
   padding: 1.5em 1.5em 0em 1.5em;
+=======
+  padding: 2em 2em 0em 2em;
+>>>>>>> 554f4d88263f2692cfb07cb4c238572d49b089f9
   margin: 0 auto;
   width: 95%;
   background-color: white;
@@ -65,7 +69,11 @@
 /*setting a little less than 100/8 because IE will break to next line*/
 .nav > li > div {
   position: absolute;
+<<<<<<< HEAD
   /*left: 12.1%;*/
+=======
+  left: 12.1%;
+>>>>>>> 554f4d88263f2692cfb07cb4c238572d49b089f9
   top: 41px;
  
   /* Don't show unless the nav bar li is hovered */

@@ -37,7 +37,11 @@ li {
 }
 .main{
   padding: 1em 2em 0em 2em;
+<<<<<<< HEAD
   margin:0 auto;
+=======
+  margin:auto;
+>>>>>>> 554f4d88263f2692cfb07cb4c238572d49b089f9
   width: 95%;
   background-color: #ffffff;
 }
