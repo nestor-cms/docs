@@ -5,7 +5,7 @@ body{
 }
 
 h1{
-  color: #326273;
+  color: #4ec5c1;
   font-size: 18px;
   padding: 20px 0px 15px 0px;
 }
@@ -17,7 +17,7 @@ h2{
 }
 
 h3{
-  color: #006699;
+  color: #326273;
   font-size: 14px;
   padding: 15px 0px 15px 0px;
 }
@@ -43,7 +43,7 @@ li {
 }
 
 table {
-  font-family: arial, sans-serif;
+  font-family: "PT Sans", sans-serif;
   border-collapse: collapse;
   width: 100%;
   margin: 10px 0px 0px 0px;
@@ -57,11 +57,11 @@ td {
 }
 
   th {
-  border: 2px solid #dddddd;
+  border: 2px solid #e7e7c5;
   text-align: left;
-  padding: 8px;
-  background-color: #E39774;
-  color: #ffffff;
+  padding: 4px;
+  background-color: #e5e338;
+  color: black;
 }
 
 tr:nth-child(even) {
@@ -70,12 +70,12 @@ tr:nth-child(even) {
 
 a, ul > li> a {
   text-decoration: none;
-  color: #5899e2;
+  color: #5c9ead;
 }
 
 a:hover, ul > li> a:hover {
   text-decoration: none;
-  color: #4c2c69;
+  color: #4ec5c1;
 }
 
 .attention {
@@ -84,7 +84,7 @@ a:hover, ul > li> a:hover {
 
 .screen_clip {
   font-style: italic;
-  color: #ff6f59;
+  color: #ec576b;
   padding: 0px 0px 10px 0px;
 }
 

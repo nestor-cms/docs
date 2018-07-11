@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   
+<h1>Access</h1>
+<p>
+    The Access component lets you assign permissions to different user roles,
+    and can be added at multiple levels in a Recipe. If you wanted to create a
+    page where Instructors uploaded course materials, and then Students could
+    upload their completed work or comment on the material, this would be
+    possible. The
+    <a href="manage_media_recipe.htm">Media Recipe example</a>
+    walks through this type of scenario.
+</p>
+<h2>
+    Access configuration
+</h2>
+<ul>
+  <li>Update the title of this component if you would like</li>
+  <li>Select the template you’d like to apply to the component. If you don’t
+      select a template the default template will be used.</li>
+  <li>If you’ve created a custom Access denied page, you can enter the URL
+      here.
+    <ul>
+      <li>This URL must point to an existing Recipe/Page</li>
+    </ul>
+  </li>
+  <li>Check the Roles that will be able to <strong>view</strong> content following/nested below this Access component in the Recipe</li>
+  <li>Check the Roles that will be able to <strong>create</strong> content following/nested below this Access component in the Recipe</li>
+  <li>If the Role you’d like to use doesn’t appear, visit the <a href="manage_roles.htm">Manage Roles</a> page to ensure that the Role exists
+    <p>
+      <img
+          border="0"
+          width="769"
+          height="737"
+          src="images/screen_clips/clip_image038.png"
+      />
+    </p>
+    <p class="screen_clip">List of roles that will be granted view and create access to any nested content components</p>
+  </li>
+
+        
+</ul>
+  
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
