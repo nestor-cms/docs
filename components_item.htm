@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+    <h1>Item
+  </h1>
+  <p>
+      The Item Component allows you to link to a new page from the rendered page.
+      When the link is clicked, any components nested under the Item in the Page
+      Recipe will then appear.
+  </p>
+  <h2>
+      Item configuration:
+  </h2>
+  <ul>
+    <li>Add an Item to a Recipe, and nest it under an Access Component if you
+      want to limit who is able to add an Item to this page</li>
+    <li>Select the template you’d like to apply to the component. If you don’t
+        select a template the default template will be used.</li>
+    <li>Nest a component under the Item Component to determine what gets rendered
+      on the target page</li>
+    <li>Change the Title of the Item to determine what appears on the <strong>Add Item</strong> Clickbar on the rendered page
+      <p>
+        <img
+            border="0"
+            width="927"
+            height="603"
+            src="images/screen_clips/clip_image040.png"
+        />
+    </p>
+  </li>
+  <li>On the rendered page, click the <strong>Add Content</strong> button at
+    the top of the page</li>
+    <li>Click the <strong>Add a new <em>(Item Component Title)</em></strong> bar
+
+      <p>
+          <img
+              border="0"
+              width="970"
+              height="326"
+              src="images/screen_clips/clip_image041.png"
+          />
+      </p>
+    </li>
+    <li>Enter a Name for the Item</li>
+    <li>Click in the URL field and a new URL will be auto-generated</li>
+    <li>Click the <strong>Create</strong> button, and a Link will be added to the
+      page
+      <p>
+          <img
+              border="0"
+              width="319"
+              height="147"
+              src="images/screen_clips/clip_image042.png"
+          />
+      </p>
+    </li>
+    <li>Click the link to see the page containing the other Components nested
+      under this Item Component in the Page Recipe</li>
+      <li>Notice that the path to this Item page appears in both the URL and the
+        Breadcrumbs menu
+    <p>
+        <img
+            border="0"
+            width="936"
+            height="500"
+            src="images/screen_clips/clip_image044.png"
+        />
+    </p>
+  </li>
+  </ul>
+   
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
