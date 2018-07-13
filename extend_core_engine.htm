@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+ 
+<h1>The Core Engine
+</h1>
+<p>
+  The heavy lifting in the Nestor system is performed by a set of classes that work together to build the final page. There are many ways to
+  interact with the core engine, either by using standard Components
+  installed with the system, or by building your own custom Components. The
+  classes that comprise the core engine allow for flexibility for both system
+  configuration and extensibility; however due to the complexity of their
+  constituent code <strong>we don’t recommend making changes directly to these classes
+  </strong>.
+</p>
+<p>
+  Each of the Core Engine classes has a number of public methods and
+  properties you can call when building your own class, as well as code used
+  for the inherent system processes that we strongly caution you against
+  altering.
+</p>
+<p>
+  The following section describes each of these core engine classes, and
+  links out to the full public API for each class.
+</p>
+<h2>DB Class
+</h2>
+<p>
+  The DB Class manages all interactions with the system database. There are
+  methods in this class that help you easily fetch, add, update and delete
+  data. DB is instantiated in the initiate process of Page Build and added to
+  the global $vce object, so the $db object is available to any Components.
+  Be sure to call “global $vce” in any function in which you call to db
+  methods to ensure it’s available to your function.
+</p>
+<p>
+  The
+  <a href="API_DB_Class.htm">DB Class API</a>
+  details methods and properties available for use .
+</p>
+
+<h2>Content Class
+</h2>
+<p>
+  The global $content object stores HTML produced by other Components in its
+  various properties, the most common being $premain, $main and $postmain. At
+  the end of the page build process, the global $content object outputs all
+  stored content to the browser.
+</p>
+<p>
+  The $content object also creates the HTML for the menu list, which is used
+  to populate site theme pages.
+</p>
+<p>
+  Content is instantiated in the initiate process of Page Build and added to
+  the global $vce object, so the $content object is available to any
+  Components. Be sure to call “global $vce” in any function in which you call
+  to $content methods to ensure it’s available to your function.
+</p>
+<p>
+  The
+  <a href="API_Content_Class.htm">
+      Content Class API
+  </a> details methods and properties available for use.
+</p>
+<h2>Site Class
+</h2>
+<p>
+  The Site class stores metadata used by the site such as theme, site
+  description,
+  <a href="extend_hooks.htm">
+      Hooks
+  </a> and the relative URL for the codebase. It contains methods to manage
+  datalists, which allow you to store data for use by your custom Component.
+  Site manages file dependencies for your Component, as well as any scheduled
+  <a href="extend_cron_tasks.htm">(cron) tasks</a>
+  you’d like to add to the system. This class also manages a set of Session
+  attributes that can be used to store temporary or persistent values across
+  a session. Lastly, Site has a method that allows you to add User Roles to
+  your installation, as well as Role specific permissions unique to your
+  custom Component.
+</p>
+<p>
+  Site is instantiated in the initiate process of Page Build and added to the
+  global $vce object, so the $site object is available to any Components. Be
+  sure to call “global $vce” in any function in which you call to $site
+  methods to ensure it’s available to your function.
+</p>
+<p>
+  The
+  <a href="API_Site_Class.htm">Site Class API details methods and properties available for use.</a>
+</p>
+<h2>User Class</h2>
+<p>
+  The User class contains methods to manage Users in the system, and stores
+  information about the current logged in User.
+</p>
+<p>
+  User is instantiated in the initiate process of Page Build and added to the
+  global $vce object, so the $user object is available to any Components. Be
+  sure to call “global $vce” in any function in which you call to $user
+  methods to ensure it’s available to your function.
+</p>
+<p>
+  The <a href="API_User_Class.htm">User Class API</a> details methods and properties available for use.
+</p>
+<h2>Page Class
+</h2>
+<p>
+  The Page Class parses the requested URL to determine what Recipe to use,
+  which Components will be added to the page, and which HTML content will be
+  added to the final rendered page based on the user role. The Page and
+  Component class interaction is the most complex part of the Page Build
+  process, and is thoroughly explained in the Page Build processes section.
+</p>
+<p>
+  Page is instantiated in the initiate process of Page Build and added to the
+  global $vce object, so the $page object is available to any Components. Be
+  sure to call “global $vce” in any function in which you call to $page
+  methods to ensure it’s available to your function.
+</p>
+<p>
+  The <a href="API_Page_Class.htm">Page Class API</a> details methods and properties available for use.
+</p>
+<h2>Component Class
+</h2>
+<p>
+  The Component Class is the base class from which components are
+  extended. This class contains a core set of methods and properties that
+  provide key functionality for all Components, as well as a set that can be
+  overwritten. The rest of the Nestor system provides a robust scaffolding
+  onto which you can build new features in your component that can plug into
+  the system at almost all levels.
+</p>
+<p>
+  See the <a href="API_Component_Class">Component Class API</a> section for full details about
+  extending the Component class as well as methods and properties available for use.  You can also review the <a href="extend_quickstart.htm">Build a Component Quickstart Guide</a>> to get your new component up and running.
+</p>
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

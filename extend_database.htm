@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   
+<h1>DataBase
+</h1>
+<p>
+  The database driving the Nestor system was built to be entirely adaptable
+  to any scenario you are addressing. Instead of a standard relational
+  architecture, Nestor is hierarchical within the main object tables, and
+  then associated data is stored in separate tables as key-value pairs.
+  Additional component-specific data can also be stored in the database in
+  the form of <a href="extend_datalists.htm">datalists</a>. This system allows for a great deal of back-end flexibility when you are
+  designing your component architecture.
+</p>
+<h2>Table Structure
+</h2>
+<p>
+  During the installation process, you provided a path value that is appended
+  to the beginning of each table name. In the following documentation, this
+  path is represented by [<span class="italic">my_db</span>] notation. This section will
+  describe each tables function and general contents, but to see the full
+  table schema refer to your instance of the database in MySQL. You can use
+  the MySQL Admin tool that installed with your version of MAMP/WAMP.
+</p>
+<h3>
+  [<span class="italic">my_db</span>]_components Table
+</h3>
+<p>
+  The components table stores general information about each component,
+  including its ID and parent ID. The parent ID provides the hierarchical
+  relationship that defines structures within the database. A component will
+  have a value for url if it represents the top (“anchor”) component in a
+  recipe.
+</p>
+<h3>
+  [<span class="italic">my_db</span>]_components_meta Table
+</h3>
+<p>
+  This table holds all associated metadata for a component, and is set up
+  using ‘meta_key’ and ‘meta_value’ fields that can be populated with any
+  key/value pairs relevant to your scenario. There are key/value pairs
+  standard for every component, including type, created_by, created_at, and
+  title. Other pairs are only relevant to some components, such as recipe and
+  role access. And other values can be inserted by your custom component if
+  needed.
+</p>
+<h3>
+  [<span class="italic">my_db</span>]_site_meta Table
+</h3>
+<p>
+  The site_meta table contains all of the information relevant to your
+  installation of Nestor. All of these site properties are thoroughly
+  detailed in the Site Class API document.
+</p>
+<h3>
+  [<span class="italic">my_db</span>]_users Table
+</h3>
+<p>
+  The users table holds the user ID and role ID, as well as the vector for
+  decryption and the hashed value of the user login and password information.
+</p>
+<h3>
+  [<span class="italic">my_db</span>]_users_meta Table
+</h3>
+<p>
+  The users_meta table holds metadata associated with each user, stored as
+  key/value pairs. All personal data is encrypted, the vector needed for
+  decryption is stored in the users table for each user.
+</p>
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   
+<h1 id="datalists">Datalists</h1>
+<p>
+  Datalists allow you to store Component specific data in a very flexible
+  format. Data can be associated with components, users, or other entities
+  you design. A datalist can be associated with items, each item can in turn
+  act as a datalist with its own associated items.
+</p>
+<p>
+  Datalists and Datalist items can be added, updated and deleted through a
+  series of methods in the Site Class. Refer to the <a href="API_Site_Class.htm">Site Class API</a> for more
+  details about managing datalists programmatically. You can also manage
+  Datalists using the <a href="manage_datalists.htm">Manage Datalists page</a>.
+</p>
+<p>
+  Datalists are contained in four tables:
+</p>
+<h2>
+  [<span class="italic">my_db</span>]_datalists Table
+</h2>
+<p>
+  The datalists table contains all of the IDs that define a datalist. All
+  values are optional except for the datalist ID, which is an auto-generated
+  primary key.
+</p>
+<ul>
+  <li>datalist ID – distinct ID that identifies the datalist</li>
+  <li>parent ID - this datalist is associated with another datalist</li>
+  <li>user ID - the data is associated with a specific user</li>
+  <li>component ID – the data is associated with a specific component</li>
+  <li>item ID – There is an associated item ID, which is also acting as a
+    datalist. Creating a new datalist in this scenario creates a hierarchy that
+    allows an item to have its own items. See the
+    <a href="#state-city">State/City datalist example</a> for an illustration of this concept.</li>
+    <li>sequence – the order in which this datalist would appear in a list</li>
+</ul>
+  
+
+<h2>
+  [<span class="italic">my_db</span>]_datalists_meta Table
+</h2>
+<p>
+  The datalists_meta table holds all of the data associated with the
+  datalist, in key/value pairs. This structure is identical to the
+  components_meta and site_meta tables and allows you the same flexibility to
+  design your data structure.
+</p>
+<h2>
+  [<span class="italic">my_db</span>]_datalists_items Table
+</h2>
+<p>
+  If you will be associating multiple items with your datalist, the
+  datalists_items table stores these items. This table contains the IDs that
+  define an item.
+</p>
+<ul>
+  <li>item ID: distinct ID that identifies the item</li>
+  <li>datalist ID: the datalist with which this item is associated</li>
+  <li>sequence: the order in which this item would appear in a list</li>
+</ul>
+
+<h2>
+  [<span class="italic">my_db</span>]_datalists_items_meta Table
+</h2>
+<p>
+  The datalists_items_meta table holds all of the data associated with the
+  item, in key/value pairs. This structure is identical to the datalists_meta
+  table and allows you the same flexibility to design your data structure.
+</p>
+<h1>State/City Datalist example
+</h1>
+<p>
+  In this scenario, the top level datalist represents a state entity, which
+  can have multiple items representing distinct states. Each state can have
+  multiple cities. In order to associate the city items to the state item, a
+  new datalist is created that represents a distinct state.
+</p>
+<p>
+  <img
+      border="0"
+      width="935"
+      height="568"
+      src="images/screen_clips/clip_image058.jpg"
+  />
+</p>
+<p class="screen_clip">State/City scenario</p>
+<p>
+  In the data structure each item contains the datalist ID of its parent
+  datalist. When an item in turn becomes a datalist, the new datalist
+  contains the item ID of its parent item. The new datalist will also have a
+  parent ID of the first level datalist.
+</p>
+<p>
+  <img
+      border="0"
+      width="1064"
+      height="802"
+      src="images/screen_clips/clip_image060.jpg"
+  />
+</p>
+<p class="screen_clip">State/City database table representation
+</p>
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
