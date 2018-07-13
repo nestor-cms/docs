@@ -91,3 +91,7 @@ a:hover, ul > li> a:hover {
 .codified {
   font-family: 'Courier New', Courier, monospace;
 }
+
+.italic{
+  font-style: italic;
+}

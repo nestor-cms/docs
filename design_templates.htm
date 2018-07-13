@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+
+    <h1>
+      Template files
+  </h1>
+  <p>
+      The template file sets up the page structure for your installation, using a
+      standard a mixture of HTML, PHP and CSS styles. The default themes use
+      templates called index.php and login.php, however you can create new
+      templates if you have a use for them. The page template used is chosen when
+      a page  <a href="manage_recipes.htm">Recipe</a>
+      is created. If you don’t choose a page template in the Recipe, the index.php template
+      will be used by default.
+  </p>
+  <p>
+      The php comment at the top of this file defines the name by which the template will
+      appear in the template list for Recipe components:
+  </p>
+  <p>
+      /*
+  </p>
+  <p>
+      Template Name: Login
+  </p>
+  <p>
+      */
+  </p>
+  <p>
+      There are a few critical calls into core Nestor functions that will
+      designate where your page content is rendered and displayed. Note that the
+      theme files are all included by initiate.php, and so that all global
+      objects are available to use without having to declare them as global.
+  </p>
+  <h2>
+      Calls to global object and theme methods
+  </h2>
+  <table border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+          <tr>
+              <th width="234" valign="top">Method call
+              </th>
+              <th width="701" valign="top">
+               Description
+              </th>
+          </tr>
+          <tr>
+              <td  valign="top">$site-&gt;site_title()
+                  
+              <td  valign="top">Retrieves and echos the site title, which is the site_title
+                property stored in the [<span class="italic">my_db</span>]_site_meta table
+              
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$page-&gt;title()
+              <td  valign="top">
+                      Retrieves and echos the page title, which is the title
+                      given to the page Recipe
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$site-&gt;theme_path
+              </td>
+              <td  valign="top"> Retrieves and sets up path to the theme file
+                </td>
+          </tr>
+          <tr>
+              <td  valign="top">$site-&gt; site_description()
+              <td  valign="top">
+                      Retrieves and echos the site description, which is the
+                      site_description property stored in the [<em>my_db</em>
+                      ]_site_meta table
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$content-&gt; menu('main')
+              </td>
+              <td  valign="top">
+                      Retrieves and displays the HTML for the designated menu.
+                      You can build and edit menus using the
+                      <a href="manage_menus.htm" >Manage Menus</a> page
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$content-&gt; breadcrumb()
+              </td>
+              <td  valign="top">
+                      Displays the breadcrumb menu. The Breadcrumbs component
+                      must be activated for this menu to display
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$content-&gt; notification_badge()
+              </td>
+              <td  valign="top">
+                      Content created by notifications component
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$content-&gt; notification_bar()
+              </td>
+              <td  valign="top">
+                      Content created by notifications component
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$user-&gt;first_name
+                
+                      <br>$user-&gt;last_name
+                  </p>
+              </td>
+              <td  valign="top">
+                      Retrieves and displays user’s first and last names
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">$page-&gt;message
+              </td>
+              <td  valign="top">
+                      Many asynchronous calls will update a message on the page
+                      object to send information about success or failure to the
+                      page. This calls retrieves any existing message and
+                      displays it accordingly
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">
+                          $content-&gt; output(array('admin', 'premain', 'main',
+                          'postmain'))
+              </td>
+              <td  valign="top">
+                      Almost all of the content created by the page components is
+                      added to one of these properties of the content object.
+                      This call will output the bulk of the page content
+              </td>
+          </tr>
+          <tr>
+              <td  valign="top">footer()
+              </td>
+              <td  valign="top">
+                      Calls the footer method and echos results. This method
+                      lives in the theme.php file by default.
+              </td>
+          </tr>
+      </tbody>
+  </table> 
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>

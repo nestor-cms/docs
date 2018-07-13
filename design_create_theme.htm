@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+    <h1>Create a new Theme
+  </h1>
+  <p>
+      Adapting the Nestor environment to your organization’s style is as simple
+      as updating a few standard files. Each page built during the page build
+      process is based on a theme, which consists of a template and resources
+      such as CSS, images and Javascript files. You can create numerous themes
+      for your installation and switch between them using the
+      <a href="manage_site.htm">Manage Site admin page</a>. All of the files for each theme are stored in folders in the
+      [<span class="italic">my_nestor</span>]/vce-content/themes folder.
+  </p>
+  <p>
+      The standard Nestor installation includes the blogorama and default themes
+      for you to use as examples. To create your own theme, copy the entire
+      theme folder and create a new folder with the name of your new theme. The
+      following files and folders can be edited to create your theme.
+  </p>
+  <h2>
+      theme.php
+  </h2>
+  <p>
+      The main theme.php file is responsible for configuring settings to allow your
+      theme to work properly. One of the more important settings found in this
+      file is the theme name, which will appear in the Manage Site page in the
+      themes list. This setting is in a php comment:
+  </p>
+  <p>
+      /*
+  </p>
+  <p>
+      Theme Name: blogorama
+  </p>
+  <p>
+      */
+  </p>
+  <p>
+      You may also need to update the $site-&gt;add_script and
+      $site-&gt;add_style methods to specify any .js and .css resource files you
+      are using for your theme. If you use the existing resources files in either
+      of the included themes – style.css and scripts.js - you won’t have to
+      update these method calls.
+  </p>
+  <p>
+      The footer function specifies the copy that will appear in the footer of each site page.  It also measures the page load time in case you need to run analysis on your site response.
+  </p>
+
+  <h2>
+   index.php
+</h2>
+<p>The index.php file contains the HTML that defines the look and feel of the page, and calls into the Nestor Engine to display the header and body content.  Refer to the <a href="design_templates.htm">Site templates</a> page to learn about building your own template, or modifying an existing template.</p>
+<h2>
+    Dependencies
+</h2>
+<h3>
+    CSS dependencies
+</h3>
+<p>
+    The stylesheet for your theme is found in the css folder. Update the styles
+    in this sheet to match your own organizational style. Make sure to add your
+    css files using the $site-&gt;add_style call in theme.php.
+</p>
+<p>
+    The stylesheet used by Nestor for core functions can be found in the Nestor
+    hierarchy: [<span class="italic">my_nestor]</span>/vce_application/css, and is named vce.css. Be
+    careful when altering this stylesheet as the styles are used throughout the
+    Nestor system.
+</p>
+<h3>JS dependencies</a>
+</h3>
+<p>
+    Javascript dependencies are found in the js folder.  You can add your own javascript file(s) if you need them for your theme.
+    Make sure to add them using the $site-&gt;add_script call in theme.php
+    file.
+</p>
+<p>
+    The main javascript files used by Nestor for core functions can be found in
+    the Nestor hierarchy: [my_nestor]/vce_application/js, the main file is
+    named vce.js. There are many useful functions in this file that define how
+    many elements function in the system, so it’s good to become familiar with
+    vce.js before writing any custom code for your theme.
+</p>
+<p>
+    Also note that jquery is included in the application build process, so you shouldn’t have to add
+    a copy to your theme to use jquery calls.
+</p>
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
