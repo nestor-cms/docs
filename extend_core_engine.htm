@@ -37,8 +37,15 @@
   The following section describes each of these core engine classes, and
   links out to the full public API for each class.
 </p>
-<h2>DB Class
-</h2>
+ <ul>
+  <li><a href="#DB">DB Class</a></li>
+  <li><a href="#content">Content Class</a></li>
+  <li><a href="#site">Site Class</a></li>
+  <li><a href="#user">User Class</a></li>
+  <li><a href="#page">Page Class</a></li>
+  <li><a href="#component">Component Class</a></li>
+</ul>
+<h2 id="DB">DB Class</h2>
 <p>
   The DB Class manages all interactions with the system database. There are
   methods in this class that help you easily fetch, add, update and delete
@@ -47,13 +54,11 @@
   Be sure to call “global $vce” in any function in which you call to db
   methods to ensure it’s available to your function.
 </p>
-<p>
-  The
-  <a href="API_DB_Class.htm">DB Class API</a>
+<p>The <a href="API_DB_Class.htm">DB Class API</a>
   details methods and properties available for use .
 </p>
 
-<h2>Content Class
+<h2 id="content">Content Class
 </h2>
 <p>
   The global $content object stores HTML produced by other Components in its
@@ -77,7 +82,7 @@
       Content Class API
   </a> details methods and properties available for use.
 </p>
-<h2>Site Class
+<h2 id="site">Site Class
 </h2>
 <p>
   The Site class stores metadata used by the site such as theme, site
@@ -104,7 +109,7 @@
   The
   <a href="API_Site_Class.htm">Site Class API details methods and properties available for use.</a>
 </p>
-<h2>User Class</h2>
+<h2 id="user">User Class</h2>
 <p>
   The User class contains methods to manage Users in the system, and stores
   information about the current logged in User.
@@ -118,7 +123,7 @@
 <p>
   The <a href="API_User_Class.htm">User Class API</a> details methods and properties available for use.
 </p>
-<h2>Page Class
+<h2 id="page">Page Class
 </h2>
 <p>
   The Page Class parses the requested URL to determine what Recipe to use,
@@ -136,7 +141,7 @@
 <p>
   The <a href="API_Page_Class.htm">Page Class API</a> details methods and properties available for use.
 </p>
-<h2>Component Class
+<h2 id="component">Component Class
 </h2>
 <p>
   The Component Class is the base class from which components are
@@ -148,7 +153,7 @@
 </p>
 <p>
   See the <a href="API_Component_Class">Component Class API</a> section for full details about
-  extending the Component class as well as methods and properties available for use.  You can also review the <a href="extend_quickstart.htm">Build a Component Quickstart Guide</a>> to get your new component up and running.
+  extending the Component class as well as methods and properties available for use.  You can also review the <a href="extend_quickstart.htm">Build a Component Quickstart Guide</a> to get your new component up and running.
 </p>
 
   </div><!--end main div-->

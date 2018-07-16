@@ -15,14 +15,90 @@
   </div>
 
   <div class="main">
-   <!--INSERT CONTENT HERE-->
 
+  <h1>The Page Build Process</h1>
+  <p>The Nestor system follows the same Page Build process for each requested page, however the final
+      rendered page is determined by the Recipe and components associated with
+      the  page. 
+  </p>
 
-
-
-
-
-
+<p>The <a href="extend_page_build_flow.htm">Nestor Page Build Process Flow</a>
+  shows how each of the core engine classes, configuration files, hooks and
+  page components interact to render the final page.
+</p>
+<h3>
+    To follow the Page Build process flow:
+</h3>
+<ol>
+  <li>The lane on the far left, labeled “Initiate”, contains the major steps in the Page Build process.  This lane roughly follows the code flow in initiate.php</li>
+  <li>During execution of initiate.php, all of the major Core Engine classes
+    are loaded and instantiated, and then added to the master $vce object. The
+    master $vce class allows for ease of access to each of these objects from
+    other components.
+  </li>
+  <li>All of the colored circles in the Initiate lane represent control
+      passing to one of the Core Engine classes. When you see a colored circle,
+      look for a corresponding colored circle across the top of the lanes. Each
+      of these lanes represents the events in the __construct() method of the
+      class.</li>
+  <li>Follow the flow down the lane for each class to learn about its
+        function. At the end of the lane flow, you’ll reach a second colored circle
+        indicating that control is passed back to the Initiate process flow.
+      </li>
+  <li>In a few cases, control is passed back and forth between the Core Engine
+    classes. This will be indicated by flow arrows crossing the lane boundaries.
+  </li>
+    <li>The squares colored light green represent Hooks. These are areas in the
+      process where you can insert a call to a method in your custom Component.
+      Refer to the <a href="extend_hooks.htm">Hooks Section</a> for more information.
+    </li>
+</ol>
+<br>
+<p>
+    When the Page object is instantiated during Initiation it kicks off the
+    most complex phases of the Page Build process. The intricate interaction
+    between Page, other core Engine Classes, and page Components provides a
+    rich opportunity to build custom code to affect the final rendered page. By
+    design, the Page class calls into specific methods in each component it
+    processes during Page Build. Also, there are many Hooks invoked during Page
+    Build into which your custom Component can insert code.
+  </p>
+<h2 id="build_array">Build Components Array Process</h2>
+<p>
+  Since the components hold all of the information about how a page is built,
+  it’s important to assemble an array that contains all of the components
+  associated with the page under construction. This array includes the
+  metadata that defines each component. A key piece of metadata is the page
+  Recipe which is discovered and added to the global $page object during this
+  process. Also, there is a parent-child-sibling hierarchy between Components
+  that must be reflected in the array. In order to build out this
+  multifarious component tree, there are many levels of recursion executed in
+  the two Page methods involved in building out the array – get_components()
+  and get_sub_components().
+</p>
+<p>The Build Components Array process is documented in the
+  <a href="extend_build_component_array_flow.htm">Build Component Array Process</a>
+  flow chart, which not only shows the control flow between methods and
+  classes, but also indicates where hooks are invoked in which you can insert
+  your own custom methods.
+</p>
+<h2 id="build_content">Build Content Process</a>
+</h2>
+<p>Once the full Component array has been populated, it’s time to build out
+  the HTML content that is rendered on the final page. This process involves
+  traversing the component array structure and comparing it to the page
+  Recipe, component-by-component. Comparing the two allows the process to
+  check for Role-based access as well as call specific methods in each
+  component to determine what content should be written out to the page.
+  There are opportunities for your custom component to stop the entire Page
+  Build within this process if there are scenarios where it makes sense for
+  your component to do so.
+</p>
+<p>The Build Content process is documented in the <a href="extend_build_content_flow.htm">Build Content Process</a>
+  flowchart, which not only shows the control flow between methods and
+  classes, but also indicates where hooks are invoked in which you can insert
+  your own custom methods.
+</p>
   </div><!--end main div-->
 
  
