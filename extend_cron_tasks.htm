@@ -28,8 +28,7 @@
           Data Structure
       </h2>
       <p>
-          A cron task takes the form of a record in the site_meta table, and contains
-          the following information:
+          A cron task takes the form of a record in the site_meta table.  The meta_key field will have the value "cron_task", and the meta_value field will contain an associative array with the following members:
       </p>
       <table border="1" cellspacing="0" cellpadding="0">
           <tbody>
@@ -38,23 +37,23 @@
                   <th width="738">Value</th>
               </tr>
               <tr>
-                  <td width="198">Component</td>
-                  <td width="738">Name of the Component Class that contains the method to be called</td>
+                  <td >component</td>
+                  <td >Name of the Component class that contains the method to be called</td>
               </tr>
               <tr>
-                  <td> method </td>
+                  <td>method </td>
                   <td >Name of the method to call. Since cron_tasks are called
                           before the components are instantiated, the method needs to
                           be static  </td>
               </tr>
               <tr>
-                  <td> properties </td>
+                  <td>properties </td>
                   <td >A list of key/value pairs to provide more information about
                           the task, for example the component_id </td>
               </tr>
               <tr>
-                  <td> timestamp </td>
-                  <td >A timestamp value to indicate when the task has expired</td>
+                  <td>timestamp </td>
+                  <td >A timestamp value to indicate when the task expires</td>
               </tr>
           </tbody>
       </table>
@@ -69,7 +68,7 @@
           If this method sends a response in the form of an array, the Site class
           updates the cron task with the new values. If the method does not send a
           response the Site class will delete this task from the system. See the
-          <a  href="API_VCE_Class.htm">Manage Cron Task</a> method in the VCE Class API for information about how to form a response to manage a cron task.
+          <a  href="API_VCE_Class.htm#cron_task">Manage Cron Task</a> method in the VCE Class API for information about how to form a response to manage a cron task.
       </p>
       <p> Since the tasks are performed during the Page build process, the tasks are
           only fired when you have visitors to your site.
