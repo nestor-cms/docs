@@ -15,14 +15,73 @@
   </div>
 
   <div class="main">
-   <!--INSERT CONTENT HERE-->
-
-
-
-
-
-
-
+      <h1>Cron Tasks</h1>
+      <p>
+          Cron tasks allow you to schedule tasks for the system. These routine tasks are
+          defined by methods within classes that are called during page
+          build. Cron tasks are useful when you need to sync with external systems,
+          such as connecting to external service providers. They can also be used for
+          general housekeeping – for example in Nestor they go through user comments looking for
+          any blank entries and deleting them every day.
+      </p>
+      <h2>
+          Data Structure
+      </h2>
+      <p>
+          A cron task takes the form of a record in the site_meta table, and contains
+          the following information:
+      </p>
+      <table border="1" cellspacing="0" cellpadding="0">
+          <tbody>
+              <tr>
+                  <th width="198">Key</th>
+                  <th width="738">Value</th>
+              </tr>
+              <tr>
+                  <td width="198">Component</td>
+                  <td width="738">Name of the Component Class that contains the method to be called</td>
+              </tr>
+              <tr>
+                  <td> method </td>
+                  <td >Name of the method to call. Since cron_tasks are called
+                          before the components are instantiated, the method needs to
+                          be static  </td>
+              </tr>
+              <tr>
+                  <td> properties </td>
+                  <td >A list of key/value pairs to provide more information about
+                          the task, for example the component_id </td>
+              </tr>
+              <tr>
+                  <td> timestamp </td>
+                  <td >A timestamp value to indicate when the task has expired</td>
+              </tr>
+          </tbody>
+      </table>
+      <h2>
+          Cron Task Management
+      </h2>
+      <p>
+          During the <a href="extend_page_build.htm">Page Build process</a>, the Site class loads all of the cron tasks
+          from the site_meta table into a cron_tasks array, and then parses through
+          the array to look for any expired timestamps. If a task has an expired
+          timestamp, the Site class will call the method indicated by the cron task.
+          If this method sends a response in the form of an array, the Site class
+          updates the cron task with the new values. If the method does not send a
+          response the Site class will delete this task from the system. See the
+          <a  href="API_VCE_Class.htm">Manage Cron Task</a> method in the VCE Class API for information about how to form a response to manage a cron task.
+      </p>
+      <p> Since the tasks are performed during the Page build process, the tasks are
+          only fired when you have visitors to your site.
+      </p>
+      <h2>
+          Throttling Cron Tasks
+      </h2>
+      <p> The CRON_TASK_LIMIT value in the <a href="install_configuration_files.htm">system config file</a> sets the amount of cron
+          tasks that will be processed on page load. This allows you to balance the
+          load on your system. The amount of cron tasks run on each page load
+          defaults to 1 if CRON_TASK_LIMIT isn’t set.
+      </p>
   </div><!--end main div-->
 
  

@@ -15,14 +15,440 @@
   </div>
 
   <div class="main">
-   <!--INSERT CONTENT HERE-->
+      <h1>Hooks</h1>
+      <p>
+          Hooks are a powerful tool that allow your component to 'hook into' the
+          Nestor engine at various stages of the <a href="extend_page_build.htm">Page Build process</a>, as well as any
+          place in the code where a hook has been inserted. A hook is configured
+          within a component class and designates a class and method to call when the
+          hook is invoked within the system. In the Nestor system, a class/method
+          pairing is known as a procedure.
+      </p>
+      <p>
+          During the <a href="extend_page_build.htm">Page Build process</a>, the procedure/hook associations are loaded
+          into a hooks array that’s added to the global $site object. The <a href="extend_hooks_config_flow.htm">Hooks
+          Definition and Load Process</a> flow chart shows the end-to-end process of
+          defining a hook and loading into the system for use.
+      </p>
+      <p>
+          Read the <a href="API_Component_Class.htm#add_a_hook">Adding a Hook section</a> in the Component API document to learn how
+          to associate a procedure with a hook in the Nestor system.
+      </p>
+      <h2>
+          <a name="_Toc517175195">Hooks invoked during the Page Build Process</a>
+      </h2>
+      <p>
+          The following flow charts depict when the major system hooks are invoked
+          during the <a href="extend_page_build.htm">Page Build process</a>. You can use these charts to design your own
+          component hooks if you need to influence the build process at any point.
+          Hooks are shown as green boxes. Note that some hooks receive parameters to
+          route to the designated procedures, and some change the value of passed
+          parameters and send the changed value back into the method from which the
+          hook is invoked. Each hook representation in the flow chart details how
+          parameters are processed by the hook procedure.
+      </p>
+      <ol>
+        <li><a href="extend_page_build_flow.htm">Page Build process</a> – shows the high level process, hooks displayed are
+          invoked during the instantiation of the $site, $user and $page objects.</li>
+        <li><a href="extend_build_component_array_flow.htm">Build Component Array process</a> – shows the detailed process of building
+          the component array, with hooks invoked by get_components and
+          get_subcomponents methods of the Page class.</li>
+        <li><a href="extend_build_content_flow.htm">Build Content process</a> – depicts the hooks invoked during the complex
+          interaction between classes (primarily Page and Component) to render the
+          page content.</li>
+      </ol>
+    
+      <h2>Hooks defined in the Core Engine Classes</h2>
+      <p>
+          The following section lists the hooks found in core engine classes, as well
+          as some other standard component classes. Each hook should follow a standard
+          nomenclature to make it easier to trace their origin and function:
+      </p>
+      <p>
+          [<span class="italic">Class-name</span>]_[<span class="italic">method-name</span>]_[<span class="italic">brief-description</span>]
+      </p>
+      <p>
+          This list is not exhaustive for the entire system, as any Component has the ability to create hooks.
+      </p>
+      <h3>
+          at_user_login
+      </h3>
+      <ul>
+        <li>Can be used to perform function using current user ID</li>
+        <li>called in User::login and User::__construct after user object is created</li>
+        <li>arguments passed: user_id</li>
+        <li>no return value</li>
+      </ul>
+  
+      <h3>
+          at_user_logout
+      </h3>
+      <ul>
+        <li>Can be used to perform function using current user ID</li>
+        <li>called in User::logout at the very end, after session info is cleared</li>
+        <li>arguments passed: user_id</li>
+        <li>no return value</li>
 
+      </ul>
+     
+      <h3>
+          alternative_user_login
+      </h3>
+      <ul>
+        <li>Can be used to create an alternative method to login if there is no user
+            session or persistent login set</li>
+        <li>called in User::__construct after performing auto login for user with a
+            session or persistent login</li>
+        <li>arguments passed: $user</li>
+        <li>no return value</li>
+      </ul>
+     
+      <!--h3>
+          build_content_recipe_item
+      </h3>
+      <p>
+          · Not in code
+      </p-->
+      <h3>***component_recipe-components_can-add (currently
+          page_requested_components)
+      </h3>
+      <ul>
+        <li>can be used to reverse auto create or alter any of the $input when a
+            component is created</li>
+        <li>called from Component::create_component</li>
+        <li>arguments passed: $input used to create component</li>
+        <li>return $input array</li>
 
+      </ul>
+    
+      <h3>
+          create_component_before
+      </h3>
+      <ul>
+        <li>can be used to reverse auto create or alter any of the $input when a
+            component is created</li>
+        <li>called from Component::create_component</li>
+        <li>arguments passed: $input used to create component</li>
+        <li>return $input array</li>
+      </ul>
+    
+      <h3>
+          delete_extirpate_component
+      </h3>
+      <ul>
+        <li>can be used to alter $components array before deletion of members.
+            $components array consists of sub-components of either the component being
+            extirpated, or sub-components of one of its descendants</li>
+        <li>called from Component::extirpate_component</li>
+        <li>arguments passed: $component_id (parent ID of $components), $components
+            (sub-components of current parent)</li>
+        <li>return $components</li>
+        
+      </ul>
+      
+      <h3>
+          input_sanitize_textarea
+      </h3>
+      <ul>
+          <li>Can be used to sanitized form input from a text area
+          </li>
+          <li>Called from Input::page_requested_url if originating form field was a
+              textarea</li>
+          <li>
+              arguments passed: $value of text
+          </li>
+          <li>
+              return $value
+          </li>
+      </ul>
+     
+      <h3>
+          media_after_display
+      </h3>
+      <ul>
+          <li>Can be used to perform a function on a mediatype component after its
+              display and edit_media_component methods are called</li>
+          <li>Called from Media::as_content</li>
+          <li>arguments passed: $each_component (media player being displayed), $vce</li>
+          <li>no return</li>
+      </ul> 
+    
+      <h3>
+          media_before_display
+      </h3>
+      <ul>
+        <li>Can be used to perform a function on a mediatype component before its
+            display method is called</li>
+        <li>
+            Called from Media::as_content
+        </li>
+        <li>arguments passed: $each_component (media player being displayed), $vce</li>
+        <li>no return</li>
+      </ul>
+      
+      <h3>
+          media_create_component
+      </h3>
+      <ul>
+        <li>Can be used to alter the input for a new media component before it’s
+            created</li>
+        <li>Called from Media::create and Mediaplupload:create</li>
+        <li>
+            arguments passed: $input used to create media component
+        </li>
+        <li>return $input array</li>
+      </ul>
+     <h3>
+          media_component_created
+      </h3>
+      <ul>
+          <li>
+              Called after a new media component is created
+          </li>
+          <li>
+              Called from Media::create
+          </li>
+          <li>arguments passed: $input used to create media component, $response array</li>
+          <li>return $response</li>
+      </ul>
+    
+      <h3>
+          media_file_uploader
+      </h3>
+      <ul>
+          <li>
+              Can be used to add content before the file upload button
+          </li>
+          <li>
+              Called from Media::add_file_uploader
+          </li>
+          <li>
+              arguments passed: $recipe_component, $vce
+          </li>
+          <li>
+              return $content_media that is added to the page
+          </li>
+      </ul>
+      <h3>
+          media_update_component
+      </h3>
+      <ul>
+          <li>
+              Called from Media::update before update_component method is called
+          </li>
+          <li>
+              arguments passed: $input used for update
+          </li>
+          <li>
+              return $input
+          </li>
+      </ul>
+      <h3>
+          media_delete_component
+      </h3>
+      <ul>
+          <li>
+              Called from Media::delete before delete_component method is called
+          </li>
+          <li>
+              arguments passed: $input used for delete
+          </li>
+          <li>
+              return $input
+          </li>
+      </ul>
+      <h3>
+          page_add_recipe
+      </h3>
+      <ul>
+        <li>called when recipe is added to $page in get_components and
+            get_sub_components</li>
+        <li>
+            Called from Page::get_components
+        </li>
+        <li>arguments passed: $page-&gt;recipe and recipe found in current component</li>
+        <li>return recipe, which is assigned to $page</li>
+      </ul>
+     
+      <h3>
+          page_build_content
+      </h3>
+      <ul>
+        <li>called for each component at the beginning of Build Content process</li>
+        <li>called from Page::build_content</li>
+        <li>arguments passed: $each_component from $components array, $linked</li>
+        <li>no return value</li>
+      </ul> 
+      
+      <h3>
+          page_build_content_callback
+      </h3>
+      <ul>
+        <li>Called before recursive call to build_content for current component</li>
+        <li>Called in Page::build_content</li>
+        <li>Arguments passed: $sub_components from current component
+        </li>
+        <li>returns $sub_components</li>
+      </ul>
+     
+      <h3>
+          page_construct_object
+      </h3>
+      <ul>
+        <li>called in Page::__construct after requested_component object is pulled
+            from db</li>
+        <li>arguments passed: $requested_component, $vce</li>
+        <li>no return value</li>
+      </ul>
 
+      <h3>
+          page_get_components
+      </h3>
+      <ul>
+        <li>Called in Page::get_components before recursive call back to
+            get_components</li>
+        <li>arguments passed: $requested_component, $components, $page</li>
+        <li>
+            no return
+        </li>
+      </ul>
+     
+      <h3>
+          page_get_sub_components
+      </h3>
+      <ul>
+        <li>Called in Page::get_sub_components before building full sub_components
+            tree</li>
+        <li>arguments passed: $requested_components</li>
+        <li>
+            return $requested_components
+        </li>
+      </ul>
 
+      <h3>
+          page_requested_components
+      </h3>
+      <ul>
+        <li>Can be used to alter $requested_component at the beginning of
+            get_components method</li>
+        <li>Called at start of Page::get_components, after call to db to get
+            requested component object</li>
+        <li>arguments passed: $requested_component</li>
+        <li>
+            return $requested_component
+        </li>
+      </ul>
 
+      <h3>
+          page_requested_url
+      </h3>
+      <ul>
+        <li>Called in Page::__construct after $requested_url is cleaned up and
+            sanitized</li>
+        <li>
+            arguments passed: $requested_url, $vce
+        </li>
+        <li>
+            no return
+        </li>
+      </ul>
 
-
+      <h3>
+          recipe_attributes
+      </h3>
+      <ul>
+        <li>Adds fields on recipe page after Recipe Name</li>
+        <li>called in ManageRecipes::as_content</li>
+        <li>arguments passed: $vce-&gt;user</li>
+        <li>returns string of HTML content with additional attributes, to be added to
+            Manage Recipe page</li>
+      </ul> 
+      
+      <h3>
+          recipe_components_each
+      </h3>
+      <ul>
+          <li>
+              Components::recipe_components
+          </li>
+      </ul>
+      <h3>
+          requested_sub_components
+      </h3>
+      <ul>
+        <li>Called at start of Page::get_sub_components, after call to db to get
+            array of sub components</li>
+        <li>arguments passed: $requested_components</li>
+        <li>return $requested_components</li>
+      </ul>
+      </p>
+     
+      <h3>
+          site_hook_initiation
+      </h3>
+      <ul>
+        <li>The earliest hook that can be used</li>
+        <li>called in Site:__construct</li>
+        <li>arguments passed: $hooks array</li>
+        <li>no return value</li>
+      </ul>
+      <h3>
+          site_javascript_dependencies
+      </h3>
+      <ul>
+        <li>can be used to alter the site-&gt;javascript_dependencies array
+        </li>
+        <li>called in Site::__construct after javascript &amp; CSS files are added to
+            site</li>
+        <li>arguments passed: $site, $site-&gt;javascript_dependencies</li>
+        <li>return javascript_dependencies array</li>
+      </ul>
+     
+      <h3>
+          site_mail_transport
+      </h3>
+      <ul>
+        <li>can be used to route mail message to a different transport method</li>
+        <li>if it exists, is called in VCE::mail instead of PHP mailer call</li>
+        <li>arguments passed: $vce, $attributes</li>
+        <li>return status of message call</li>
+      </ul>
+     
+      <h3>
+          site_media_link
+      </h3>
+      <ul>
+        <li>can be used to alter path to which media is uploaded</li>
+        <li>
+            called in Site::media_link after $media_link path is built
+        </li>
+        <li>arguments passed: $fileinfo arrray, $this</li>
+        <li>
+            returns $media_link
+        </li>
+      </ul>
+      
+      <h3>
+          site_object_construct
+      </h3>
+      <ul>
+        <li>Can be used to modify the site object</li>
+        <li>called in Site::__construct</li>
+        <li>arguments passed: $site object</li>
+        <li>no return value</li>
+      </ul> 
+     
+      <h3>
+          user_attributes
+      </h3>
+      <ul>
+        <li>Used to add additional user attributes</li>
+        <li>called in: ManageUsers::as_content, UserRegistration::as_content,
+            UserSettings::as_content</li>
+        <li>arguments passed: $user_info array</li>
+        <li>returns string of HTML content with additional user attributes, to be
+            added to Manage Users page</li>
+      </ul>
   </div><!--end main div-->
 
  

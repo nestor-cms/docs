@@ -15,52 +15,42 @@
   </div>
 
   <div class="main">
-    <h3>
-      <a name="_Toc517175189">Page Request Routing</a>
-  </h3>
+    <h1>Page Request Routing
+  </h1>
   <p>
       There are a few things that are important to understand about how the page
       requests are routed by Nestor:
   </p>
-  <p>
-      · All calls into your Nestor installation are intercepted by the .htaccess
-      file and routed to index.php if the requested path doesn’t specify an
-      existing file or directory
-  </p>
-  <p>
-      · Index.php sets a few values and then loads initiate.php, which drives the
-      build process
-  </p>
-  <p>
-      · If the requested path contains a URL value recognized by the system, the
-      page will be built according to the Recipe with the designated URL (see
-      <a
-          href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Nestor%20Documentation.docx#_Manage_Recipes_2"
-      >
-          Manage Recipes
-      </a>
-      section for more information)
-  </p>
-  <p>
-  o The URL value is found in this pattern: <em>[my_servername]</em>/    <em>[my_nestor]</em>/<strong>URL</strong>
-  </p>
-  <p>
-  § For example, in the path    <a href="http://localhost/vce/admin">http://localhost/vce/admin</a> -
-      ‘admin’ is the URL value
-  </p>
-  <p>
-      o You can also add a ‘~[component_id]’ to the path querystring to render a
-      specific component. This must be a page level component, or you will not
-      see a properly rendered page.
-  </p>
-  <p>
-  § For example:    <a href="http://localhost/vce/~1">http://localhost/vce/~1</a> will load the
-      recipe associated with the component with component_id of 1
-  </p>
-  <p>
-      · If the requested URL is not recognized, or the request is not accompanied
-      by the correct security handshake, the request is routed to the home page
-  </p>
+  <ul>
+    <li>All calls into your Nestor installation are intercepted by the .htaccess
+        file and routed to index.php if the requested path doesn’t specify an
+        existing file or directory.  Refer to the <a href="install-htaccess.htm">.htaccess configuration section</a> for more information about server re-redirect information.</li>
+    <li>Index.php sets a few values and then loads initiate.php, which drives the <a href="extend_page_build.htm">Page
+            Build process</a>.</li>
+    <li>If the requested path contains a URL value recognized by the system, the
+                page will be built according to the Recipe with the designated URL (see
+                <a  href="manage_recipes.htm">Manage Recipes</a> section for more information)
+        <ul>
+            <li>The URL value is found in this pattern: [<span class="italic">my_servername</span>]/[<span class="italic">my_nestor</span>/<strong>URL</strong>
+                <ul>
+                  <li>For example, in the path <a href="http://localhost/vce/admin">http://localhost/vce/admin</a> -
+                    <strong>admin</strong> is the URL value
+                  </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>You can also add a ‘~[<span class="italic">component_id</span>]’ to the path querystring to render a specific component. This must be a page level component, or you will not see a properly rendered page.</li>
+        <ul>
+           <li>For example:    <a href="http://localhost/vce/~1">http://localhost/vce/~1</a> will load the
+                      recipe associated with the component with component_id of 1
+            </li>
+        </ul>
+    </li>
+    <li>If the requested URL/component ID is not recognized, or the request is not accompanied
+              by the correct security handshake, the request is routed to the home page.
+    </li>
+  </ul>
 
   </div><!--end main div-->
 

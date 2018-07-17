@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+      <h1>Build a Custom Component
+      </h1>
+      <p> Nestor is easily extensible for developers, as it was designed to allow
+          custom components to access the core system at multiple levels. This
+          section details how to build your own custom component.
+      </p>
+      <h2>Component Quick Start</a>
+      </h2>
+      <p>We have included a sample component in the standard Nestor Installation to
+          help jumpstart your customization. The sample component – Blog-o-rama – is
+          located in the [<span class="italic">my_nestor]</span>/vce-content/components/blog-o-rama
+          directory.
+      </p>
+      <p>
+          Follow these quick steps to start building your first component:
+      </p>
+      <ol>
+        <li><a href="install.html">Install Nestor</a></li>  
+        <li>Open the blog-o-rama.php file into your code editor of choice</li>
+        <li>You can change the Class name, but if you do so, it’s best to update the
+                file name and the folder name in which the component resides for
+                continuity. The folder, file and Class name should be the same.</li>
+        <li>In the component_info( ) method, change the title, description and category values</li>
+        <li>In the as_content method, change the value of $my_content to the value
+                you’d like to display. You can include HTML tags, but make sure that if you
+                use special characters in your text that you use the proper escape syntax</li>
+        <li>Open the <a href="manage_components.htm">Manage Components page</a>, and click on the category matching the
+                category you set previously. Note that your component name and description
+                values also display in this interface.</li>
+        <li>You should see your component in the list. Click the <strong>Activated</strong> button next to your component name and then the <strong>Update Components</strong> button to activate your component.</li>
+        <li>Open the <a href="manage_recipes.htm">Manage Recipes page</a> and add your component to a recipe. Make
+                sure you include a <a href="components_location.htm">Location component</a> with a URL value.</li>
+        <li>Open the <a href="manage_menus.htm">Manage Menus</a> page and add your new page to the main menu</li>
+        <li>Click on the new menu item with your component name and you will see
+                your component on a page!</li>
+        <li>Read the next section, Extending the Component Class, to understand how to extend your class beyond these basic methods and properties.</li>
+        
+      </ol> 
+      
+      <h2>Extending the Component Class
+      </h2>
+      <p>The Nestor Core Engine was written to provide a multitude of opportunities for your custom Component to affect the final rendered page.  Extending the Component class allows you to layer  new features and functionality onto Nestor, and still provides the same abilities to allow end users to add content of their own when using the system. Your interactions can be driven by overwriting certain properties and functions in the parent class that are called during the <a href="extend_page_build.htm">Page Build process</a>. Also, there are a variety of <a href="extend_hooks.htm">hooks</a> that will invoke a method within your Component at various stages of the page build process.
+      </p>
+      <p>The <a href="API_Component_Class.htm">Component Class API</a> section has detailed information about
+          the available methods that you can use to interact with the Nestor System, as well as standard properties associated with components. You can also refer to the <a href="extend_page_build.htm">Page Build process</a> section to learn about system processes performed by the core engine classes that you will be able to influence by extending the Component Class.
+      </p>
+
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
