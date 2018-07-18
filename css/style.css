@@ -1,5 +1,5 @@
 body{
-font-family: "PT Sans", Verdana, Arial, sans-serif;
+font-family: "PT Sans", "Verdana", "Arial", "sans-serif";
 background-color: #ffffff;
 font-size: 14px;
 }
@@ -71,6 +71,7 @@ border: 1px solid #dddddd;
 text-align: left;
 padding: 4px;
 vertical-align: middle;
+font-family: "PT Sans", "Verdana", "Arial", "sans-serif";
 }
 
 .header_cell {
@@ -145,4 +146,12 @@ font-family: 'Courier New', Courier, monospace;
 background-color: #eeeeee;
 color: #326273;
 font-weight: bold;
+}
+
+.purple {
+color: #990099;
+}
+
+.orange {
+  color: #ff6600;
 }
