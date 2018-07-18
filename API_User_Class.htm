@@ -16,23 +16,13 @@
 
   <div class="main">
    <!--INSERT CONTENT HERE-->
-
-
-
    <h1>
     User Class
 </h1>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <div align="center">
-                    <hr size="3" width="100%" align="center"/>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div align="center">
+    <hr width="100%"/>
+</div>
+
 <p>
     The user class maintains information related to the user, and is
     responsible for securing user data with hashing and encryption functions.
@@ -44,20 +34,17 @@
     be required to log in.
 </p>
 <p>
-    During page load, user data is retrieved from the [<em>my_db</em>]_users
-    and [<em>my_db</em>]_users_meta tables and stored as properties of the user
+    During page load, user data is retrieved from the [<span class="italic">my_db</span>]_users
+    and [<span class="italic">my_db</span>]_users_meta tables and stored as properties of the user
     object referenced by key name. All user data is encrypted in these tables,
     but decrypted when added to the user object. The encryption vector for each
-    user is stored in the [<em>my_db</em>]_users table, as well as the hashed
+    user is stored in the [<span class="italic">my_db</span>]_users table, as well as the hashed
     email/password.
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    <a name="properties">Properties</a>
-                </p>
+            <td width="935" valign="top" class="header_cell">Properties
             </td>
         </tr>
     </tbody>
@@ -65,209 +52,217 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="136" valign="top">
-                <p>
+            <th width="136" valign="top">
+ 
                     <strong>Name</strong>
-                </p>
-            </td>
-            <td width="143" valign="top">
-                <p>
+ 
+            </th>
+            <th width="143" valign="top">
+ 
                     <strong>Type</strong>
-                </p>
-            </td>
-            <td width="657" valign="top">
-                <p>
+ 
+            </th>
+            <th width="657" valign="top">
+ 
                     <strong>Description</strong>
-                </p>
-            </td>
+ 
+            </th>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $role_id
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     The role ID of the user
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $session_vector
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Vector used for encryption/decryption for the user
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $user_id
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     User ID
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $persistant_login
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Determines if login persists beyond session
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $email
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     User email
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $first_name
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     User first name
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $last_name
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     User last name
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $role_name
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Name of user role
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     $role_hierarchy
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Hierarchy of user role
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     [attribute name]
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Custom user attributes can be created in the system on the
                     Manage Users page.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+ 
                     [Class based permissions]
-                </p>
+ 
             </td>
             <td width="143" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="657" valign="top">
-                <p>
+ 
                     Custom permissions can be assigned to roles for specific
                     classes
-                </p>
+ 
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" id="methods">
+    <tbody>
+        <tr>
+            <td width="935" valign="top" class="header_cell">Methods
             </td>
         </tr>
     </tbody>
@@ -275,299 +270,280 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
-                    <a name="methods">Methods</a>
-                </h2>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="297" valign="top">
-                <p>
+            <th width="297" valign="top">
+ 
                     <strong>Name/Syntax</strong>
-                </p>
-            </td>
-            <td width="639" valign="top">
-                <p>
+ 
+            </th>
+            <th width="639" valign="top">
+ 
                     <strong>Description</strong>
-                </p>
-            </td>
+ 
+            </th>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>
                         Static
-                        <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#create_hash"
-                        >
+                        <a  href="#create_hash">
                             create_hash
                         </a>
                     </strong>
-                    ($email, $password)<strong></strong>
-                </p>
+                    ($email, $password)
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Creates hash of email and password
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#create_vector"
+                            href="#create_vector"
                         >
                             create_vector
                         </a>
                     </strong>
                     ( )
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Creates a unique encrypted vector for
                     encryption/decryption.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#decryption"
+                            href="#decryption"
                         >
                             decryption
                         </a>
                     </strong>
-                    ($decode_text, $vector)<strong></strong>
-                </p>
+                    ($decode_text, $vector)
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Decrypts the designated text using provided vector
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>
                         Static
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#email_to_id"
+                            href="#email_to_id"
                         >
                             email_to_id
                         </a>
                     </strong>
-                    ($email)<strong></strong>
-                </p>
+                    ($email)
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Takes an email address and return a user id if user exists.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#encryption"
+                            href="#encryption"
                         >
                             encryption
                         </a>
                     </strong>
                     ($encode_text, $vector)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Encrypts the designated text using provided vector
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#get_users"
+                            href="#get_users"
                         >
                             get_users
                         </a>
                     </strong>
                     (
-                </p>
-                <p>
+ 
+ 
                     $users_info = array(),
-                </p>
-                <p>
+ 
+ 
                     $key_by_user_id = false)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Searches for users by provided roles or user_ids, and
                     returns all info about each user that matches the search
                     criteria.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#login"
+                            href="#login"
                         >
                             login
                         </a>
                     </strong>
                     ($input)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Authenticate user with email and password entered in login
                     screen.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#logout"
+                            href="#logout"
                         >
                             logout
                         </a>
                     </strong>
                     ( )
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Logout the current user.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#lookup"
+                            href="#lookup"
                         >
                             lookup
                         </a>
                     </strong>
                     ($email)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Encrypts email, used to lookup user
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#make_user_object"
+                            href="#make_user_object"
                         >
                             make_user_object
                         </a>
                     </strong>
                     ($user_id)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Create and populate the global $user object
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#order_preserving_hash"
+                            href="#order_preserving_hash"
                         >
                             order_preserving_hash
                         </a>
                     </strong>
                     ($string)
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Create hash that preserves the sort order of the provided
                     string
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="297" valign="top">
-                <p>
+ 
                     <strong>Static</strong>
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#vector_length"
+                            href="#vector_length"
                         >
                             vector_length
                         </a>
                     </strong>
                     ( )
-                </p>
+ 
             </td>
             <td width="639" valign="top">
-                <p>
+ 
                     Returns the length of the vector being used by the system.
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1" cellspacing="0" cellpadding="0" class="header_cell">
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <h2>
                     Method Details
-                </h2>
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a name="_Get_Data_Object"></a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<table border="1" cellspacing="0" cellpadding="0" id="create_hash">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="create_hash">Create Hash</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+              Create Hash
             </td>
         </tr>
     </tbody>
@@ -578,107 +554,97 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     create_hash($email, $password)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $email
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     User email
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $password
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     User password
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Encrypted email and password
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
                     $hash = user::create_hash($input['email'],
                     $input['password']);
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+<p><a href="#methods">Back to Top</a>
+<table border="1" cellspacing="0" cellpadding="0" id="create_vector">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="create_vector"></a>
-                    <a name="store_session"></a>
+            <td width="935" valign="top" class="method_name">
                     Create Vector
-                </h3>
             </td>
         </tr>
     </tbody>
@@ -690,24 +656,24 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     create_vector ()
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     No parameters
-                </p>
+ 
             </td>
             <td width="162" valign="top">
             </td>
@@ -716,58 +682,48 @@
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Encrypted vector
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
+                    global $vce;<br> 
                     $sess_vector = $vce-&gt;user-&gt;create_vector();
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+<p><a href="#methods">Back to Top</a>
+<table border="1" cellspacing="0" cellpadding="0" id="decryption">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="decryption">Decryption</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Decryption
             </td>
         </tr>
     </tbody>
@@ -778,79 +734,78 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     decryption ($decode_text, $vector)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
-                    $ decode_text
-                </p>
+ 
+                    $decode_text
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Text to be decrypted
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $vector
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Vector to use in decryption
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Decrypted text
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+
+<h3>
     Example
-</h4>
+</h3>
 <p>
     Dossier submitted with the form and then decrypted during the upload
     process.
@@ -858,35 +813,24 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="codified">
                     Global $vce;
-                </p>
-                <p>
+                    <Br>
                     $dossier =
                     json_decode($user-&gt;decryption($_REQUEST['dossier'],
-                </p>
-                <p>
-                    $user-&gt;session_vector));
-                </p>
+                    user-&gt;session_vector));
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+
+<table border="1" cellspacing="0" cellpadding="0" id="email_to_id">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="email_to_id">Email to ID</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Email to ID
             </td>
         </tr>
     </tbody>
@@ -897,102 +841,92 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     email_to_id ($email)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $email
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     User email
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     ID of user
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Null
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Return null if no user
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    $global vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+                    $global vce;<br>
                     $user_id = $vce-&gt;user-&gt;email_to_id($input['email']);
-                </p>
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+
+<table border="1" cellspacing="0" cellpadding="0" id="encryption">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="encryption">Encryption</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Encryption
             </td>
         </tr>
     </tbody>
@@ -1000,117 +934,107 @@
 <p>
     Static function encrypts the designated text using provided vector
 </p>
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1" cellspacing="0" cellpadding="0" class="method_syntax">
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+ 
                     encryption ($encode_text, $vector)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $encode_text
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Text to be encrypted
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $vector
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Vector to use in encryption
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Encrypted text
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+<h3>
+</h3>
+<h3>
     Example
-</h4>
+</h3>
 <p>
     Encrypt the dossier using the session_vector for the user
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    Global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
+                    Global $vce;<br>
                     $dossier =
-                    $vce-&gt;user-&gt;encryption(json_encode($dossier_elements),
-                </p>
-                <p>
+                    $vce-&gt;user-&gt;encryption(json_encode($dossier_elements), 
                     $vce-&gt;user-&gt;session_vector);
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+
+<table border="1" cellspacing="0" cellpadding="0" id="get_users">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="get_users">Get Users</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Get Users
             </td>
         </tr>
     </tbody>
@@ -1123,120 +1047,120 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     get_users($users_info = array(), $key_by_user_id = false)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $key_by_user_id
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Determines whether the returned array should be keyed by
                     the user_id. False by default. If this is set to true,
                     $users_info is keyed by the user_id, and is populated with
                     user objects instead of arrays.
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $users_info
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     Array
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Users search criteria, by roles or user IDs
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="936" colspan="3" valign="top">
-                <p>
-                    Potential members of the $users_info array
-                </p>
+ 
+                    <strong>Potential members of the $users_info array</strong>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     user_ids
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     String containing user IDs to search on, separated by ‘|’
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     roles
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     String containing roles to search on, separated by ‘|’. If
                     set to ‘all’, method will return all users.
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+<h3>
+</h3>
+<h3>
     Return array
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="158" valign="top">
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     Return false if no users matching criteria, or
                     no/improperly formatted search criteria provided
-                </p>
+ 
             </td>
             <td width="1">
             </td>
@@ -1245,240 +1169,227 @@
             <td width="158" valign="top">
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Array
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     Array with all relevant user info matching search criteria.
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="936" colspan="4" valign="top">
-                <p>
-                    Members of the returned array
-                </p>
+ 
+                   <strong>Members of the returned array</strong> 
+ 
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     [index]
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Object
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     Object representing each returned user ($key_by_user_id =
                     false)
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     user_id
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Object
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     Object representing each returned user ($key_by_user_id =
                     true)
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="936" colspan="4" valign="top">
-                <p>
-                    Properties of each object
-                </p>
+ 
+                    <Strong>Properties of each object</Strong>
+ 
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     user_id
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     User ID
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     role_id
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     Role ID of user
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     first_name
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     User First Name
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     last_name
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     User last name
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     email
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
+ 
                     User email
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
+ 
                     [key]
-                </p>
+ 
             </td>
             <td width="110" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" valign="top">
-                <p>
-                    Each meta_key and meta_value in the [<em>my_db</em>
+ 
+                    Each meta_key and meta_value in the [<span class="italic">my_db</span>
                     ]_users_meta table for the user is decrypted and added to
                     the array. See
                     <a
-                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#properties"
+                        href="#properties"
                     >
                         Properties
                     </a>
                     section for more details on user metadata.
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
+                    global $vce;<br>
+                    <br>
                     $users_by_role = $vce-&gt;user-&gt;get_users($users_info =
-                    array("roles"=&gt;"1|3"),
-                </p>
-                <p>
-                    $key_by_user_id = false);
-                </p>
-                <p>
+                    array("roles"=&gt;"1|3");<br>
+                    $key_by_user_id = false),
                     $users_by_user_id = $vce-&gt;user-&gt;get_users($users_info
                     =
-                </p>
-                <p>
                     array("user_ids"=&gt;"1|3"), $key_by_user_id = true);
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+  
+<table border="1" cellspacing="0" cellpadding="0" id="login">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="login">Login</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Login
             </td>
         </tr>
     </tbody>
@@ -1489,169 +1400,146 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     login ($input)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" colspan="2" valign="top">
-                <p>
+ 
                     $input
-                </p>
+ 
             </td>
             <td width="162" colspan="2" valign="top">
-                <p>
+ 
                     Array
-                </p>
+ 
             </td>
             <td width="576" colspan="2" valign="top">
-                <p>
+ 
                     Information used to authenticate the user
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="936" colspan="6" valign="top">
-                <p>
-                    Members of the $input array
-                </p>
+ 
+                    <strong>Members of the $input array</strong>
+ 
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
-                    Email
-                </p>
+ 
+                    email
+ 
             </td>
             <td width="110" colspan="2" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" colspan="2" valign="top">
-                <p>
+ 
                     Email entered by user at login screen
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
         <tr>
             <td width="158" valign="top">
-                <p>
-                    Password
-                </p>
+ 
+                    password
+ 
             </td>
             <td width="110" colspan="2" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="668" colspan="2" valign="top">
-                <p>
+ 
                     Password entered by user at login screen
-                </p>
+ 
             </td>
             <td width="1">
             </td>
         </tr>
-        <tr height="0">
-            <td width="140">
-            </td>
-            <td width="30">
-            </td>
-            <td width="67">
-            </td>
-            <td width="69">
-            </td>
-            <td width="401">
-            </td>
-            <td width="1">
-            </td>
-        </tr>
+        
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Return true if successful login, false if user already
                     logged in
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+
+<h3>
     Hooks
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
-                    at_user_login invoked after user object is created.
+ 
+                    <span  class="hook">at_user_login</span> invoked after user object is created.
                     Receives user ID
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    Global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
+                    global $vce;<br>
                     $success = $vce-&gt;user-&gt;login($input);
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+  
+<table border="1" cellspacing="0" cellpadding="0" id="logout">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="logout">Logout</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Logout
             </td>
         </tr>
     </tbody>
@@ -1663,96 +1551,82 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     logout()
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="936" valign="top">
-                <p>
+ 
                     No parameters
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+<h3>
+</h3>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     No return value
-                </p>
+ 
             </td>
             <td width="738" valign="top">
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+<h3>
+</h3>
+<h3>
     Hooks
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
-                    at_user_logout invoked after user object, persistent login,
+                     <span class="hook">at_user_logout</span> invoked after user object, persistent login,
                     and session data all cleared/unset.
-                </p>
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    Global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+                    global $vce;<br>
                     $vce-&gt;user-&gt;logout();
-                </p>
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+  
+<table border="1" cellspacing="0" cellpadding="0" id="lookup">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="lookup">Lookup</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Lookup
             </td>
         </tr>
     </tbody>
@@ -1763,94 +1637,87 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     lookup($email)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $email
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     User email
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Encrypted email
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    $lookup = self::lookup($email)
-                </p>
+            <td width="935" valign="top" class="codified">
+ 
+                    $lookup = self::lookup($email);
+ 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><a href="#methods">Back to Top</a>
+  
+<table border="1" cellspacing="0" cellpadding="0"  id="make_user_object">
+    <tbody>
+        <tr>
+            <td width="935" valign="top" class="method_name">
+                Make User Object
             </td>
         </tr>
     </tbody>
 </table>
 <p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="make_user_object">Make User Object</a>
-                </h3>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    Create and populate the global $user object. Get data from [<em>my_db</em>
-    ]_users and [<em>my_db</em>]_users_meta tables, session variables, and any
+    Create and populate the global $user object. Get data from [<span class="italic">my_db</span>
+    ]_users and [<span class="italic">my_db</span>]_users_meta tables, session variables, and any
     role info from $site object. All encrypted data is decrypted before adding
     to user object. Also create a session vector for encryption/decryption that
     is added to user object. Add user object to session.
@@ -1858,110 +1725,83 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     make_user_object($user_id)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $user_id
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     User ID
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Return true if successful addition to session. Default is
                     true.
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Hooks
-</h4>
+
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    at_user_logout invoked after user object, persistent login,
-                    and session data all cleared/unset.
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <p>
-                    Global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+ 
+                    global $vce;<Br>
                     $vce-&gt;user-&gt;logout();
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a>
+  
+<table border="1" cellspacing="0" cellpadding="0" id="order_preserving_hash">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="order_preserving_hash">Order Preserving Hash</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Order Preserving Hash
             </td>
         </tr>
     </tbody>
@@ -1973,89 +1813,83 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     order_preserving_hash($string)
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     $string
-                </p>
+ 
             </td>
             <td width="162" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="576" valign="top">
-                <p>
+ 
                     Text for which you want an order preserving hash
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     String
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Order preserving hash
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+</h3>
+<!--h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+ 
                     example
-                </p>
+ 
             </td>
         </tr>
     </tbody>
-</table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+</table-->
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="vector_length">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="vector_length">Vector Length</a>
-                </h3>
+            <td width="935" valign="top" class="method_name">
+                Vector Length
             </td>
         </tr>
     </tbody>
@@ -2068,24 +1902,24 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" valign="top" class="method_syntax">
+ 
                     vector_length()
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     No parameters
-                </p>
+ 
             </td>
             <td width="162" valign="top">
             </td>
@@ -2094,66 +1928,55 @@
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Int
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Returns the cipher length on success
-                </p>
+ 
             </td>
         </tr>
         <tr>
             <td width="198" valign="top">
-                <p>
+ 
                     Boolean
-                </p>
+ 
             </td>
             <td width="738" valign="top">
-                <p>
+ 
                     Returns false on failure
-                </p>
+ 
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
+
+<h3>
     Example
-</h4>
+</h3>
 <p>
     Called in the __contruct() method of User
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    global $vce;
-                </p>
-                <p>
+            <td width="935" valign="top" class="codified">
+                    global $vce;<br>
                     $length = self::vector_length();
-                </p>
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/User%20Class%20API.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
+<p><a href="#methods">Back to Top</a>
 
 
 
