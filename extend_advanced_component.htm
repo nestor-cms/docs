@@ -14,130 +14,80 @@
 
   </div>
 
-  <div class="main">
-    <p>
-      This Guide will walk through:
+  <div class="main" id="top">
+    <h1>Advanced Component Development</h1>
+    <p>The Nestor platform has many built in functions that you can use in your Component development. This Guide covers the following:
   </p>
   <ol>
-      <li><a href="#properties"></a>Properties associated with components and how to assign values to them</a></li>
-      <li><a href="#methods">Methods available to be overwritten, and how they interact with the core
-          Nestor engine classes</a></li>
-      <li>Static methods called from the parent Component class that are essential to system processes. <strong>We strongly advise you not to alter these static methods</strong>.</li>
-      <li><a href="#core_functions">Core Functions</a> that you may want to add to your component
-      that need to be routed properly through Nestor for them to work. These include functions such as
-      <a href="#form_submission">form submission</a> and <a href="#file_upload">file upload</a>.
-      </li>
-      <li><a href="#form_submission">How to Build a Component with Minions</a></li>
-      <li><a href="#form_submission">Troubleshooting tools</a> to help you trace issues in your code.</li>
+      <li><a href="#form_submission">Form Submission</a></li>
+      <li><a href="#file_upload">File Upload</a></li>
+      <li><a href="#hook">Add a Hook</a></li>
+      <li><a href="#form_submission">Build a Component with Minions</a></li>
+      
   </ol>
   
-     
-  <p>
-      5) 
-  </p>
-
-
-  <table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <h2>
-                    <a name="core_functions">Core </a>
-                    Functions
-                </h2>
-            </td>
-        </tr>
-    </tbody>
-</table>
+  <h2 id="form_submission">Form Submission</h2>
 <p>
     In order for your Component to take full advantage of the security and flow
-    continuity provided by the Nestor framework, certain functions need to be
-    routed properly.
+    continuity provided by the Nestor framework, form submissions need to be
+    routed properly. Nestor has a specific procedure that must be followed to eliminate common
+    form submission security vulnerabilities. Once you understand the form submission procedure, you will
+    be able to take full advantage of it to interact with your end users.
 </p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    <a name="form_submission">Form Submission</a>
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    Nestor has a specific procedure that must be followed to eliminate common
-    form submission security vulnerabilities.
-</p>
+
+ 
+<h3>Form Submission Process</h3>
 <p>
     If you’d like to collect and process user data with your component, there
     are a few pieces that need to be in place. Many of these are provided by
     the Nestor framework by default, but you will need to manage some of them
-    in your code. Once you understand the form submission procedure, you will
-    be able to take full advantage of it to interact with your end users.
+    in your code. Follow these steps to submit and process form data:
 </p>
+
+<ol>
+  <li>Any form with the class "asynchronous-form" will invoke the submit
+      function in vce.js, and the form will be submitted asynchronously</li>
+  <li>The form is submitted to the path designated by $vce-&gt;input_path. By
+      default this is [<span class="italic">my_site_url</span>]/input</li>
+  <li>Form input is routed to input/input.php, which decrypts the dossier and
+          sanitizes and re-keys all dossier and form field values into an input array</li>
+  <li>Input Class checks if there is a form_input method in specified class,
+      if not it calls form_input in Component class</li>
+  <li>Form_input routes the input array to the designated procedure – which is
+      the class/method in the dossier</li>
+  <li>Procedure processes the data passed in the dossier and form fields</li>
+  <li>Control passed back to originating javascript call, which displays any
+      messages echoed by PHP methods</li>
+</ol>
+
  
-    Form Submission Process
- 
-<p>
-    1) Any form with the class "asynchronous-form" will invoke the submit
-    function in vce.js, and the form will be submitted asynchronously
-</p>
-<p>
-    2) The form is submitted to the path designated by $vce-&gt;input_path. By
-    default this is [<span class="italic">my_site_url</span>]/input
-</p>
-<p>
-    3) Form input is routed to input/input.php, which decrypts the dossier and
-    sanitizes and re-keys all dossier and form field values into an input array
-</p>
-<p>
-    4) Input Class checks if there is a form_input method in specified class,
-    if not it calls form_input in Component class
-</p>
-<p>
-    5) Form_input routes the input array to the designated procedure – which is
-    the class/method in the dossier
-</p>
-<p>
-    6) Procedure processes the data
-</p>
-<p>
-    7) Control passed back to originating javascript call, which displays any
-    messages echoed by PHP methods
-</p>
- 
-    Form Fields
+<h3>Form Fields</h3>
  
 <p>
     Your component needs to create the HTML content for the form fields, which
-    must include values for the following.
+    must include values for the following:
 </p>
-<p>
-    1) A hidden input that contains an encrypted dossier. A dossier is
-    basically an array of values that designate the component type, the
-    procedure that is called in the component when the form is submitted, the
-    component_id and the “created_at” value. Other values can be added based on
-    your component’s needs. The encrypted dossier is generated by calling
-    $vce-&gt;page-&gt;generate_dossier($dossier).
-</p>
-<p>
-    Depending on what point in the page build process you are calling this
-    method, the component may already have dossiers available for create,
-    update and delete. If these suit your needs you can use them without having
-    to generate a new dossier. But sometimes it’s just safer to go ahead and
-    create the dossier before you use it.
-</p>
-<p>
-    2) A hidden input that contains the site input path, designated by
-    $vce-&gt;input_path
-</p>
-<p>
-    3) Your form fields from which you’ll collect user data
-</p>
- <h3>
+<ol>
+  <li>A hidden input that contains an encrypted dossier. A dossier is
+      basically an array of values that designate the component type, the
+      procedure that is called in the component when the form is submitted, the
+      component_id and the “created_at” value. Other values can be added based on
+      your component’s needs. The encrypted dossier is generated by calling
+      $vce-&gt;page-&gt;generate_dossier($dossier).<br><br>
+
+      Depending on what point in the page build process you are calling this
+      method, the component may already have dossiers available for create,
+      update and delete. If these suit your needs you can use them without having
+      to generate a new dossier. But sometimes it’s just safer to go ahead and
+      create the dossier before you use it.</li>
+      <li>A hidden input that contains the site input path, designated by
+          $vce-&gt;input_path</li>
+      <li>Your form fields from which you’ll collect user data</li>
+</ol>
+
+<h3>
     Example – Generating a Dossier and Creating Form Fields
-</h4>
+</h3>
 <p>
     The Blog-o-rama example has a create_contact_form method that shows how to
     generate a dossier and populate form fields with hidden values.
@@ -145,99 +95,102 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
+            <td width="935" class="codified">
 
-                    public function create_contact_form($each_component, $vce)
-                    {
-
-
-                    $dossier = array(
+            public function create_contact_form($each_component, $vce) {<br>
 
 
-                    'type' =&gt; 'Blogorama',
+            &nbsp;&nbsp;$dossier = array(<br>
 
 
-                    'procedure' =&gt; 'update_contact',
+            &nbsp;&nbsp;&nbsp;&nbsp;'type' =&gt; 'Blogorama',<br>
 
 
-                    'component_id' =&gt; $each_component-&gt;component_id,
+            &nbsp;&nbsp;&nbsp;&nbsp;'procedure' =&gt; 'update_contact',<br>
 
 
-                    'created_at' =&gt; $each_component-&gt;created_at
+            &nbsp;&nbsp;&nbsp;&nbsp;'component_id' =&gt; $each_component-&gt;component_id,<br>
 
 
-                    );
+            &nbsp;&nbsp;&nbsp;&nbsp;'created_at' =&gt; $each_component-&gt;created_at<br>
 
 
-                    // generate dossier
+            &nbsp;&nbsp;);<br>
 
 
-                    $each_component-&gt;dossier_for_contact =
+            &nbsp;&nbsp;// generate dossier<br><br>
 
 
-                    $vce-&gt;generate_dossier($dossier);
+            &nbsp;&nbsp;$each_component-&gt;dossier_for_contact =
 
 
-                    $contact_form = &lt;&lt;&lt;EOF
+            &nbsp;&nbsp;$vce-&gt;generate_dossier($dossier);<br>
 
 
-                    &lt;div id="text-block-container add-container"&gt;
+            &nbsp;&nbsp;$contact_form = <br>
+                    &lt;&lt;&lt;EOF<br>
 
 
-                    &lt;div class="clickbar-container"&gt;
+                    &lt;div id="text-block-container add-container"&gt;<br>
 
 
-                    &lt;div class="clickbar-content"&gt;
+                    &lt;div class="clickbar-container"&gt;<br>
+
+
+                    &lt;div class="clickbar-content"&gt;<br>
 
 
                     &lt;form id="create_media" class="asynchronous-form"
                     method="post" action="$vce-&gt;input_path"
-                    autocomplete="off"&gt;
+                    autocomplete="off"&gt;<br>
 
 
                     &lt;input type="hidden" name="dossier"
-                    value="$each_component-&gt;dossier_for_contact"&gt;
+                    value="$each_component-&gt;dossier_for_contact"&gt;<br>
 
 
                     &lt;input type="hidden" name="title" value="Contact
-                    Info"&gt;
+                    Info"&gt;<br>
 
 
                     &lt;label&gt; &lt;input type="text"
-                    name="contact_email"&gt; &lt;div class="label-text"&gt;
-                    &lt;div class="label-message"&gt;Email&lt;/div&gt; &lt;div
-                    class="label-error"&gt;Enter an email&lt;/div&gt;
-                    &lt;/div&gt; &lt;/label&gt;
+                    name="contact_email"&gt; &lt;div class="label-text"&gt;<br>
+
+                    &lt;div class="label-message"&gt;Email&lt;/div&gt; 
+                    &lt;div
+                    class="label-error"&gt;Enter an email&lt;/div&gt;<br>
+                    &lt;/div&gt; <br>
+                    &lt;/label&gt;<br>
 
 
                     &lt;input type="hidden" name="sequence"
-                    value="$each_component-&gt;sequence"&gt;
+                    value="$each_component-&gt;sequence"&gt;<br>
 
 
-                    &lt;input type="submit" value="Sign Up"&gt;
+                    &lt;input type="submit" value="Sign Up"&gt;<br>
 
 
-                    &lt;/form&gt;
+                    &lt;/form&gt;<br>
 
 
-                    &lt;/div&gt;
+                    &lt;/div&gt;<br>
 
 
                     &lt;div class="clickbar-title
                     clickbar-closed"&gt;&lt;span&gt;Contact
-                    Form&lt;/span&gt;&lt;/div&gt;
+                    Form&lt;/span&gt;&lt;/div&gt;<br>
 
 
-                    &lt;/div&gt;
+                    &lt;/div&gt;<br>
 
 
-                    &lt;/div&gt;
+                    &lt;/div&gt;<br>
 
 
-                    EOF;
+                    EOF;<br>
 
 
-                    return $contact_form;
+                    &nbsp;&nbsp;return $contact_form;<br>
 
 
                     }
@@ -253,35 +206,31 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
+            <td width="935" class="codified">
 
-                    public function as_content($each_component, $vce) {
-
-
-                    //$my_content = $this-&gt;component_info();
+            public function as_content($each_component, $vce) {<br>
 
 
-                    $display_content = "Blog-o-rama says hello!";
+              &nbsp;&nbsp;//$my_content = $this-&gt;component_info();<br>
 
 
-                    $display_content .=
-                    $this-&gt;create_contact_form($each_component,
+              &nbsp;&nbsp;$display_content = "Blog-o-rama says hello!";<br>
 
 
-                    $vce);
+              &nbsp;&nbsp;$display_content .= $this-&gt;create_contact_form($each_component, $vce);<br>
 
 
-                    $vce-&gt;content-&gt;add('main', $display_content);
+              &nbsp;&nbsp;$vce-&gt;content-&gt;add('main', $display_content);<br>
 
 
-                    }
+            }
 
             </td>
         </tr>
     </tbody>
 </table>
  
-    Processing Data from your Component
+ <h3>Processing Data from your Component</h3>
  
 <p>
     The simplest way to receive data is to use the inherent update function in
@@ -310,27 +259,27 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
+            <td width="935" class="codified">
 
-                    public function update_contact($input) {
-
-
-                    global $vce;
+                    public function update_contact($input) {<br>
 
 
-                    $vce-&gt;dump($input);
+                    &nbsp;&nbsp;global $vce;<br>
 
 
-                    echo json_encode(array('response' =&gt; 'success',
+                    &nbsp;&nbsp;$vce-&gt;dump($input);<br>
 
 
-                    'procedure' =&gt; 'create','action' =&gt; 'reload',
+                    &nbsp;&nbsp;echo json_encode(array('response' =&gt; 'success',<br>
 
 
-                    'message' =&gt; 'This is only a test'));
+                    &nbsp;&nbsp;&nbsp;&nbsp;'procedure' =&gt; 'create','action' =&gt; 'reload',<br>
 
 
-                    return;
+                    &nbsp;&nbsp;&nbsp;&nbsp;'message' =&gt; 'This is only a test'));<br>
+
+
+                    &nbsp;&nbsp;return;<br>
 
 
                     }
@@ -340,406 +289,46 @@
     </tbody>
 </table>
  
-    Ways to Subvert the Form Submission Process
+ <h3>Ways to Subvert the Form Submission Process</h3>
  
-<p>
-    1) Overwrite the form_input method from the parent Component class. Be
-    careful if you do this, and make sure to keep the important elements that
-    allow your input to be processed
-</p>
-<p>
-    2) Write a custom method to process your data, and make sure it’s the
-    designated procedure in your dossier
-</p>
-<p>
-    3) Customize your form fields that you add to a page. You can have multiple
-    forms with multiple dossiers
-</p>
-<p>
-    4) Overwrite the input path and create your own component to route the
-    data.
-</p>
+<ol>
+  <li>Overwrite the form_input method from the parent Component class. Be
+      careful if you do this, and make sure to keep the important elements that
+      allow your input to be processed</li>
+  <li>Write a custom method to process your data, and make sure it’s the
+          designated procedure in your dossier</li>
+  <li>Customize your form fields that you add to a page. You can have multiple
+      forms with multiple dossiers</li>
+      <li>Overwrite the input path and create your own component to route the
+          data.</li>
+</ol>
 
-<p><a href="#methods">Back to Top</a>
+<p><a href="#top">Back to Top</a>
 
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    <a name="file_upload">File Upload</a>
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
+<h2 id="file_upload">File Upload</h2>
 <p>
     There are some components which allow a user to upload a file. This can be
     useful in many scenarios. There are two methods involved in building and
     adding the file upload element to a page:
 </p>
-<p>
-    1) File_upload returns true or false. The file upload element will only be
-    added if this method returns true. Use this method to test conditions to
-    determine if the element should be added to the page.
-</p>
-<p>
-    2) Add_file_uploader will create the HTML content to add a file upload
-    element to the page, and returns this content.
-</p>
+<ol>
+  <li>File_upload returns true or false. The file upload element will only be
+      added if this method returns true. Use this method to test conditions to
+      determine if the element should be added to the page.</li>
+  <li>Add_file_uploader will create the HTML content to add a file upload
+      element to the page, and returns this content.</li>
+</ol>
+
 <p>
     The Blogorama Class has a working example using the file_upload and
     add_file_uploader methods to add a file upload element to the page.
 </p>
 
-<p><a href="#methods">Back to Top</a>
+<p><a href="#top">Back to Top</a>
 
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <h2>
-                    <a name="troubleshooting_tools">Troubleshooting Tools</a>
-                </h2>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<h2 id="hook">Add a Hook</h2>
 <p>
-    The complexity of Nestor allows the system a great deal of flexibility,
-    however it can lead to some difficult troubleshooting scenarios. There are
-    some useful functions that will help you trace and debug your code.
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    Dump
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    The dump method located in $vce allows you to display the contents of a
-    value to the screen. Note that this doesn’t always work, depending on what
-    point during the page build process you call the function.
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-
-                    dump($var, $color = 'ffc')
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-    Parameters
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="198" valign="top">
-
-                    $var
-
-            </td>
-            <td width="162" valign="top">
-
-                    Mixed
-
-            </td>
-            <td width="576" valign="top">
-
-                    If given a
-                    <a
-                        href="http://php.net/manual/en/language.types.string.php"
-                    >
-                        string
-                    </a>
-                    ,
-                    <a
-                        href="http://php.net/manual/en/language.types.integer.php"
-                    >
-                        integer
-                    </a>
-                    or
-                    <a href="http://php.net/manual/en/language.types.float.php">
-                        float
-                    </a>
-                    , the value itself will be printed. If given an
-                    <a href="http://php.net/manual/en/language.types.array.php">
-                        array
-                    </a>
-                    , values will be presented in a format that shows keys and
-                    elements.
-
-            </td>
-        </tr>
-        <tr>
-            <td width="198" valign="top">
-
-                    $color
-
-            </td>
-            <td width="162" valign="top">
-
-                    String
-
-            </td>
-            <td width="576" valign="top">
-
-                    Hex value for the color of the background shown behind the
-                    value printed
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-    Return
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-
-                    No values returned
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-</h4>
- <h3>
-    Example<strong></strong>
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-
-                    $vce-&gt;dump($each_component);
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><a href="#methods">Back to Top</a>
-
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    Log
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    If you aren’t seeing results using the dump function, or the logic you are
-    testing is in a complex chain of function calls, using the $vce log
-    function can be very useful. Anything you send to $vce-&gt;log will be
-    added to the log.txt file found in the root folder of your Nestor
-    installation. You can designate a different file, just know that the path
-    will be built from your root folder.
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-
-                    log($var, $file = "log.txt")
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-    Parameters
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="198" valign="top">
-
-                    $var
-
-            </td>
-            <td width="162" valign="top">
-
-                    Mixed
-
-            </td>
-            <td width="576" valign="top">
-
-                    Can be any type except a
-                    <a
-                        href="http://php.net/manual/en/language.types.resource.php"
-                    >
-                        resource
-                    </a>
-
-            </td>
-        </tr>
-        <tr>
-            <td width="198" valign="top">
-
-                    $file
-
-            </td>
-            <td width="162" valign="top">
-
-                    String (Optional)
-
-            </td>
-            <td width="576" valign="top">
-
-                    Name of the file to which information will be written.
-                    Defaults to log.txt.
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-    Return
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-
-                    No values returned
-
-            </td>
-        </tr>
-    </tbody>
-</table>
- <h3>
-</h4>
- <h3>
-    Example<strong></strong>
-</h4>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-
-                    //send components array details to the log file
-
-
-                    $var = $vce-&gt;page-&gt;components;
-
-
-                    $vce-&gt;log($var);
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><a href="#methods">Back to Top</a>
-
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    Displaying Errors from Asynchronous Calls
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    Many of the features of Nestor rely on asynchronous calls to the server.
-    Errors on the server can be easily masked this way. Use the echo command to
-    send messages back to the originating javascript call, which will display
-    these messages.
-</p>
- <h3>
-    Example
-</h4>
-<p>
-    The create method of Component returns a success message if component was
-    created, and an error message if not. A return value of ‘success’ will
-    cause the page to reload, a return value of ‘error’ will display an error
-    message on the page.
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-
-                    if ($component_id) {
-
-
-                    global $site;
-
-
-                    $site-&gt;add_attributes('message',self::component_info()
-
-
-                    ['name'] . ' Created');
-
-
-                    echo json_encode(array('response' =&gt; 'success',
-
-
-                    'procedure' =&gt; 'create','action' =&gt; 'reload',
-
-
-                    'message' =&gt; 'Created','component_id' =&gt;
-                    $component_id));
-
-
-                    return;
-
-
-                    } else {
-
-
-                    echo json_encode(array('response' =&gt; 'error',
-
-
-                    'procedure' =&gt; 'update','message' =&gt; "Error"));
-
-
-                    return;
-
-
-                    }
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table border="1" cellspacing="0" cellpadding="0"  id="add_a_hook">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    Adding a Hook
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    Hooks are a powerful tool that allow your component to 'hook into' the
+    Hooks are a powerful tool that allow your component to hook into the
     Nestor engine at various stages of the page build process, as well as any
     place in the code where a hook has been inserted. A hook is configured
     within a component class and designates a class and method to call when the
@@ -747,44 +336,42 @@
     pairing is known as a procedure.
 </p>
 <p>
-    Read the Hooks Section for detailed information about what hooks are
+    Read the <a href="extend_hooks.htm">Hooks section</a> for detailed information about what hooks are
     available in the Nestor system and how they can influence the function of
     the core engine classes.
 </p>
  
-    Hook configuration
+<h3>Hook configuration</h3>
  
 <p>
-    During the page build process, the procedure/hook associations are loaded
-    into a hooks array that’s added to the global $site object. The Hooks
-    Definition and Load Process flow chart shows the end-to-end process of
+    During the <a href="extend_page_build.htm">Page Build process</a>, the procedure/hook associations are loaded
+    into a hooks array that’s added to the global $site object. <a href="extend_hooks_config_flow.htm">The Hooks
+    Definition and Load Process flow chart</a> shows the end-to-end process of
     defining a hook and loading into the system for use.
 </p>
 <p>
     To assign a procedure to a hook, overwrite the preload_component method in
     your component.
 </p>
- <h3>
-    Hook configuration example<strong></strong>
-</h4>
+ <h3>Hook configuration example</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
+            <td width="935" class="codified">
 
-                    public function preload_component() {
-
-
-                    $content_hook = array (
+                    public function preload_component() {<br>
 
 
-                    'page_requested_url' =&gt; 'Input::page_requested_url'
+                    &nbsp;&nbsp;$content_hook = array (<br>
 
 
-                    );
+                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; 'Input::page_requested_url'<br>
 
 
-                    return $content_hook;
+                    &nbsp;&nbsp;);<br>
+
+
+                    &nbsp;&nbsp;return $content_hook;<br>
 
 
                     }
@@ -793,17 +380,9 @@
         </tr>
     </tbody>
 </table>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                 
-                    Build a Component with Minions
-                 
-            </td>
-        </tr>
-    </tbody>
-</table>
+<p><a href="#top">Back to Top</a>
+ <h2>Build a Component with Minions</h2>
+            
 <p>
     There are some cases where you may want to create a component that will
     have a number of sub-components, referred to as Minions, that it can
@@ -821,29 +400,29 @@
 <p>
     <img
         border="0"
-        width="803"
-        height="510"
-        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg"
+        width="600"
+        height="501"
+        src="images/screen_clips/media_with_mediatypes.png"
     />
 </p>
 <p>
-    <span class="italic">Media component in a recipe with Minion selection</span>
+    <span class="screen_clip">Media component in a recipe with Minion selection</span>
 </p>
 <p>
     <img
         border="0"
-        width="936"
-        height="277"
-        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png"
+        width="900"
+        height="238"
+        src="images/screen_clips/add_media_content.png"
     />
 </p>
 <p>
-    <span class="italic">
+    <span class="screen_clip">
         Media content choices for the end user, all Minion types represented
     </span>
 </p>
  
-    Master/Minion Class Structure
+<h3>Master/Minion Class Structure</h3>
  
 <p>
     The master class (Media) extends Component class, while the Minion
@@ -854,65 +433,45 @@
     their Master component.
 </p>
  
-    Master Component Class
+<h3>Master Component Class</h3>
  
 <p>
     The Master Class needs to perform the following operations to find and
     connect to its Minions.
 </p>
-<p>
-    1) Create a hook in the preload_component method
-</p>
-<p>
-    2) Use the hook to call a method that loads in the Minion Parent class (ie
-    MediaType)
-</p>
-<p>
-    3) In the as_content method, load in the list of minions. This list takes
-the form of an array that’s a property of $site, labeled enabled_[    <span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
-</p>
-<p>
-    a. The enabled_[<span class="italic">Minion parent class name</span>]s array is created and
-    populated by the Manage Components page each time the Master component is
-    added or updated. It’s populated with all of its active Minions. It will be
-    given the name enabled_[<span class="italic">Minion parent class name</span>]s by default.
-</p>
-<p>
-    b. Cycle through the Minion array and load each of their class files
-</p>
-<p>
-    4) Call a class, ie edit_media_component, to generate dossiers and to call
-    the edit function of each Minion
-</p>
-<p>
-    5) In the add_component function, add code to make sure each minion shows
-    up as a checkbox
-</p>
-<p>
-    6) Create a subfolder under the master folder for the Minion parent class
-    files
-</p>
- 
-    Minion Classes
- 
-<p>
-    1) Create a separate folder in the [my_nestor]-content\components folder to
-    host each minion, create a class file for each Minion in its respective
-    folder
-</p>
-<p>
-    2) The parent Minion class should have a generic methods for display that
-    each Minion will overwrite
-</p>
-<p>
-    3) The parent Minion class needs a method to add each Minion, using
-    dossiers created by the master class
-</p>
-<p>
-    4) The Minion classes will need to flesh out the display method to generate
-    content for themselves
-</p>
+<ol>
+  <li>Create a hook in the preload_component method</li>
+  <li>Use the hook to call a method that loads in the Minion Parent class (ie
+      MediaType)</li>
+  <li>In the as_content method, load in the list of minions. This list takes the form of an array that’s a property of $site, labeled enabled_[<span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
+  <ul>
+    <li>The enabled_[<span class="italic">Minion parent class name</span>]s array is created and
+      populated by the Manage Components page each time the Master component is
+      added or updated. It’s populated with all of its active Minions. It will be
+      given the name enabled_[<span class="italic">Minion parent class name</span>]s by default.</li>
+      <li>Cycle through the Minion array and load each of their class files</li>
+  </ul>
+  </li>
+  <li>Call a class, ie edit_media_component, to generate dossiers and to call
+      the edit function of each Minion</li>
+  <li>In the add_component function, add code to make sure each minion shows up as a checkbox</li>
+  <li>Create a subfolder under the master folder for the Minion parent class
+      files</li>
+</ol>
 
+<h3>Minion Classes</h3>
+ 
+<ol>
+  <li>Create a separate folder in the [<span class="italic">my_nestor</span>]-content/components folder to
+      host each minion, create a class file for each Minion in its respective
+      folder</li>
+  <li>The parent Minion class should have a generic methods for display that each Minion will overwrite</li>
+  <li>The parent Minion class needs a method to add each Minion, using
+      dossiers created by the master class</li>
+  <li>The Minion classes will need to flesh out the display method to generate
+      content for themselves</li>
+</ol>
+<p><a href="#top">Back to Top</a>
   </div><!--end main div-->
 
  

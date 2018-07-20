@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nestor Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body onload="includeHTML()">
+  <div id="menu" menu-html="menu.html">
+
+  </div>
+
+  <div class="main">
+   
+ <h2 id="troubleshooting_tools">Troubleshooting Tools
+  </h2>
+   <p>
+     The complexity of Nestor allows the system a great deal of flexibility,
+     however it can lead to some difficult troubleshooting scenarios. There are
+     some useful functions that will help you trace and debug your code.
+ </p>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+                  
+                     Dump
+                  
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ <p>
+     The dump method located in $vce allows you to display the contents of a
+     value to the screen. Note that this doesn’t always work, depending on what
+     point during the page build process you call the function.
+ </p>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+ 
+                     dump($var, $color = 'ffc')
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+     Parameters
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="198" >
+ 
+                     $var
+ 
+             </td>
+             <td width="162" >
+ 
+                     Mixed
+ 
+             </td>
+             <td width="576" >
+ 
+                     If given a
+                     <a
+                         href="http://php.net/manual/en/language.types.string.php"
+                     >
+                         string
+                     </a>
+                     ,
+                     <a
+                         href="http://php.net/manual/en/language.types.integer.php"
+                     >
+                         integer
+                     </a>
+                     or
+                     <a href="http://php.net/manual/en/language.types.float.php">
+                         float
+                     </a>
+                     , the value itself will be printed. If given an
+                     <a href="http://php.net/manual/en/language.types.array.php">
+                         array
+                     </a>
+                     , values will be presented in a format that shows keys and
+                     elements.
+ 
+             </td>
+         </tr>
+         <tr>
+             <td width="198" >
+ 
+                     $color
+ 
+             </td>
+             <td width="162" >
+ 
+                     String
+ 
+             </td>
+             <td width="576" >
+ 
+                     Hex value for the color of the background shown behind the
+                     value printed
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+     Return
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="198" >
+             </td>
+             <td width="738" >
+ 
+                     No values returned
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+ </h4>
+  <h3>
+     Example<strong></strong>
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+ 
+                     $vce-&gt;dump($each_component);
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ 
+ <p><a href="#top">Back to Top</a>
+ 
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+                  
+                     Log
+                  
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ <p>
+     If you aren’t seeing results using the dump function, or the logic you are
+     testing is in a complex chain of function calls, using the $vce log
+     function can be very useful. Anything you send to $vce-&gt;log will be
+     added to the log.txt file found in the root folder of your Nestor
+     installation. You can designate a different file, just know that the path
+     will be built from your root folder.
+ </p>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+ 
+                     log($var, $file = "log.txt")
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+     Parameters
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="198" >
+ 
+                     $var
+ 
+             </td>
+             <td width="162" >
+ 
+                     Mixed
+ 
+             </td>
+             <td width="576" >
+ 
+                     Can be any type except a
+                     <a
+                         href="http://php.net/manual/en/language.types.resource.php"
+                     >
+                         resource
+                     </a>
+ 
+             </td>
+         </tr>
+         <tr>
+             <td width="198" >
+ 
+                     $file
+ 
+             </td>
+             <td width="162" >
+ 
+                     String (Optional)
+ 
+             </td>
+             <td width="576" >
+ 
+                     Name of the file to which information will be written.
+                     Defaults to log.txt.
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+     Return
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="198" >
+             </td>
+             <td width="738" >
+ 
+                     No values returned
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  <h3>
+ </h4>
+  <h3>
+     Example<strong></strong>
+ </h4>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+ 
+                     //send components array details to the log file
+ 
+ 
+                     $var = $vce-&gt;page-&gt;components;
+ 
+ 
+                     $vce-&gt;log($var);
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ 
+ <p><a href="#top">Back to Top</a>
+ 
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+                  
+                     Displaying Errors from Asynchronous Calls
+                  
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ <p>
+     Many of the features of Nestor rely on asynchronous calls to the server.
+     Errors on the server can be easily masked this way. Use the echo command to
+     send messages back to the originating javascript call, which will display
+     these messages.
+ </p>
+  <h3>
+     Example
+ </h4>
+ <p>
+     The create method of Component returns a success message if component was
+     created, and an error message if not. A return value of ‘success’ will
+     cause the page to reload, a return value of ‘error’ will display an error
+     message on the page.
+ </p>
+ <table border="1" cellspacing="0" cellpadding="0">
+     <tbody>
+         <tr>
+             <td width="935" >
+ 
+                     if ($component_id) {
+ 
+ 
+                     global $site;
+ 
+ 
+                     $site-&gt;add_attributes('message',self::component_info()
+ 
+ 
+                     ['name'] . ' Created');
+ 
+ 
+                     echo json_encode(array('response' =&gt; 'success',
+ 
+ 
+                     'procedure' =&gt; 'create','action' =&gt; 'reload',
+ 
+ 
+                     'message' =&gt; 'Created','component_id' =&gt;
+                     $component_id));
+ 
+ 
+                     return;
+ 
+ 
+                     } else {
+ 
+ 
+                     echo json_encode(array('response' =&gt; 'error',
+ 
+ 
+                     'procedure' =&gt; 'update','message' =&gt; "Error"));
+ 
+ 
+                     return;
+ 
+ 
+                     }
+ 
+             </td>
+         </tr>
+     </tbody>
+ </table>
+  </div><!--end main div-->
+
+ 
+</body>
+</html>
