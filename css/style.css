@@ -19,7 +19,7 @@ padding: 15px 0px 15px 0px;
 h3{
 color: #326273;
 font-size: 14px;
-padding: 5px 0px 5px 0px;
+padding: 10px 0px 5px 0px;
 }
 
 hr { 
@@ -34,12 +34,13 @@ border-width: 1px;
 
 p{
 font-size: 14px;
-padding-bottom: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
 }
 
 ul, ol{
 font-size: 14px;
-margin-left: 15px;
+margin-left: 25px;
 }
 
 li {
@@ -91,6 +92,8 @@ text-align: left;
 padding: 4px;
 background-color: #e5e338;
 color: black;
+vertical-align: middle;
+font-family: "PT Sans", "Verdana", "Arial", "sans-serif";
 }
 
 
@@ -121,14 +124,19 @@ padding: 0px 0px 10px 0px;
 .codified {
 font-family: 'Courier New', Courier, monospace;
 background-color: #eeeeee;
+vertical-align: middle;
 }
 
-.italic{
+.italic {
 font-style: italic;
 }
 
+.bold {
+font-weight: bold;
+}
+
 .hook {
-font-style: bold;
+font-weight: bold;
 color: green;
 }
 
@@ -155,3 +163,4 @@ color: #990099;
 .orange {
   color: #ff6600;
 }
+

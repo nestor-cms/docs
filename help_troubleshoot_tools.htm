@@ -16,24 +16,16 @@
 
   <div class="main">
    
- <h2 id="troubleshooting_tools">Troubleshooting Tools
-  </h2>
+ <h1 id="troubleshooting_tools">Troubleshooting Tools
+  </h1>
    <p>
      The complexity of Nestor allows the system a great deal of flexibility,
      however it can lead to some difficult troubleshooting scenarios. There are
      some useful functions that will help you trace and debug your code.
  </p>
  <table border="1" cellspacing="0" cellpadding="0">
-     <tbody>
-         <tr>
-             <td width="935" >
-                  
-                     Dump
-                  
-             </td>
-         </tr>
-     </tbody>
- </table>
+<h2>Dump</h2>
+
  <p>
      The dump method located in $vce allows you to display the contents of a
      value to the screen. Note that this doesn’t always work, depending on what
@@ -42,7 +34,7 @@
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="935" >
+             <td width="935" class="method_syntax">
  
                      dump($var, $color = 'ffc')
  
@@ -52,7 +44,7 @@
  </table>
   <h3>
      Parameters
- </h4>
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
@@ -115,13 +107,11 @@
  </table>
   <h3>
      Return
- </h4>
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="198" >
-             </td>
-             <td width="738" >
+             <td >
  
                      No values returned
  
@@ -129,15 +119,14 @@
          </tr>
      </tbody>
  </table>
+
   <h3>
- </h4>
-  <h3>
-     Example<strong></strong>
- </h4>
+     Example
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="935" >
+             <td width="935" class="codified">
  
                      $vce-&gt;dump($each_component);
  
@@ -148,17 +137,8 @@
  
  <p><a href="#top">Back to Top</a>
  
- <table border="1" cellspacing="0" cellpadding="0">
-     <tbody>
-         <tr>
-             <td width="935" >
+ <h2>Log</h2>
                   
-                     Log
-                  
-             </td>
-         </tr>
-     </tbody>
- </table>
  <p>
      If you aren’t seeing results using the dump function, or the logic you are
      testing is in a complex chain of function calls, using the $vce log
@@ -170,7 +150,7 @@
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="935" >
+             <td width="935" class="method_syntax">
  
                      log($var, $file = "log.txt")
  
@@ -180,7 +160,7 @@
  </table>
   <h3>
      Parameters
- </h4>
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
@@ -227,38 +207,28 @@
  </table>
   <h3>
      Return
- </h4>
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="198" >
-             </td>
-             <td width="738" >
- 
+             <td>
                      No values returned
- 
              </td>
          </tr>
      </tbody>
  </table>
   <h3>
- </h4>
+ </h3>
   <h3>
-     Example<strong></strong>
- </h4>
+     Example
+ </h3>
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="935" >
- 
-                     //send components array details to the log file
- 
- 
-                     $var = $vce-&gt;page-&gt;components;
- 
- 
-                     $vce-&gt;log($var);
- 
+             <td width="935" class="codified">
+                     //send components array details to the log file<br>
+                     $var = $vce-&gt;page-&gt;components;<br>
+                     $vce-&gt;log($var);<br>
              </td>
          </tr>
      </tbody>
@@ -266,17 +236,8 @@
  
  <p><a href="#top">Back to Top</a>
  
- <table border="1" cellspacing="0" cellpadding="0">
-     <tbody>
-         <tr>
-             <td width="935" >
-                  
-                     Displaying Errors from Asynchronous Calls
-                  
-             </td>
-         </tr>
-     </tbody>
- </table>
+ <h2>Displaying Errors from Asynchronous Calls</h2>
+
  <p>
      Many of the features of Nestor rely on asynchronous calls to the server.
      Errors on the server can be easily masked this way. Use the echo command to
@@ -285,7 +246,7 @@
  </p>
   <h3>
      Example
- </h4>
+ </h3>
  <p>
      The create method of Component returns a success message if component was
      created, and an error message if not. A return value of ‘success’ will
@@ -295,45 +256,20 @@
  <table border="1" cellspacing="0" cellpadding="0">
      <tbody>
          <tr>
-             <td width="935" >
+             <td width="935" class="codified">
  
-                     if ($component_id) {
- 
- 
-                     global $site;
- 
- 
-                     $site-&gt;add_attributes('message',self::component_info()
- 
- 
-                     ['name'] . ' Created');
+                     if ($component_id) {<br>
+                     &nbsp;&nbsp;global $site;<br>
+                     &nbsp;&nbsp;$site-&gt;add_attributes('message',self::component_info()['name'] . ' Created');<br>
+                     &nbsp;&nbsp;echo json_encode(array('response' =&gt; 'success','procedure' =&gt; 'create','action' =&gt; 'reload',<br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;'message' =&gt; 'Created','component_id' =&gt;$component_id));<br>
+                     &nbsp;&nbsp;return;<br>
  
  
-                     echo json_encode(array('response' =&gt; 'success',
- 
- 
-                     'procedure' =&gt; 'create','action' =&gt; 'reload',
- 
- 
-                     'message' =&gt; 'Created','component_id' =&gt;
-                     $component_id));
- 
- 
-                     return;
- 
- 
-                     } else {
- 
- 
-                     echo json_encode(array('response' =&gt; 'error',
- 
- 
-                     'procedure' =&gt; 'update','message' =&gt; "Error"));
- 
- 
-                     return;
- 
- 
+                     } else {<br>
+                        &nbsp;&nbsp;echo json_encode(array('response' =&gt; 'error', 'procedure' =&gt; 'update','message' =&gt; "Error"));<br>
+                        &nbsp;&nbsp;return;<br>
+
                      }
  
              </td>

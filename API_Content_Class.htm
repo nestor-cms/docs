@@ -15,24 +15,13 @@
   </div>
 
   <div class="main">
-   <!--INSERT CONTENT HERE-->
-
-
 
    <h1>
     Content Class
 </h1>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <div align="center">
-                    <hr size="3" width="100%" align="center"/>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+ <hr size="3" width="100%" align="center"/>
+               
 <p>
     The Content class is the repository for all HTML produced by other classes.
     Content is stored in this object in the properties which are created by the
@@ -52,10 +41,8 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
+            <td width="935" valign="top" class="header_cell">
                     Properties
-                </h2>
             </td>
         </tr>
     </tbody>
@@ -63,143 +50,141 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="136" valign="top">
-                <p>
+            <th width="136" valign="top">
+
                     <strong>Name</strong>
-                </p>
-            </td>
-            <td width="143" valign="top">
-                <p>
+
+            </th>
+            <th width="143" valign="top">
+
                     <strong>Type</strong>
-                </p>
-            </td>
-            <td width="657" valign="top">
-                <p>
+
+            </th>
+            <th width="657" valign="top">
+
                     <strong>Description</strong>
-                </p>
-            </td>
+
+            </th>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     $premain
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     Holds the content that by default will be written first to
                     the content area of the final rendered page
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     $main
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     Holds the content that by default will be written after the
                     premain content to final rendered page
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     $postmain
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     Holds the content that by default will be written after the
                     main content to final rendered page
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     $admin
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     Holds admin content
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     javascript
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     HTML script content to add javascript files to the page in
                     the normal header spot
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="136" valign="top">
-                <p>
+
                     javascript_footer
-                </p>
+
             </td>
             <td width="143" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="657" valign="top">
-                <p>
+
                     HTML script content to add javascript files to the page in
                     the footer position
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
 <p>
-    *note: these properties are not created during construct, but are the
+    <span class="bold">note</span>: these properties are not created during construct, but are the
     common values used by many components to add content to the $content
     object.
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
+            <td width="935" valign="top" class="header_cell">
                     Methods
-                </h2>
             </td>
         </tr>
     </tbody>
@@ -207,20 +192,20 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <th width="387" valign="top">
+
                     <strong>Name/Syntax</strong>
-                </p>
-            </td>
-            <td width="549" valign="top">
-                <p>
+
+            </th>
+            <th width="549" valign="top">
+
                     <strong>Description</strong>
-                </p>
-            </td>
+
+            </th>
         </tr>
         <tr>
             <td width="387" valign="top">
-                <p>
+
                     <strong>
                         <a
                             href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Content%20Class.docx#add"
@@ -229,23 +214,23 @@
                         </a>
                     </strong>
                     ($property_name = 'main',
-                </p>
-                <p>
+
+
                     $new_content = null,
-                </p>
-                <p>
+
+
                     $prepend = false)
-                </p>
+
             </td>
             <td width="549" valign="top">
-                <p>
+
                     Add content to the designated property of $content
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="387" valign="top">
-                <p>
+
                     <strong>
                         <a
                             href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Content%20Class.docx#menu"
@@ -254,20 +239,20 @@
                         </a>
                     </strong>
                     ($title, $args = array())<strong></strong>
-                </p>
+
             </td>
             <td width="549" valign="top">
-                <p>
+
                     Creates menu when called. Echos the final, formatted menu
                     string so that it can be inserted directly into an HTML
                     page context. Note that menu items are checked by role to
                     ensure the viewer should have access to them.
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="387" valign="top">
-                <p>
+
                     <strong>
                         <a
                             href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Content%20Class.docx#output"
@@ -276,13 +261,13 @@
                         </a>
                     </strong>
                     ($items = null)
-                </p>
+
             </td>
             <td width="549" valign="top">
-                <p>
+
                     Either output current contents of $content, or values of
                     $items if specified
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -305,9 +290,9 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <h3>
+                
                     <a name="add">Add</a>
-                </h3>
+                
             </td>
         </tr>
     </tbody>
@@ -321,10 +306,10 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     add ($property_name = 'main', $new_content = null, $prepend
                     = false)
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -336,60 +321,60 @@
     <tbody>
         <tr>
             <td width="194" valign="top">
-                <p>
+
                     $property_name
-                </p>
+
             </td>
             <td width="130" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="612" valign="top">
-                <p>
+
                     Designates to which $content property the content should be
                     added, defaults to main. Values of ‘premain’, ‘main’ and
                     ‘postmain’ are the most common, and by default these are
                     the values that are written to the page by the output
                     function.
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="194" valign="top">
-                <p>
+
                     $new_content
-                </p>
+
             </td>
             <td width="130" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="612" valign="top">
-                <p>
+
                     The content you will be adding. Should be formatted for
                     HTML output
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="194" valign="top">
-                <p>
+
                     $prepend
-                </p>
+
             </td>
             <td width="130" valign="top">
-                <p>
+
                     Bool
-                </p>
+
             </td>
             <td width="612" valign="top">
-                <p>
+
                     When set to true, will prepend the content to the
                     designated property. This is set to false by default, so in
                     most cases content will be appended
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -403,9 +388,9 @@
             <td width="198" valign="top">
             </td>
             <td width="738" valign="top">
-                <p>
+
                     No return value
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -417,10 +402,10 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     $vce-&gt;content-&gt;add('main',
                     '&lt;br&gt;Hiya!&lt;br&gt;');
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -429,9 +414,9 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <h3>
+                
                     <a name="output">Output</a>
-                </h3>
+                
             </td>
         </tr>
     </tbody>
@@ -447,9 +432,9 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     output($items = null)
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -461,21 +446,21 @@
     <tbody>
         <tr>
             <td width="171" valign="top">
-                <p>
+
                     $items
-                </p>
+
             </td>
             <td width="126" valign="top">
-                <p>
+
                     array of strings
-                </p>
+
             </td>
             <td width="639" valign="top">
-                <p>
+
                     If set, this function will output all the properties
                     designated in the array, in the order they appear in the
                     array
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -489,9 +474,9 @@
             <td width="171" valign="top">
             </td>
             <td width="764" valign="top">
-                <p>
+
                     No return value
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -503,17 +488,17 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     //will concatenate admin, premain, main and postmain and
                     then
-                </p>
-                <p>
+
+
                     //echo the result
-                </p>
-                <p>
+
+
                     $vce-&gt;content-&gt;output(array('admin', 'premain',
                     'main', 'postmain'));
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -522,9 +507,9 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <h3>
+                
                     <a name="menu">Menu</a>
-                </h3>
+                
             </td>
         </tr>
     </tbody>
@@ -539,9 +524,9 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     menu($title, $args = array())
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -553,36 +538,36 @@
     <tbody>
         <tr>
             <td width="180" valign="top">
-                <p>
+
                     $title
-                </p>
+
             </td>
             <td width="162" valign="top">
-                <p>
+
                     String
-                </p>
+
             </td>
             <td width="594" valign="top">
-                <p>
+
                     Title of the menu
-                </p>
+
             </td>
         </tr>
         <tr>
             <td width="180" valign="top">
-                <p>
+
                     $args
-                </p>
+
             </td>
             <td width="162" valign="top">
-                <p>
+
                     Array
-                </p>
+
             </td>
             <td width="594" valign="top">
-                <p>
+
                     Other args used by function, such as class and separator
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -596,9 +581,9 @@
             <td width="189" valign="top">
             </td>
             <td width="746" valign="top">
-                <p>
+
                     No return value, echo the string representing the menu
-                </p>
+
             </td>
         </tr>
     </tbody>
@@ -610,13 +595,13 @@
     <tbody>
         <tr>
             <td width="935" valign="top">
-                <p>
+
                     //example of menu in a theme.php page, inserted into page
                     HTML
-                </p>
-                <p>
+
+
                     &lt;?php $vce-&gt;content-&gt;menu('main'); ?&gt;
-                </p>
+
             </td>
         </tr>
     </tbody>
