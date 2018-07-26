@@ -20,20 +20,12 @@
 <h1>
     Site Class API
 </h1>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <div align="center">
-                    <hr size="3" width="100%" align="center"/>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+ <hr size="3" width="100%" align="center"/>
+
 <p>
     The Site class stores metadata used by the site such as theme, site
-    description, and relative URL for the codebase Site also manages file
+    description, and relative URL for the codebase. Site also manages file
     dependencies for your Component, as well as any scheduled (cron) tasks
     you’d like to add to the system. This Class also manages a set of Session
     attributes that can be used to store temporary or persistent values across
@@ -56,10 +48,10 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
+            <td width="935"  class="header_cell">
+                
                     Properties
-                </h2>
+                
             </td>
         </tr>
     </tbody>
@@ -67,449 +59,443 @@
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <th width="256" >
+
                     <strong>Name</strong>
-                </p>
-            </td>
-            <td width="168" valign="top">
-                <p>
+
+            </th>
+            <th width="168" >
+
                     <strong>Type</strong>
-                </p>
-            </td>
-            <td width="513" valign="top">
-                <p>
+
+            </th>
+            <th width="513" >
+
                     <strong>Description</strong>
-                </p>
-            </td>
+
+            </th>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $activated_components
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the active components in the system.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $enabled_mediatype
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the MediaTypes enabled for use with the Media
-                    object
-                </p>
-                <p>
-                    Note: if you have built custom components with minions, you
-will see other similar arrays named $enabled_[                    <em>minion name</em>]
-                </p>
+                    object.<br><br>
+
+
+                    Note: if you have built custom components with minions, you will see other similar arrays named $enabled_[<span class="italic">minion name</span >]
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256" >
+
                     $hooks
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     Array
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Holds all the hooks loaded from components. Each hook
                     composed of a class name and method to call, plus other
                     args as defined by the hook
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $installed_components
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the components installed in the system.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256" >
+
                     $javascript_dependencies
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     Array
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Stores paths to js and stylesheet dependencies
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $preloaded_components
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the preloaded components in the system.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $roles
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the system roles
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_roles
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the role access specific to certain components
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_description
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Description of your installation, is displayed on the site
                     banner following the Theme title
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_email
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Email of site administrator
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_menus
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the menus available
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_theme
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Tells system which theme pages to use
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_title
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     Title that is inserted as the HTML page title, displays as
                     tab or page name in the browser
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $site_url
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     URL that resolves to your installation of Nestor
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256"  class="purple">
+
                     $user_attributes
-                </p>
+
             </td>
-            <td width="168" valign="top">
-                <p>
+            <td width="168" >
+
                     JSON encoded String
-                </p>
+
             </td>
-            <td width="513" valign="top">
-                <p>
+            <td width="513" >
+
                     List of the custom user attributes created in your
                     installation
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h2>
-    Using the site_meta table to store site properties
-</h2>
+
+<table border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td width="935"  class="header_cell">
+                    
+                        Site properties stored in the site_meta table
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 <p>
-    Most of the properties in the Site class (marked purple in the table above)
+    Most of the properties in the Site class (marked <span class="purple">purple</span> in the table above)
     are not created when the site object is instantiated, but instead are
-    retrieved from the [<em>yourdb</em>]_site_meta table then added as
-    key-&gt;value pairs to the $site object. The purple properties listed above
+    retrieved from the [<span class="italic">yourdb</span >]_site_meta table then added as
+    key / value pairs to the $site object. The purple properties listed above
     are the standard values populated during the installation process. This
     gives you the flexibility to add your own values to the $site object that
     can be used for your own custom functionality.
 </p>
 <p>
     Since these properties are stored in your database instance, you are able
-    to change them using database tool instead of programmatically. This is an
-    easy option to update some of the properties, such as site_description ,
-site_theme and site_title. However, we would strongly caution you    <strong>NOT</strong> to change the following properties, as this will cause
-    your installation to stop working.
+    to change them by directly editing your database table instead of programmatically. This is an easy option to update some of the properties, such as site_description, site_theme and site_title. However, we would strongly caution you <strong>NOT</strong> to change the following properties, as this may cause
+    your installation to stop working properly.
 </p>
+
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
-                    [<em>yourDB</em>]_site_meta table key/value pairs that
-                    should NOT be altered in the database
-                </h2>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="256" valign="top">
-                <p>
+            <th width="256" >
+
                     <strong>Property</strong>
-                </p>
-            </td>
-            <td width="681" valign="top">
-                <p>
+
+            </th>
+            <th width="681" >
+
                     <strong>Correct Method to Update</strong>
-                </p>
+
+            </th>
+        </tr>
+        <tr>
+            <td width="256" >
+
+                    activated_components
+
+            </td>
+            <td width="681" >
+
+                    Use the <a href="manage_components.htm">Manage Components</a> interface.
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
-                    activated_components<strong></strong>
-                </p>
+            <td width="256" >
+
+                    enabled_mediatype
+
             </td>
-            <td width="681" valign="top">
-                <p>
-                    Use (or adapt) the Manage Components component
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="256" valign="top">
-                <p>
-                    enabled_mediatype<strong></strong>
-                </p>
-            </td>
-            <td width="681" valign="top">
-                <p>
-                    Use (or adapt) the Manage Components component. When you
-                    activate the parent Media component, you’ll then have the
+            <td width="681" >
+
+                    Use  the <a href="manage_components.htm">Manage Components</a> interface. When you
+                    activate the parent <a href="components_media.htm">Media Component</a>, you’ll then have the
                     option to activate individual MediaTypes
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
-                    hooks<strong></strong>
-                </p>
+            <td width="256" >
+
+                    hooks
+
             </td>
-            <td width="681" valign="top">
-                <p>
-                    See section on adding hooks to a custom component
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="256" valign="top">
-                <p>
-                    installed_components<strong></strong>
-                </p>
-            </td>
-            <td width="681" valign="top">
-                <p>
-                    Use (or adapt) the Manage Components component
-                </p>
+            <td width="681" >
+
+                    See section on <a href="extend_hooks.htm">adding hooks</a> to a custom component
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
-                    javascript_dependencies<strong></strong>
-                </p>
+            <td width="256" >
+
+                    installed_components
+
             </td>
-            <td width="681" valign="top">
-                <p>
+            <td width="681" >
+
+                    Use the <a href="manage_components.htm">Manage Components</a> interface.
+
+            </td>
+        </tr>
+        <tr>
+            <td width="256" >
+
+                    javascript_dependencies
+
+            </td>
+            <td width="681" >
+
                     Call
                     <a
-                        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_script"
+                        href="#add_script"
                     >
                         $vce-&gt;site-&gt; add_script
                     </a>
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
-                    preloaded_components<strong></strong>
-                </p>
+            <td width="256" >
+
+                    preloaded_components
+
             </td>
-            <td width="681" valign="top">
-                <p>
-                    Overwrite the preload_component method in your component
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="256" valign="top">
-                <p>
-                    roles<strong></strong>
-                </p>
-            </td>
-            <td width="681" valign="top">
-                <p>
-                    Code to update roles is found in the Manage Roles component
-                </p>
+            <td width="681" >
+
+                    Overwrite the <a href="API_Component_Class#preload_component">preload_component</a> method in your component
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
+            <td width="256" >
+
+                    roles
+
+            </td>
+            <td width="681" >
+
+                    Update roles using the <a href="manage_roles.htm">Manage Roles</a> interface.
+
+            </td>
+        </tr>
+        <tr>
+            <td width="256" >
+
                     site_menus
-                </p>
+
             </td>
-            <td width="681" valign="top">
-                <p>
-                    Code to update menus is found in the Manage Menus component
-                </p>
+            <td width="681" >
+
+                    Update menus using the <a href="manage_menus.htm">Manage Menus</a> interface.
+
             </td>
         </tr>
         <tr>
-            <td width="256" valign="top">
-                <p>
-                    user_attributes<strong></strong>
-                </p>
+            <td width="256" >
+
+                    user_attributes
+
             </td>
-            <td width="681" valign="top">
-                <p>
-                    Code to update user attributes is found in the Manage User
-                    Attributes component, currently accessible within the
-                    Manage Users component
-                </p>
+            <td width="681" >
+
+                    Use the <a href="manage_users.htm">Manage Users</a> interface.
+
             </td>
         </tr>
     </tbody>
@@ -518,13 +504,13 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
     Future builds of Nestor will contain methods to allow you to
     programmatically change some of these properties without breaking the site.
 </p>
-<table border="1" cellspacing="0" cellpadding="0">
+<table border="1" cellspacing="0" cellpadding="0" id="methods">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
-                    <a name="methods">Methods</a>
-                </h2>
+            <td width="935"  class="header_cell">
+                
+                  Methods
+                
             </td>
         </tr>
     </tbody>
@@ -532,201 +518,201 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <th width="387" >
+
                     <strong>Name/Syntax</strong>
-                    <strong></strong>
-                </p>
-            </td>
-            <td width="549" valign="top">
-                <p>
+                    
+
+            </th>
+            <th width="549" >
+
                     <strong>Description</strong>
-                </p>
-            </td>
+
+            </th>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_attributes"
+                            href="#add_attributes"
                         >
                             add_attributes
                         </a>
                     </strong>
                     ($key, $value, $persistant = false)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Add key/value pairs to the the Session Object
                     ‘add_attributes’ property, which get added to the page
                     object on the next load.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_script"
+                            href="#add_script"
                         >
                             add_script
                         </a>
                     </strong>
                     ($path, $dependencies = null, $footer = null)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Add javascript or style sheet to the rendered page
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_site_roles"
+                            href="#add_site_roles"
                         >
                             add_site_roles
                         </a>
                     </strong>
                     ($attributes)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Add new roles to the site
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_style"
+                            href="#add_style"
                         >
                             add_style
                         </a>
                     </strong>
                     ($path, $name = null, $media = 'all')
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Add stylesheet to the rendered page
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#get_template_names"
+                            href="#get_template_names"
                         >
                             get_template_names
                         </a>
                     </strong>
                     ( )
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Creates an array of template names with complete file paths
                     that reside in the current theme directory.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#media_link"
+                            href="#media_link"
                         >
                             media_link
                         </a>
                     </strong>
                     ($fileinfo)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Generates the full path to a file, given an array with file
                     properties
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#remove_attributes"
+                            href="#remove_attributes"
                         >
                             remove_attributes
                         </a>
                     </strong>
                     ($key)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Remove an attribute from the Session Object
                     ‘add_attributes’ property
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#retrieve_attributes"
+                            href="#retrieve_attributes"
                         >
                             retrieve_attributes
                         </a>
                     </strong>
                     ($key)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Retrieve an attribute from the Session Object
                     ‘add_attributes’ property
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="387" valign="top">
-                <p>
+            <td width="387" >
+
                     <strong>
                         <a
-                            href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#url_checker"
+                            href="#url_checker"
                         >
                             url_checker
                         </a>
                     </strong>
                     ($url)
-                </p>
+
             </td>
-            <td width="549" valign="top">
-                <p>
+            <td width="549" >
+
                     Checks if a url has already been assigned to a component in
                     another Recipe
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
 <p>
     <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#Function_Name"
+        href="#Function_Name"
     >
         Add Function Name
     </a>
@@ -734,24 +720,22 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h2>
+            <td width="935"  class="header_cell">
+                
                     Method Details
-                </h2>
+                
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a name="_Get_Data_Object"></a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<table border="1" cellspacing="0" cellpadding="0" id="add_attributes">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="add_attributes">Add Attributes</a>
-                </h3>
+            <td width="935"  class="method_name">
+                
+                    Add Attributes
+                
             </td>
         </tr>
     </tbody>
@@ -769,119 +753,109 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935"  class="method_syntax">
+
                     add_attributes($key, $value, $persistant = false)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $key
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Key for the attribute
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $value
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Value to associate with $key in the Object
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $persistant
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     Boolean (Optional)
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Determines whether the value is loaded back into the
                     session variable after being added to page object, or
                     deleted. Allows the value to persist between page loads.
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
+            <td >
+
                     No return values
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935"  class="codified">
+
                     $vce-&gt;site-&gt;add_attributes('message','Alias
                     Created');
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+<p><a href="#methods">Back to Top</a></p>
+<table border="1" cellspacing="0" cellpadding="0" id="add_script">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="add_script">Add Script</a>
-                </h3>
+            <td width="935" class="method_name">Add Script
+                
             </td>
         </tr>
     </tbody>
@@ -893,7 +867,7 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
     $dependencies is supplied, a corresponding stylesheet(s) is added to the
     $site object. (see
     <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#add_style"
+        href="#add_style"
     >
         Add Style
     </a>
@@ -902,138 +876,131 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935"  class="method_syntax">
+
                     add_script($path, $dependencies = null, $footer = null)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="174" valign="top">
-                <p>
+            <td width="174" >
+
                     $path
-                </p>
+
             </td>
-            <td width="159" valign="top">
-                <p>
+            <td width="159" >
+
                     String
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     Path to the file, relative to the component directory
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="174" valign="top">
-                <p>
+            <td width="174" >
+
                     $dependencies
-                </p>
+
             </td>
-            <td width="159" valign="top">
-                <p>
+            <td width="159" >
+
                     String
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     Any stylesheet dependencies that should be added with the
                     javascript file. Can designate more than one, separated by
                     “ “. If there is a stylesheet in the site
                     $javascript_dependencies array that matches the
                     $dependencies value, the stylesheet is added to the page.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="174" valign="top">
-                <p>
+            <td width="174" >
+
                     $footer
-                </p>
+
             </td>
-            <td width="159" valign="top">
-                <p>
+            <td width="159" >
+
                     Boolean
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     If supplied, javascript will be added to
                     content-&gt;javascript_footer instead of
                     content-&gt;javascript. This would position the script on
                     the rendered page after any scripts in
                     content-&gt;javascript.
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
+            <td >
+
                     No return values
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="codified">
+
                     $vce-&gt;site-&gt;add_script(dirname(__FILE__) .
                     '/js/jquery-nestable.js',
-                </p>
-                <p>
-                    'jquery tablesorter');
-                </p>
-                <p>
+
+
+                    'jquery tablesorter');<br>
+
+
                     $vce-&gt;site-&gt;add_script(dirname(__FILE__) .
                     '/js/script.js');
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="add_site_roles">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="add_site_roles">Add Site Roles</a>
-                </h3>
+            <td width="935"  class="method_name">          
+                    Add Site Roles
+                
             </td>
         </tr>
     </tbody>
@@ -1073,374 +1040,287 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <p>
     <img
         border="0"
-        width="936"
-        height="166"
-        src="file:///C:/Users/cdoring/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png"
+        width="945"
+        height="305"
+        src="images/screen_clips/blogorama_permissions.png"
     />
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935"  class="method_syntax">
+
                     add_site_roles($attributes)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     $attributes
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     Array
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Information about the new site roles to add. Can hold more
                     than one array, each array represents one new role
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="936" colspan="3">
-                <p>
+            <td width="936" colspan="3" class="bold">
+
                     Values in the $attributes array
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
+            <td width="252" >
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     Array
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Anonymous arrays with information about each role to add
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="936" colspan="3">
-                <p>
+            <td width="936" colspan="3" class="bold">
+
                     Values in the individual roles arrays
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     role_name
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     String
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Name of role
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
-                    role_hierarchy<strong></strong>
-                </p>
+            <td width="252" >
+
+                    role_hierarchy
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     Int
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Order in which this role will appear in a rendered list of
                     roles
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     permissions
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     String
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Assigns unique permissions from the calling Component Class
                     to roles. Each permission you would like to assign to a
                     role is separated by a comma in the string.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="936" colspan="3">
-                <p>
+            <td width="936" colspan="3" class="bold"> 
+
                     Values set in component info permissions array (Optional)
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     name
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     String
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Name of the unique permission
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     description
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     String
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     Description of how this permission is used
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="252" valign="top">
-                <p>
+            <td width="252" >
+
                     type
-                </p>
+
             </td>
-            <td width="153" valign="top">
-                <p>
+            <td width="153" >
+
                     String
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="531" valign="top">
-                <p>
+            <td width="531" >
+
                     If set to ‘singular’, role options will be shown as radio
                     buttons. If not set to ‘singular’, options will have check
                     boxes.
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
-                    No return values
-                </p>
+            <td >
+                 No return values
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Example
-</h4>
+</h3>
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    //within component_info() function of BlogPoster Class
-                </p>
-                <p>
-                    public function component_info() {
-                </p>
-                <p>
-                    return array(
-                </p>
-                <p>
-                    'name' =&gt; 'BlogPoster',
-                </p>
-                <p>
-                    'description' =&gt; 'Component to create blog posts',
-                </p>
-                <p>
-                    'category' =&gt; 'Blog',
-                </p>
-                <p>
-                    'permissions' =&gt; array(
-                </p>
-                <p>
-                    array(
-                </p>
-                <p>
-                    'name' =&gt; 'Read',
-                </p>
-                <p>
-                    'description' =&gt; 'Can read posts'
-                </p>
-                <p>
-                    ),
-                </p>
-                <p>
-                    array(
-                </p>
-                <p>
-                    'name' =&gt; 'Write',
-                </p>
-                <p>
-                    'description' =&gt; 'Can add and update posts'
-                </p>
-                <p>
-                    ),
-                </p>
-                <p>
-                    array(
-                </p>
-                <p>
-                    'name' =&gt; 'Delete',
-                </p>
-                <p>
-                    'description' =&gt; 'Can delete posts'
-                </p>
-                <p>
-                    )
-                </p>
-                <p>
-                    )
-                </p>
-                <p>
-                    );
-                </p>
-                <p>
-                    }
-                </p>
+            <td width="935" class="codified">
+
+                    
+        
+            $attributes = array (<br>
+        
+        
+            &nbsp;&nbsp;array (<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_name' =&gt; 'Moderator',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_hierarchy' =&gt; '1',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'permissions' =&gt; 'Read,Write,Delete'<br>
+        
+        
+        
+        
+            &nbsp;&nbsp;),<br>
+        
+        
+            &nbsp;&nbsp;array (<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_name' =&gt; 'Author',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_hierarchy' =&gt; '2',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'permissions' =&gt; 'Read,Write'<br>
+        
+        
+            &nbsp;&nbsp;),<br>
+        
+        
+            &nbsp;&nbsp;array (<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_name' =&gt; 'Visitor',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'role_hierarchy' =&gt; '3',<br>
+        
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;'permissions' =&gt; 'Read'<br>
+        
+        
+            &nbsp;&nbsp;)<br>
+        
+        
+        
+        
+            );<br>
+        
+        
+            $vce-&gt;site-&gt;add_site_roles($attributes);<br>
+             
             </td>
         </tr>
     </tbody>
 </table>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="add_style">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h4>
-                    //code in other BlogPoster function, calling to
-                    add_site_roles()
-                </h4>
-                <h4>
-                    $attributes = array (
-                </h4>
-                <h4>
-                    array (
-                </h4>
-                <h4>
-                    'role_name' =&gt; 'Moderator',
-                </h4>
-                <h4>
-                    'role_hierarchy' =&gt; '1',
-                </h4>
-                <h4>
-                    'permissions' =&gt; 'Read,Write,Delete'
-                </h4>
-                <h4>
-                </h4>
-                <h4>
-                    ),
-                </h4>
-                <h4>
-                    array (
-                </h4>
-                <h4>
-                    'role_name' =&gt; 'Author',
-                </h4>
-                <h4>
-                    'role_hierarchy' =&gt; '2',
-                </h4>
-                <h4>
-                    'permissions' =&gt; 'Read,Write'
-                </h4>
-                <h4>
-                    ),
-                </h4>
-                <h4>
-                    array (
-                </h4>
-                <h4>
-                    'role_name' =&gt; 'Visitor',
-                </h4>
-                <h4>
-                    'role_hierarchy' =&gt; '3',
-                </h4>
-                <h4>
-                    'permissions' =&gt; 'Read'
-                </h4>
-                <h4>
-                    )
-                </h4>
-                <h4>
-                </h4>
-                <h4>
-                    );
-                </h4>
-                <h4>
-                </h4>
-                <h4>
-                    $vce-&gt;site-&gt;add_site_roles($attributes);
-                </h4>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="add_style">Add Style</a>
-                </h3>
+            <td width="935" class="method_name">Add Style
+                
             </td>
         </tr>
     </tbody>
@@ -1452,129 +1332,120 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     add_style($path, $name = null, $media = 'all')
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="171" valign="top">
-                <p>
+            <td width="171" >
+
                     $path
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     Path to the stylesheet, usually supplied relative to the
                     component directory
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="171" valign="top">
-                <p>
+            <td width="171" >
+
                     $name
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     Name of the stylesheet to be added to the script tag, if
                     called from add_script() this will be the filename without
                     the extension, + ‘-style’
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="171" valign="top">
-                <p>
+            <td width="171" >
+
                     $media
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
-                <p>
+
+
                     (Optional)
-                </p>
+
             </td>
-            <td width="603" valign="top">
-                <p>
+            <td width="603" >
+
                     Media property of the script tag
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
-                    No return value
-                </p>
+            <td>
+
+                    No return values
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="codified">
+
                     $vce-&gt;site-&gt;add_style(dirname(__FILE__) .
                     '/css/jquery-nestable.css',
-                </p>
-                <p>
+
+
                     'jquery-nestable-style');
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0"  id="get_template_names">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="get_template_names">Get Template Names</a>
-                </h3>
+            <td width="935" class="method_name">Get Template Names
             </td>
         </tr>
     </tbody>
@@ -1587,95 +1458,87 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     get_template_names()
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
+            <td>
+
                     No parameters
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     Array
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     Returns an array of the template files contained in the
                     current theme directory.
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    $elements = "elements: ";
-                </p>
-                <p>
+            <td width="935" class="codified">
+
+                    $elements = "elements: ";<br>
+
+
                     foreach($vce-&gt;site-&gt;get_template_names() as
-                    $file_name=&gt;$file_path) {
-                </p>
-                <p>
-                    $elements .= '&lt;option value="' . $file_path . '"';
-                </p>
-                <p>
-                    $elements .= '&gt;' . $ file_name . '&lt;/option&gt;';
-                </p>
-                <p>
+                    $file_name=&gt;$file_path) {<br>
+
+
+                    &nbsp;&nbsp;$elements .= '&lt;option value="' . $file_path . '"';<br>
+
+
+                    &nbsp;&nbsp;$elements .= '&gt;' . $ file_name . '&lt;/option&gt;';<br>
+
+
                     }
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="935" valign="top">
+            <td width="935" >
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="media_link">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="media_link">Media Link</a>
-                </h3>
+            <td width="935" class="method_name">Media Link
+                
             </td>
         </tr>
     </tbody>
@@ -1689,162 +1552,156 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     media_link($fileinfo)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $fileinfo
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     Array
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Contains properties for file for which a media link will be
                     generated.
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="936" colspan="3" valign="top">
-                <p>
+            <td width="936" colspan="3" >
+
                     Potential members of $fileinfo array
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     expires
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     Int
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     how many seconds this link will be functional
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     path
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     path relative to the uploads directory, as defined by site
                     properties
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     String
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     Full path to where file resides, useful to populate HTML
                     tags to link to files
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Hooks
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    site_media_link is called just before the function returns
+            <td width="935" >
+
+                    <span class="hook">site_media_link</span> is called just before the function returns
                     the Media Link
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+</h3>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    $fileinfo = array(
-                </p>
-                <p>
-                    'expires' =&gt; 30,
-                </p>
-                <p>
-                    'path' =&gt; $each_component-&gt;created_by . '/' .
+            <td width="935" class="codified">
+
+                    $fileinfo = array(<br>
+
+
+                    &nbsp;&nbsp;'expires' =&gt; 30,<br>
+
+
+                    &nbsp;&nbsp;'path' =&gt; $each_component-&gt;created_by . '/' .
                     $each_component-&gt;path
-                </p>
-                <p>
-                    );
-                </p>
-                <p>
+
+
+                    );<br>
+
+
                     $imagePath = '&lt;img class="vce-image" src="'.
-                </p>
-                <p>
+
+
                     $vce-&gt;site-&gt;media_link($fileinfo).'"&gt;';
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="remove_attributes">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="remove_attributes">Remove Attributes</a>
-                </h3>
+            <td width="935" class="method_name">Remove Attributes
+                
             </td>
         </tr>
     </tbody>
@@ -1855,82 +1712,74 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     remove_attributes($key)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $key
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Key to the value that you want to remove
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-            </td>
-            <td width="738" valign="top">
-                <p>
+            <td>
+
                     No return value
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-    Example<strong></strong>
-</h4>
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="codified">
+
                     $vce-&gt;site-&gt;remove_attributes('webdam_token_expires');
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="retrieve_attributes">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="retrieve_attributes">Retrieve Attributes</a>
-                </h3>
+            <td width="935" class="method_name">Retrieve Attributes
+                
             </td>
         </tr>
     </tbody>
@@ -1943,101 +1792,94 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     retrieve_attributes($key)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $key
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     Key to the value that you want to retrieve
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     String
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     Value of the indicated $key in the Session ‘add_attributes’
                     property
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     null
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     Returns null if the specified $key isn’t set
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="codified">
+
                     $webdam_token_expires =
                     $vce-&gt;site-&gt;retrieve_attributes('webdam_token_expires');
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+
+<p><a href="#methods">Back to Top</a></p>
+
+<table border="1" cellspacing="0" cellpadding="0" id="url_checker">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <h3>
-                    <a name="url_checker">URL Checker</a>
-                </h3>
+            <td width="935" class="method_name">URL Checker
+                
             </td>
         </tr>
     </tbody>
@@ -2054,103 +1896,95 @@ site_theme and site_title. However, we would strongly caution you    <strong>NOT
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
+            <td width="935" class="method_syntax">
+
                     url_checker($url)
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Parameters
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     $url
-                </p>
+
             </td>
-            <td width="162" valign="top">
-                <p>
+            <td width="162" >
+
                     String
-                </p>
+
             </td>
-            <td width="576" valign="top">
-                <p>
+            <td width="576" >
+
                     URL that you are checking for duplicates
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
+<h3>
     Return
-</h4>
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     String
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     If this URL is not being used, will return a cleaned URL
-                </p>
+
             </td>
         </tr>
         <tr>
-            <td width="198" valign="top">
-                <p>
+            <td width="198" >
+
                     String
-                </p>
+
             </td>
-            <td width="738" valign="top">
-                <p>
+            <td width="738" >
+
                     If this URL is being used, will add ‘-2’ to the cleaned URL
                     and check this version. If the ‘-2’ version is available,
                     it will return this URL to the calling function.
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<h4>
-</h4>
-<h4>
-    Example<strong></strong>
-</h4>
+
+<h3>
+    Example
+</h3>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-            <td width="935" valign="top">
-                <p>
-                    $url = 'admin';
-                </p>
-                <p>
-                    $vce-&gt;site-&gt;url_checker($url);
-                </p>
-                <p>
-                    //returns menu-admin if available for use
-                </p>
-                <p>
+            <td width="935" class="codified">
+
+                    $url = 'admin';<br>
+
+
+                    $vce-&gt;site-&gt;url_checker($url);<br><br>
+
+
+                    //returns menu-admin if available for use<br>
                     //returns menu-admin-2 if already in use
-                </p>
+
             </td>
         </tr>
     </tbody>
 </table>
-<p>
-    <a
-        href="https://uwnetid.sharepoint.com/sites/og_cultivate-learning-nestor/Shared%20Documents/Documentation/Site%20Class.docx#methods"
-    >
-        Back to Top
-    </a>
-</p>
+
+<p><a href="#methods">Back to Top</a></p>
 
 
 

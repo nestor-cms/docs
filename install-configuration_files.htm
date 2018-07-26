@@ -16,7 +16,7 @@
 
   <div class="main">
     
-    <h1>Configuration Files</h1> 
+    <h1>Configuration File</h1> 
     <p>The Nestor configuration file - vce-config.php – is found in the root directory of your installation.  This file defines and assigns values to a variety of constants that will allow you to fine-tune the workings of your installation.</p>    
     <p>
       <a href=#installer>Installer Defined Settings</a><br>
@@ -69,7 +69,7 @@
       </tr>
       <tr>
         <td>SITE_KEY </td>
-        <td>Site key used by application for encryption   – <span class="attention">do not change this after install or your site will stop working</span></td>
+        <td>Site key used by application for encryption   – <span class="attention">do not change this after install or your site will stop working</span>. <br><br> The only time you would manually update the site key is if you re-run the installation process, but you want to continue to use the database from your current install.  In that case you would copy in the Site Key that is needed to decrypt the current data.</td>
         <td>Generated and written by the installer</td>
       </tr>
       <tr>
@@ -86,8 +86,8 @@
     </table>
     <br><br>
     <h2 id="manual">Manually Configured Settings</h2>
-   <p> here are other settings used by Nestor that can be manually configured in the configuration file.  You can even add your own settings for custom component development.</p>
-   <p> These settings are all optional.</p>
+   <p>There are other settings used by Nestor that can be manually configured in the configuration file.  You can even add your own settings for custom component development.</p>
+   <p>These settings are all optional.</p>
     
     <table>
       <tr>

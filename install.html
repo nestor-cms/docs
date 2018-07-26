@@ -17,26 +17,26 @@
   <div class="main">
     <div  id="before_you_install"></div>
     <h1>Before you install</h1>
-    <p>Follow these steps before running the Installer to prevent some common errors
+    <p>Follow these steps before running the Installer to prevent some common errors:
       <ol>
-        <li>You need to have rights to install software on the machine onto which you are installing the system</li>
+        <li>Ensure you have rights to install software on the machine onto which you are installing the system</li>
         <li>Install LAMP (Mac, Linux) or WAMP (Windows) on your system</li>
-        <li>	Create a new database in MySQL.   You can give it any name but make sure you use this name to 
+        <li>Create a new database in MySQL.   You can give it any name but make sure you use this name to 
           identify the database when you run the installer</li>
           <li>Create MySQL account with at least Database Manager permissions for the database you created in step 3</li>
-          <li>You will create an admin account during installation.  You’ll need to remember which email and password you’ve assigned to this account</li>
-      
+         
       </ol>
 	
      </p>
       <div  id="installation_steps"></div>
       <h1>Installation Steps</h1>
         <ol>
-          <li>Copy the Nestor files from GitHub.   The folder where you clone/copy the files can have whatever name you choose, but make sure you use this folder name to identify the application path during installation. </li>
+          <li>Clone the master Nestor branch from GitHub.   The folder where you clone/copy the files can have whatever name you choose, but make sure you use this folder name to identify the application path during installation.</li>
           <li>Navigate to your application folder in a web browser.  (ie http://localhost/vce)</li>
           <li>The Nestor installer should start and walk you through the installation and configuration process</li>
           <li>If the installer doesn’t start automatically, look for the vce-installer.php file in the root of your installation folder and open it in a web browser</li>
           <li>You will create an admin account during installation.  You’ll need to remember which email and password you’ve assigned to this account</li>
+          <li>A site key is generated during the installation.  Copy this key and save it in a safe location.  If you need to run the installer again and want to continue using your current database, you will need to use re-add this key to your <a href="install-configuration_files.htm">configuration file</a> to decrypt data in the database.</li>
         
         </ol>
     
