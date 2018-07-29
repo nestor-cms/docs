@@ -68,7 +68,7 @@
           If this method sends a response in the form of an array, the Site class
           updates the cron task with the new values. If the method does not send a
           response the Site class will delete this task from the system. See the
-          <a  href="API_VCE_Class.htm#cron_task">Manage Cron Task</a> method in the VCE Class API for information about how to form a response to manage a cron task.
+          <a  href="API_VCE_Class.htm#manage_cron_task">Manage Cron Task</a> method in the VCE Class API for information about how to form a response to manage a cron task.
       </p>
       <p> Since the tasks are performed during the Page build process, the tasks are
           only fired when you have visitors to your site.
@@ -76,7 +76,7 @@
       <h2>
           Throttling Cron Tasks
       </h2>
-      <p> The CRON_TASK_LIMIT value in the <a href="install_configuration_files.htm">system config file</a> sets the amount of cron
+      <p> The CRON_TASK_LIMIT value in the <a href="install-configuration_files.htm">system config file</a> sets the amount of cron
           tasks that will be processed on page load. This allows you to balance the
           load on your system. The amount of cron tasks run on each page load
           defaults to 1 if CRON_TASK_LIMIT isn’t set.

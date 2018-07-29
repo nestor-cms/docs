@@ -47,6 +47,9 @@
       theme files are all included by initiate.php, and so that all global
       objects are available to use without having to declare them as global.
   </p>
+  <p>You may notice that many of the method calls used by the theme templates don't exist in the Class files.  There is a general __call() method in each core engine class that will be invoked to return properties with the matching name to these function calls.
+
+  </p>
   <h2>
       Calls to global object and theme methods
   </h2>

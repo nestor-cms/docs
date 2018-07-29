@@ -31,7 +31,7 @@
           defining a hook and loading into the system for use.
       </p>
       <p>
-          Read the <a href="API_Component_Class.htm#add_a_hook">Adding a Hook section</a> in the Component API document to learn how
+          Read the <a href="extend_advanced_component.htm#hook">Add a Hook section</a> in Extended Component Development to learn how
           to associate a procedure with a hook in the Nestor system.
       </p>
       <h2>
@@ -109,17 +109,6 @@
       <p>
           · Not in code
       </p-->
-      <h3>***component_recipe-components_can-add (currently
-          page_requested_components)
-      </h3>
-      <ul>
-        <li>can be used to reverse auto create or alter any of the $input when a
-            component is created</li>
-        <li>called from Component::create_component</li>
-        <li>arguments passed: $input used to create component</li>
-        <li>return $input array</li>
-
-      </ul>
     
       <h3>
           create_component_before
@@ -325,6 +314,16 @@
         </li>
       </ul>
 
+      <h3>page_requested_components
+        </h3>
+        <ul>
+          <li>can be used to reverse auto create or alter any of the $input when a
+              component is created</li>
+          <li>called from Component::create_component</li>
+          <li>arguments passed: $input used to create component</li>
+          <li>return $input array</li>
+  
+        </ul>
       <h3>
           page_requested_components
       </h3>

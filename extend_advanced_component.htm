@@ -16,13 +16,20 @@
 
   <div class="main" id="top">
     <h1>Advanced Component Development</h1>
-    <p>The Nestor platform has many built in functions that you can use in your Component development. This Guide covers the following:
+    <p>The Nestor platform has many built in functions that you can use in your Component development. This section covers the following:
   </p>
   <ol>
-      <li><a href="#form_submission">Form Submission</a></li>
+      <li><a href="#form_submission">Form Submission</a>
+        <ul>
+            <li><a href="#form_fields_dossier">Generate a Dossier and Configure Form Fields</a>
+            </li>
+            <li><a href="#processing_data">Process Form Data</a></li>
+            <li><a href="#subvert">Subvert the Submission Process</a></li>
+        </ul>
+    </li>
       <li><a href="#file_upload">File Upload</a></li>
       <li><a href="#hook">Add a Hook</a></li>
-      <li><a href="#form_submission">Build a Component with Minions</a></li>
+      <li><a href="#minions">Build a Component with Minions</a></li>
       
   </ol>
   
@@ -60,8 +67,8 @@
       messages echoed by PHP methods</li>
 </ol>
 
- 
-<h3>Form Fields</h3>
+<p><a href="#top">Back to Top</a>
+<h3 id="form_fields_dossier">Generate a Dossier and Configure Form Fields</h3>
  
 <p>
     Your component needs to create the HTML content for the form fields, which
@@ -84,10 +91,8 @@
           $vce-&gt;input_path</li>
       <li>Your form fields from which you’ll collect user data</li>
 </ol>
-
-<h3>
-    Example – Generating a Dossier and Creating Form Fields
-</h3>
+<p><a href="#top">Back to Top</a>
+<h3>Example</h3> 
 <p>
     The Blog-o-rama example has a create_contact_form method that shows how to
     generate a dossier and populate form fields with hidden values.
@@ -229,8 +234,9 @@
         </tr>
     </tbody>
 </table>
- 
- <h3>Processing Data from your Component</h3>
+
+<p><a href="#top">Back to Top</a>
+ <h3 id="processing_data">Processing Data from your Component</h3>
  
 <p>
     The simplest way to receive data is to use the inherent update function in
@@ -256,6 +262,7 @@
     The echo command returns a message to the originating js call, which will
     be displayed on your page once the server is finished processing data.
 </p>
+<h3>Example</h3> 
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -288,8 +295,9 @@
         </tr>
     </tbody>
 </table>
+<p><a href="#top">Back to Top</a>
  
- <h3>Ways to Subvert the Form Submission Process</h3>
+ <h3 id="subvert">Ways to Subvert the Form Submission Process</h3>
  
 <ol>
   <li>Overwrite the form_input method from the parent Component class. Be
@@ -422,7 +430,7 @@
     </span>
 </p>
  
-<h3>Master/Minion Class Structure</h3>
+<h3 id="minions">Master/Minion Class Structure</h3>
  
 <p>
     The master class (Media) extends Component class, while the Minion
@@ -440,21 +448,21 @@
     connect to its Minions.
 </p>
 <ol>
-  <li>Create a hook in the preload_component method</li>
+  <li>Create a hook in the <a href="API_Component_Class.htm#preload_component">preload_component</a> method</li>
   <li>Use the hook to call a method that loads in the Minion Parent class (ie
       MediaType)</li>
-  <li>In the as_content method, load in the list of minions. This list takes the form of an array that’s a property of $site, labeled enabled_[<span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
+  <li>In the <a href="API_Component_Class.htm#as_content">as_content</a> method, load in the list of minions. This list takes the form of an array that’s a property of $site, labeled enabled_[<span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
   <ul>
     <li>The enabled_[<span class="italic">Minion parent class name</span>]s array is created and
-      populated by the Manage Components page each time the Master component is
+      populated by the <a href="manage_components.htm">Manage Components page</a> each time the Master component is
       added or updated. It’s populated with all of its active Minions. It will be
       given the name enabled_[<span class="italic">Minion parent class name</span>]s by default.</li>
       <li>Cycle through the Minion array and load each of their class files</li>
   </ul>
   </li>
-  <li>Call a class, ie edit_media_component, to generate dossiers and to call
+  <li>Call a method in the Media class, ie edit_media_component, to generate dossiers and to call
       the edit function of each Minion</li>
-  <li>In the add_component function, add code to make sure each minion shows up as a checkbox</li>
+  <li>In the <a href="API_Component_Class.htm#add_component">add_component</a> function, add code to make sure each minion shows up as a checkbox</li>
   <li>Create a subfolder under the master folder for the Minion parent class
       files</li>
 </ol>
