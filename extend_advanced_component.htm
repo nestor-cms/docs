@@ -448,10 +448,10 @@
     connect to its Minions.
 </p>
 <ol>
-  <li>Create a hook in the <a href="API_Component_Class.htm#preload_component">preload_component</a> method</li>
+  <li>Create a hook in the <a href="API_Component_Class.htm#methods">preload_component</a> method</li>
   <li>Use the hook to call a method that loads in the Minion Parent class (ie
       MediaType)</li>
-  <li>In the <a href="API_Component_Class.htm#as_content">as_content</a> method, load in the list of minions. This list takes the form of an array that’s a property of $site, labeled enabled_[<span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
+  <li>In the <a href="API_Component_Class.htm#methods">as_content</a> method, load in the list of minions. This list takes the form of an array that’s a property of $site, labeled enabled_[<span class="italic">Minion parent class name</span>]s. ( ie enabled_mediatypes)
   <ul>
     <li>The enabled_[<span class="italic">Minion parent class name</span>]s array is created and
       populated by the <a href="manage_components.htm">Manage Components page</a> each time the Master component is
@@ -462,7 +462,7 @@
   </li>
   <li>Call a method in the Media class, ie edit_media_component, to generate dossiers and to call
       the edit function of each Minion</li>
-  <li>In the <a href="API_Component_Class.htm#add_component">add_component</a> function, add code to make sure each minion shows up as a checkbox</li>
+  <li>In the <a href="API_Component_Class.htm#methods">add_component</a> function, add code to make sure each minion shows up as a checkbox</li>
   <li>Create a subfolder under the master folder for the Minion parent class
       files</li>
 </ol>
