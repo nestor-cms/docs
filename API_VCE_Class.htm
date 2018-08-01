@@ -835,7 +835,7 @@
                     );<br>
 
 
-                    $vce-&gt;site-&gt;add_datalist_item($input);
+                    $vce-&gt;add_datalist_item($input);
 
             </td>
         </tr>
@@ -1659,7 +1659,7 @@
                     );<br>
 
 
-                    $vce-&gt;site-&gt;create_datalist($attributes);
+                    $vce-&gt;create_datalist($attributes);
 
             </td>
         </tr>
@@ -1758,7 +1758,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;create_datalist($attributes);
+                    $vce-&gt;create_datalist($attributes);
 
             </td>
         </tr>
@@ -3108,7 +3108,7 @@
                 
                 
                     $options =
-                    $vce-&gt;site-&gt;get_datalist_items($attributes);<br>
+                    $vce-&gt;get_datalist_items($attributes);<br>
                 
                 
                     $insert = "options: ";<br>
@@ -3418,7 +3418,7 @@
         <tr>
             <td width="935" class="codified">
 
-                    $lookup = $site-&gt;ilkyo($input['email']);
+                    $lookup = $vce-&gt;ilkyo($input['email']);
 
             </td>
         </tr>
@@ -3613,7 +3613,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;insert_datalist_items($attributes);
+                    $vce-&gt;insert_datalist_items($attributes);
 
             </td>
         </tr>
@@ -4029,7 +4029,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;mail($attributes);
+                    $vce-&gt;mail($attributes);
 
             </td>
         </tr>
@@ -4344,7 +4344,7 @@
                     );<br><br>
                 
 
-                    $cron_task_id =  $vce-&gt;site-&gt;manage_cron_task($cron_task);
+                    $cron_task_id =  $vce-&gt;manage_cron_task($cron_task);
 
             </td>
         </tr>
@@ -4390,7 +4390,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;manage_cron_task($cron_task);
+                    $vce-&gt;manage_cron_task($cron_task);
 
             </td>
         </tr>
@@ -4539,7 +4539,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;remove_datalist($attributes);
+                    $vce-&gt;remove_datalist($attributes);
 
             </td>
         </tr>
@@ -5010,7 +5010,7 @@
                     );<br><br>
 
 
-                    $vce-&gt;site-&gt;update_datalist($attributes);
+                    $vce-&gt;update_datalist($attributes);
 
             </td>
         </tr>
@@ -5253,7 +5253,7 @@
 
 
                     $updated =
-                    $vce-&gt;site-&gt;update_datalist_item($attributes);
+                    $vce-&gt;update_datalist_item($attributes);
 
             </td>
         </tr>

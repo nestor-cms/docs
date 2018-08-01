@@ -1170,7 +1170,7 @@
 <p>
     This example shows how to create and add a dossier to a form for
     submission. To learn more about dossiers and the form input/submission
-    setup, visit the Form Submission section of this guide.
+    setup, visit the <a href="extend_advanced_component.htm#form_fields_dossier">Form Submission section</a>.
 </p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
@@ -1178,7 +1178,7 @@
             <td width="935"  class="codified">
 
                     $dossier_for_create =
-                    $vce-&gt;page-&gt;generate_dossier($recipe_component-&gt;dossier);<br><br>
+                    $vce-&gt;generate_dossier($recipe_component-&gt;dossier);<br><br>
 
                     // create dossier for checkurl functionality<br>
 
@@ -1186,7 +1186,7 @@
 
                     // add dossier, which is an encrypted json object of details uses in the form<br><br>
 
-                    $dossier_for_checkurl = $vce-&gt;page-&gt;generate_dossier($dossier);<br>
+                    $dossier_for_checkurl = $vce-&gt;generate_dossier($dossier);<br>
 
 
                     $content =<br> 
@@ -1195,7 +1195,7 @@
                     add-container"&gt;<br>
                     &lt;div class="clickbar-content"&gt;<br>
                     &lt;form id="create_items" class="asynchronous-form"
-                    method="post" action="$vce-&gt;page-&gt;input_path"
+                    method="post" action="$vce-&gt;input_path"
                     autocomplete="off"&gt;<br>
                     &lt;input type="hidden" name="dossier"
                     value="$dossier_for_create"&gt;<br>
@@ -1896,7 +1896,7 @@
                    &nbsp;&nbsp; $vce-&gt;content-&gt;main .= '&lt;div class="items-link"&gt;<br>
 
 
-                   &nbsp;&nbsp;&lt;a href="' . $vce-&gt;site-&gt;site_url . '/' .  $each_component-&gt;url . '"&gt;' . $title . '&lt;/a&gt;&lt;/div&gt;' . PHP_EOL;<br>
+                   &nbsp;&nbsp;&lt;a href="' . $vce-&gt;site_url . '/' .  $each_component-&gt;url . '"&gt;' . $title . '&lt;/a&gt;&lt;/div&gt;' . PHP_EOL;<br>
 
 
                 }
@@ -2564,7 +2564,7 @@
                     &lt;div class="clickbar-content"&gt;<br>
 
 
-                    &lt;form id="$type-configuration"class="configure-component" method="post" action="$vce-&gt;page-&gt;input_path" autocomplete="off"&gt;<br>
+                    &lt;form id="$type-configuration"class="configure-component" method="post" action="$vce-&gt;input_path" autocomplete="off"&gt;<br>
 
 
                     &lt;input type="hidden" name="dossier" value="$dossier_for_configure"&gt;<br>
@@ -4220,7 +4220,7 @@ parent_id, sequence, and url. Adds any other data as key/value pairs to [<span c
                             &nbsp;&nbsp;&nbsp;&nbsp;// generate dossier<br><br>
 
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;$dossier_for_update = $vce-&gt;page-&gt;generate_dossier($dossier);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$dossier_for_update = $vce-&gt;generate_dossier($dossier);<br>
 
 
                             &nbsp;&nbsp;&nbsp;&nbsp;$content = <br>
@@ -4236,7 +4236,7 @@ parent_id, sequence, and url. Adds any other data as key/value pairs to [<span c
 
                     &lt;form id="update_$each_component-&gt;component_id"
                     class="asynchronous-form" method="post" action="$
-                    vce-&gt;page-&gt;input_path" autocomplete="off"&gt;<br>
+                    vce-&gt;input_path" autocomplete="off"&gt;<br>
 
 
                     &lt;input type="hidden" name="dossier"
@@ -4348,7 +4348,7 @@ parent_id, sequence, and url. Adds any other data as key/value pairs to [<span c
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// generate dossier<br>
 
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dossier_for_delete = $vce-&gt;page-&gt;generate_dossier($dossier);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dossier_for_delete = $vce-&gt;generate_dossier($dossier);<br>
 
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$content .= <br>
@@ -4357,7 +4357,7 @@ parent_id, sequence, and url. Adds any other data as key/value pairs to [<span c
 
                     &lt;form id="delete_$each_component-&gt;component_id"
                     class="delete-form float-right-form asynchronous-form"
-                    method="post" action="$vce-&gt;page-&gt;input_path"&gt;<br>
+                    method="post" action="$vce-&gt;input_path"&gt;<br>
 
 
                     &lt;input type="hidden" name="dossier"
@@ -4394,7 +4394,7 @@ parent_id, sequence, and url. Adds any other data as key/value pairs to [<span c
                     EOF;<br>
 
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;$vce-&gt;page-&gt;content-&gt;add('admin', $content);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$vce-&gt;content-&gt;add('admin', $content);<br>
 
 
                     &nbsp;&nbsp;}<br>
