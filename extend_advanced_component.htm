@@ -374,9 +374,9 @@
                     &nbsp;&nbsp;$content_hook = array (<br>
 
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; 'Input::page_requested_url'<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; 'File::page_requested_url',<br>
 
-
+                    &nbsp;&nbsp;&nbsp;&nbsp;'site_media_link' =&gt; 'File::site_media_link'<br>
                     &nbsp;&nbsp;);<br>
 
 
@@ -402,8 +402,8 @@
                     &nbsp;&nbsp;$content_hook = array (<br>
 
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; ['function' => 'Input::page_requested_url', 'priority' => -100]'<br>
-
+                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; ['function' => 'File::page_requested_url', 'priority' => -100],<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;'site_media_link' =&gt; ['function' => 'File::site_media_link', 'priority' => 100],<br>
 
                     &nbsp;&nbsp;);<br>
 
