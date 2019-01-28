@@ -357,11 +357,12 @@
     Definition and Load Process flow chart</a> shows the end-to-end process of
     defining a hook and loading into the system for use.
 </p>
-<p>
-    To assign a procedure to a hook, overwrite the preload_component method in
-    your component.
-</p>
+
  <h3>Hook configuration example</h3>
+ <p>
+    To assign a procedure to a hook, overwrite the preload_component method in
+    your component.  Add all of the hooks that will use methods in your component to the $content_hook array. For each hook, use the hook name as the array index, and assign the component method to call when the hook is invoked.  
+</p>
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -374,6 +375,34 @@
 
 
                     &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; 'Input::page_requested_url'<br>
+
+
+                    &nbsp;&nbsp;);<br>
+
+
+                    &nbsp;&nbsp;return $content_hook;<br>
+
+
+                    }
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>You can also control the order in which hook events are fired off by using a priority value. A lower or negative priority value goes first, with positive numbers after.  In this case, each hook's properties will be added as an array.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="935" class="codified">
+
+                    public function preload_component() {<br>
+
+
+                    &nbsp;&nbsp;$content_hook = array (<br>
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;'page_requested_url' =&gt; ['function' => 'Input::page_requested_url', 'priority' => -100]'<br>
 
 
                     &nbsp;&nbsp;);<br>
