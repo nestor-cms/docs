@@ -5,4 +5,4 @@ The Nested Component Based Content Management System (aka “Nestor”) is a ver
 
 **[ Get the application ](https://github.com/nestor-cms/nestor)**
 
-**[ Access the full documentation over here ](https://nestor-cms.github.io/docs/)**
+**[ Access the full documentation over here ](https://nestor-cms.github.io/documentation/)**
