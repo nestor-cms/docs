@@ -5,7 +5,7 @@ The Nested Component Based Content Management System (aka “Nestor”) is such 
 Access the full documentation over here.
 [Link]https://nestor-cms.github.io/docs/
 
-**[ Installation Guide ](Home/Install)**
+**[ Access the full documentation over here ](https://nestor-cms.github.io/docs/)**
 
 ## Nestor Quickstart
 
